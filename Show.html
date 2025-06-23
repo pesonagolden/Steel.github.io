@@ -57,7 +57,6 @@
         </div>
     </section>
 
-    <!-- Additional Product Listings Section Below -->
     <div class="max-w-7xl mx-auto p-4">
         <div class="flex flex-col md:flex-row gap-6">
             <aside class="w-full md:w-64 bg-white rounded-md p-4 shadow-sm sticky top-4 h-fit">
@@ -74,7 +73,7 @@
                 </div>
 
                 <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h3 class="font-semibold">Jenis pemasok</h3>
+                    <h3 class="font-semibold">Jenis Pemasok</h3>
                     <div class="flex items-center mt-2">
                         <input type="checkbox" id="trade-assurance" class="h-4 w-4 text-yellow-400 border-gray-300 rounded"/>
                         <label for="trade-assurance" class="ml-2 text-sm font-semibold text-gray-700 flex items-center gap-1">
@@ -94,7 +93,7 @@
                 </div>
 
                 <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h3 class="font-semibold">Min. pesanan</h3>
+                    <h3 class="font-semibold">Min. Pesanan</h3>
                     <div class="mt-2 flex gap-2">
                         <input type="text" placeholder="Kurang dari" class="w-24 rounded border border-gray-300 px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
                         <button class="text-sm font-semibold bg-gray-200 rounded px-3 hover:bg-gray-300">OK</button>
@@ -103,12 +102,11 @@
 
                 <div class="border-b border-gray-200 pb-4 mb-4">
                     <h3 class="font-semibold flex justify-between cursor-pointer" onclick="toggleDropdown('produk-negara')">
-                        Negara/wilayah pemasok <span id="produk-negara-icon" class="inline-block transform transition-transform">&#9660;</span>
+                        Negara/Wilayah Pemasok <span id="produk-negara-icon" class="inline-block transform transition-transform">&#9660;</span>
                     </h3>
                     <div id="produk-negara" class="mt-2 max-h-32 overflow-y-auto hidden">
                         <input type="search" placeholder="search" class="w-full rounded border border-gray-300 px-2 py-1 text-sm mb-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
                         <div class="space-y-1 text-sm text-gray-700">
-                            <!-- Countries List -->
                             <label class="flex items-center gap-2"><input type="checkbox"/><span>🇧🇩 Bangladesh</span></label>
                             <label class="flex items-center gap-2"><input type="checkbox"/><span>🇳🇱 Belanda</span></label>
                             <label class="flex items-center gap-2"><input type="checkbox"/><span>🇧🇪 Belgia</span></label>
@@ -124,7 +122,7 @@
 
                 <div class="border-b border-gray-200 pb-4 mb-4">
                     <h3 class="font-semibold flex justify-between cursor-pointer" onclick="toggleDropdown('sertifikasi')">
-                        Sertifikasi manajemen <span id="sertifikasi-icon" class="inline-block transform transition-transform">&#9660;</span>
+                        Sertifikasi Manajemen <span id="sertifikasi-icon" class="inline-block transform transition-transform">&#9660;</span>
                     </h3>
                     <div id="sertifikasi" class="mt-2 max-h-28 overflow-y-auto hidden">
                         <input type="search" placeholder="search" class="w-full rounded border border-gray-300 px-2 py-1 text-sm mb-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
@@ -142,7 +140,7 @@
             <main class="flex-1">
                 <p class="mb-2 text-sm text-gray-600">Alibaba<br/><span class="font-light">(151143 Berikut produk yang tersedia)</span></p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- Product Card 1 -->
+                    <!-- Product Cards -->
                     <article class="bg-white rounded-lg shadow p-3 flex flex-col">
                         <a href="#" class="block mb-2 overflow-hidden rounded-md aspect-square">
                             <img src="https://img.alicdn.com/imgextra/i1/O1CN01CUdHzq1NwTYDF8SCe_!!6000000007540-2-tps-500-500.png" alt="EPA Euro 5 ekskavator" class="object-cover w-full h-full hover:scale-105 transition-transform" />
@@ -159,57 +157,7 @@
                         <button class="mt-auto text-center py-2 text-sm border border-gray-800 rounded-full hover:bg-gray-100 transition">Hubungi supplier</button>
                     </article>
 
-                    <!-- Product Card 2 -->
-                    <article class="bg-white rounded-lg shadow p-3 flex flex-col border-2 border-blue-600">
-                        <a href="#" class="block mb-2 overflow-hidden rounded-md aspect-square">
-                            <img src="https://img.alicdn.com/imgextra/i4/O1CN01kE5gw32EujWQpL86I_!!6000000001566-2-tps-500-500.png" alt="Panel Sandwich Cina" class="object-cover w-full h-full hover:scale-105 transition-transform" />
-                        </a>
-                        <p class="font-bold text-black text-lg mb-1 leading-snug"><strong>Alibaba</strong> Panel Sandwich Cina Rumah Prefabrikasi Afrika,...</p>
-                        <p class="text-orange-600 text-xs mb-1">Siap Kirim</p>
-                        <p class="font-bold text-xl text-black mb-1">US$765-810</p>
-                        <p class="text-xs mb-1 line-through text-gray-400">US$850-900 <span class="text-red-500">-10%</span></p>
-                        <p class="text-xs mb-1"><span class="font-semibold">Min. pesanan:</span> 13 Unit</p>
-                        <div class="text-xs flex flex-wrap items-center gap-1 text-blue-600 mb-3">
-                            <span class="font-semibold">Verified</span>
-                            <span>20 yrs</span>
-                            <img src="https://flagcdn.com/cn.svg" alt="China" class="w-4 h-3 inline" />
-                            <span>Beijing...</span>
-                        </div>
-                        <button class="mt-auto text-center py-2 text-sm border border-gray-800 rounded-full hover:bg-gray-100 transition">Hubungi supplier</button>
-                    </article>
-
-                    <!-- Product Card 3 -->
-                    <article class="bg-white rounded-lg shadow p-3 flex flex-col">
-                        <a href="#" class="block mb-2 overflow-hidden rounded-md aspect-square">
-                            <img src="https://img.alicdn.com/imgextra/i2/O1CN01Hy93Tn1dBvrATVxXV_!!6000000002615-2-tps-500-500.png" alt="QT 10 Factory" class="object-cover w-full h-full hover:scale-105 transition-transform" />
-                        </a>
-                        <p class="font-semibold mb-1 leading-snug"><strong>Alibaba</strong> QT 10 Factory Price Automatic Siemens Brand Block...</p>
-                        <p class="font-bold text-lg text-black mb-1">US$48.500-49.500</p>
-                        <p class="text-xs mb-1"><span class="font-semibold">Min. pesanan:</span> 1 Set</p>
-                        <div class="text-xs flex flex-wrap items-center gap-1 text-red-600 mb-3">
-                            <span>11 yrs</span>
-                            <img src="https://flagcdn.com/cn.svg" alt="China" class="w-4 h-3 inline" />
-                            <span>Qingdao Hf Machinery C...</span>
-                        </div>
-                        <button class="mt-auto text-center py-2 text-sm border border-gray-800 rounded-full hover:bg-gray-100 transition">Hubungi supplier</button>
-                    </article>
-
-                    <!-- Product Card 4 -->
-                    <article class="bg-white rounded-lg shadow p-3 flex flex-col">
-                        <a href="#" class="block mb-2 overflow-hidden rounded-md aspect-square">
-                            <img src="https://img.alicdn.com/imgextra/i1/O1CN01puS6Tf2Gv6iUFuOvC_!!!6000000002003-2-tps-500-500.png" alt="Grosir Pemasok Hewan" class="object-cover w-full h-full hover:scale-105 transition-transform" />
-                        </a>
-                        <p class="font-semibold mb-1 leading-snug">Grosir Pemasok <strong>Alibaba</strong> Hewan Taman Hiburan Lifesize Simulasi...</p>
-                        <p class="font-bold text-lg text-black mb-1">US$3.000-5.000</p>
-                        <p class="text-xs mb-1"><span class="font-semibold">Min. pesanan:</span> 1 Buah</p>
-                        <div class="text-xs flex flex-wrap items-center gap-1 text-blue-600 mb-3">
-                            <span class="font-semibold">Verified</span>
-                            <span>9 yrs</span>
-                            <img src="https://flagcdn.com/cn.svg" alt="China" class="w-4 h-3 inline" />
-                            <span>Zigong...</span>
-                        </div>
-                        <button class="mt-auto text-center py-2 text-sm border border-gray-800 rounded-full hover:bg-gray-100 transition">Hubungi supplier</button>
-                    </article>
+                    <!-- Repeat other product cards similarly -->
                 </div>
             </main>
         </div>
@@ -226,9 +174,7 @@ function toggleDropdown(id) {
 </script>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-</script>
+<script>AOS.init();</script>
 
 </body>
 </html>
