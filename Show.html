@@ -1,180 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="main.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <title>PT.Pesona Golden Steel | Homepage</title>
-    <link rel="icon" href="gambar/Screenshot_2025-02-10_171728-removebg-preview.png" type="image/png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PT. Pesona Golden Steel | Homepage</title>
+  <link rel="icon" href="gambar/favicon.png" type="image/png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
+    header { background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .navbar-brand { font-weight: 600; font-size: 1.5rem; color: #2b2b2b; }
+    .banner { background: linear-gradient(90deg, #005b9f, #00a0dc); color: white; padding: 60px 0; }
+    .banner h1 { font-weight: 600; }
+    .whatsapp-button { background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+    .product-card { background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+    .product-card:hover { transform: translateY(-5px); }
+    footer { background-color: #343a40; color: white; padding: 40px 0; }
+    footer a { color: #ffffff; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-
-<header>
-    <nav class="main-nav">
-        <div class="brand text-main">
-            <a href="index.html">
-                <h1>PT.PESONA GOLDEN STEEL</h1>
-            </a>
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="#">PT. PESONA GOLDEN STEEL</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">Tentang Kami</a></li>
+            <li class="nav-item"><a class="nav-link" href="#lokasi">Lokasi</a></li>
+          </ul>
         </div>
-        <div class="links">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">Tentang Kami</a></li>
-                <li><a href="lokasi.html">Lokasi Workshop</a></li>
-            </ul>
-        </div>
-        <div class="menu">
-            <img src="menu.svg" alt="menu icon">
-        </div>
+      </div>
     </nav>
-</header>
+  </header>
 
-<main>
-    <div id="popupModal" class="popup-modal">
-        <div class="popup-content">
-            <span class="close-btn" id="closePopup">&times;</span>
-            <p>Selamat datang di situs kami!</p>
-        </div>
+  <section class="banner text-center">
+    <div class="container">
+      <h1 data-aos="fade-right">Solusi Kebutuhan Valve Anda</h1>
+      <p data-aos="fade-left">Berbagai jenis valve berkualitas tersedia di sini.</p>
+      <a href="https://wa.me/628989619222" class="whatsapp-button" data-aos="fade-up">Hubungi Kami</a>
     </div>
-    
-    <section class="banner">
-        <div class="container">
-            <div class="row justify-content-center align-items-center pad-tab" data-aos="fade-up">
-                <div class="banner-text col-sm-12 col-md-6" data-aos="fade-right">
-                    <p class="text-second">PT.Pesona Golden Steel</p>
-                    <h1 class="text-main secondary-col">Solusi Kebutuhan Anda</h1>
-                    <p class="text-second">Ada Berbagai Macam Valve Yang Dapat Anda Pesan Disini</p>
-                    <a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual." 
-                       class="whatsapp-button" target="_blank">Hubungi Saya</a>
-                </div>
-                <div class="banner-image col-sm-12 col-md-6 d-none d-sm-block" data-aos="fade-left">
-                    <img src="gambar/image.jpeg" alt="image-banner" class="img-fluid">
-                </div>
-            </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <div class="row text-center mb-4">
+        <h2 class="fw-bold">Produk Unggulan</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6" data-aos="zoom-in">
+          <div class="product-card p-3">
+            <img src="gambar/prod-1.jpg" alt="Produk 1" class="img-fluid mb-3">
+            <h6>Valve Kuningan 1 Inch</h6>
+            <p class="mb-1">Harga: Rp 250.000</p>
+            <small>Minimum order: 1 pcs</small>
+          </div>
         </div>
-    </section>
-
-    <div class="max-w-7xl mx-auto p-4">
-        <div class="flex flex-col md:flex-row gap-6">
-            <aside class="w-full md:w-64 bg-white rounded-md p-4 shadow-sm sticky top-4 h-fit">
-                <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h2 class="font-bold text-lg mb-2">Kategori</h2>
-                    <ul class="space-y-1 text-sm text-gray-600">
-                        <li><a href="#" class="block hover:text-blue-600">Pengisi Daya</a></li>
-                        <li><a href="#" class="block hover:text-blue-600">Skuter Listrik</a></li>
-                        <li><a href="#" class="block hover:text-blue-600">Pengisi Daya Portabel</a></li>
-                        <li><a href="#" class="block hover:text-blue-600">Ekstensi Rambut</a></li>
-                        <li><a href="#" class="block hover:text-blue-600">Jam Tangan Pintar</a></li>
-                        <li><a href="#" class="block hover:text-blue-600">Sepeda Gunung</a></li>
-                    </ul>
-                </div>
-
-                <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h3 class="font-semibold">Jenis Pemasok</h3>
-                    <div class="flex items-center mt-2">
-                        <input type="checkbox" id="trade-assurance" class="h-4 w-4 text-yellow-400 border-gray-300 rounded"/>
-                        <label for="trade-assurance" class="ml-2 text-sm font-semibold text-gray-700 flex items-center gap-1">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="inline-block h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2L2 7v13h20V7L12 2zm0 4l7 3.5v7.5h-4V14H9v3.5H5v-7.5L12 6z"/>
-                            </svg>
-                            Trade Assurance
-                        </label>
-                    </div>
-                    <div class="flex items-center mt-2">
-                        <input type="checkbox" id="verified-supplier" class="h-4 w-4 text-blue-600 border-gray-300 rounded"/>
-                        <label for="verified-supplier" class="ml-2 text-sm font-semibold text-gray-700 flex items-center gap-1">
-                            <img src="https://img.icons8.com/ios-filled/14/0000FF/verified-account.png" alt="Verified Icon" />
-                            Verified Supplier
-                        </label>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h3 class="font-semibold">Min. Pesanan</h3>
-                    <div class="mt-2 flex gap-2">
-                        <input type="text" placeholder="Kurang dari" class="w-24 rounded border border-gray-300 px-2 py-1 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
-                        <button class="text-sm font-semibold bg-gray-200 rounded px-3 hover:bg-gray-300">OK</button>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h3 class="font-semibold flex justify-between cursor-pointer" onclick="toggleDropdown('produk-negara')">
-                        Negara/Wilayah Pemasok <span id="produk-negara-icon" class="inline-block transform transition-transform">&#9660;</span>
-                    </h3>
-                    <div id="produk-negara" class="mt-2 max-h-32 overflow-y-auto hidden">
-                        <input type="search" placeholder="search" class="w-full rounded border border-gray-300 px-2 py-1 text-sm mb-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
-                        <div class="space-y-1 text-sm text-gray-700">
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇧🇩 Bangladesh</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇳🇱 Belanda</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇧🇪 Belgia</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇭🇰 Hong Kong, S.A.R</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇮🇳 India</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇰🇷 Korea Selatan</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇲🇲 Myanmar</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇳🇵 Nepal</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>🇵🇰 Pakistan</span></label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="border-b border-gray-200 pb-4 mb-4">
-                    <h3 class="font-semibold flex justify-between cursor-pointer" onclick="toggleDropdown('sertifikasi')">
-                        Sertifikasi Manajemen <span id="sertifikasi-icon" class="inline-block transform transition-transform">&#9660;</span>
-                    </h3>
-                    <div id="sertifikasi" class="mt-2 max-h-28 overflow-y-auto hidden">
-                        <input type="search" placeholder="search" class="w-full rounded border border-gray-300 px-2 py-1 text-sm mb-2 focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500" />
-                        <div class="space-y-1 text-sm text-gray-700">
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>ISO 9001</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>CE</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>RoHS</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>SGS</span></label>
-                            <label class="flex items-center gap-2"><input type="checkbox"/><span>UL</span></label>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <main class="flex-1">
-                <p class="mb-2 text-sm text-gray-600">Alibaba<br/><span class="font-light">(151143 Berikut produk yang tersedia)</span></p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                    <!-- Product Cards -->
-                    <article class="bg-white rounded-lg shadow p-3 flex flex-col">
-                        <a href="#" class="block mb-2 overflow-hidden rounded-md aspect-square">
-                            <img src="https://img.alicdn.com/imgextra/i1/O1CN01CUdHzq1NwTYDF8SCe_!!6000000007540-2-tps-500-500.png" alt="EPA Euro 5 ekskavator" class="object-cover w-full h-full hover:scale-105 transition-transform" />
-                        </a>
-                        <p class="text-gray-700 text-sm mb-1 leading-snug">EPA Euro 5 nirkabel digunakan 2 Ton ekskavator teleskopik Crawler...</p>
-                        <p class="font-bold text-lg text-black mb-1">US$1.899</p>
-                        <p class="text-xs mb-1"><span class="font-semibold">Min. pesanan:</span> 1 Set</p>
-                        <div class="text-xs flex flex-wrap items-center gap-1 text-blue-600 mb-3">
-                            <span class="font-semibold">Verified</span>
-                            <span>8 yrs</span>
-                            <img src="https://flagcdn.com/cn.svg" alt="China" class="w-4 h-3 inline" />
-                            <span>Jining Saao...</span>
-                        </div>
-                        <button class="mt-auto text-center py-2 text-sm border border-gray-800 rounded-full hover:bg-gray-100 transition">Hubungi supplier</button>
-                    </article>
-
-                    <!-- Repeat other product cards similarly -->
-                </div>
-            </main>
+        <div class="col-md-3 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+          <div class="product-card p-3">
+            <img src="gambar/prod-2.jpg" alt="Produk 2" class="img-fluid mb-3">
+            <h6>Ball Valve Stainless</h6>
+            <p class="mb-1">Harga: Rp 350.000</p>
+            <small>Minimum order: 1 pcs</small>
+          </div>
         </div>
+        <!-- Tambah produk lainnya sesuai kebutuhan -->
+      </div>
     </div>
-</main>
+  </section>
 
-<script>
-function toggleDropdown(id) {
-    const el = document.getElementById(id);
-    const icon = document.getElementById(id + '-icon');
-    el.classList.toggle('hidden');
-    icon.style.transform = el.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
-}
-</script>
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h5>PT. PESONA GOLDEN STEEL</h5>
+          <p>Email: pesona.golden@gmail.com</p>
+          <p>Telp: <a href="https://wa.me/628989619222">0898 9619 222</a></p>
+          <p>Lokasi: Jakarta Utara, Warakas</p>
+        </div>
+        <div class="col-md-6 text-md-end mt-4 mt-md-0">
+          <p>Ikuti kami:</p>
+          <a href="https://www.tokopedia.com/cv-pgs" target="_blank"><img src="gambar/pngegg.png" alt="Tokopedia" style="width: 100px;"></a>
+          <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank"><img src="gambar/pngegg (2).png" alt="Facebook" style="width: 100px;"></a>
+        </div>
+      </div>
+      <hr class="my-4" />
+      <div class="text-center">
+        <small>&copy; 2025 PT. Pesona Golden Steel. All Rights Reserved.</small>
+      </div>
+    </div>
+  </footer>
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init();</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init();</script>
 </body>
 </html>
