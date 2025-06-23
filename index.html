@@ -1,349 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="main.css">
-	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<title>PT.Pesona Golden Stell | Homepage</title>
-	<link rel="icon" href="gambar/Screenshot_2025-02-10_171728-removebg-preview.png" type="image/png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon.ico">
-	<span class="navbar-toggler-icon"></span>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <title>PT.Pesona Golden Steel | Homepage</title>
+    <link rel="icon" href="gambar/Screenshot_2025-02-10_171728-removebg-preview.png" type="image/png">
 </head>
 <body>
-		<nav class="main-nav">
-			<div class="brand text-main">
-				<a href="index.html">
-					<h1>PT.PESONA GOLDEN STEEL</h1>
-					<span class="navbar-toggler-icon"></span>
-				</a>
-			</div>
-			<div class="links">
-				<ul>
-					<li><a href="about.html">Tentang Kami</a></li>
-					<li><a href="lokasi.html">Lokasi Workshop</a></li>
+    <nav class="main-nav">
+        <div class="brand text-main">
+            <a href="index.html">
+                <h1>PT.PESONA GOLDEN STEEL</h1>
+            </a>
+        </div>
+        <div class="links">
+            <ul>
+                <li><a href="Show.html">Product Stock</a></li>
+                <li><a href="about.html">Tentang Kami</a></li>
+                <li><a href="lokasi.html">Lokasi Workshop</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <img src="menu.svg" alt="menu">
+        </div>
+    </nav>
 
-					
-						
-	
+    <main>
+        <!-- Popup Modal -->
+        <div id="popupModal" class="popup-modal">
+            <div class="popup-content">
+                <span class="close-btn" id="closePopup">&times;</span>
+                <h2>Selamat Data</h2>
+                <p>Selamat datang di situs kami!</p>
+            </div>
+        </div>
+        
+        <!-- BANNER -->
+        <section class="banner">
+            <div class="container">
+                <div class="row justify-content-center align-items-center pad-tab" data-aos="fade-up">
+                    <div class="banner-text col-sm-12 col-md-6" data-aos="fade-right">
+                        <p class="text-second">PT.Pesona Golden Steel</p>
+                        <h1 class="text-main secondary-col">Solusi Kebutuhan Anda</h1>
+                        <p class="text-second">Ada Berbagai Macam Valve Yang Dapat Anda Pesan Disini</p>
+                        <a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual" 
+                        class="whatsapp-button" target="_blank">Hubungi Saya</a>
+                    </div>
+                    <div class="banner-image col-sm-12 col-md-6 d-none d-sm-block" data-aos="fade-left">
+                        <img src="gambar/image.jpeg" alt="image-banner" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-			</div>
-			<div class="menu">
-				<img src="menu.svg" alt="menu">
-			</div>
-		</nav>
-	</header><!-- /header -->
+        <!-- NEW ARRIVALS -->
+        <section class="new-arrivals">
+            <div class="container">
+                <div class="text-arrivals row align-items-center">
+                    <div class="title col-7 col-sm-6 col-md-9 text-left">
+                        <h3 class="text-main"><span>MY</span> PRODUCT</h3>
+                    </div>
+                    <div class="text-show-all col-5 col-sm-6 col-md-3 text-right text-main pr-md-0">
+                        <a href="">
+                            <p>SHOW ALL <img src="gambar/arrow.png" alt="icon-arrow"></p>
+                        </a>
+                    </div>
+                </div>
+            
+                <div class="arrival-images row justify-content-center align-items-center text-center">
+                    <div class="arrival-image col-12 mb-4 mb-sm-0 mb-md-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
+                        <a href="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.38_ffb063ba.jpg">
+                            <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.38_ffb063ba.jpg" alt="pict1" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="arrival-image col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up">
+                        <a href="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_4d9f74db.jpg">
+                            <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_4d9f74db.jpg" alt="pict2" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="arrival-image col-12 mb-4 mb-sm-0 mb-md-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
+                        <a href="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_d70dfb03.jpg">
+                            <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_d70dfb03.jpg" alt="pict3" class="img-fluid">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-	<main>
-		<!-- Popup Modal -->
-		<div id="popupModal" class="popup-modal">
-			<div class="popup-content">
-				<span class="close-btn" id="closePopup">&times;</span>
-				<h2>Selamat Data</h2>
-				<p>Selamat datang di situs kami!</p>
-			</div>
-		</div>
-		
-		<!--BANNER-->
-		<section class="banner">
-			<div class="container">
-				<div class="row justify-content-center align-items-center pad-tab" data-aos="fade-up">
-					<div class="banner-text col-sm-12 col-md-6"data-aos="fade-right">
-						<p class="text-second">PT.Pesona Golden Stell</p>
-						<h1 class="text-main secondary-col">Solusi Kebutuhan Anda
-						</h1>
-						<p class="text-second">Ada Brbagai Macam Valve Yang Dapat Anda Pesan Disini </p>
-						<a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual ." 
-						class="whatsapp-button" target="_blank">Hubungi Saya</a>
-					</div>
-					<div class="banner-image col-sm-12 col-md-6 d-none d-sm-block"data-aos="fade-left">
-						<img src="gambar/image.jpeg" alt="image-banner" class="img-fluid">
-					</div>
-				</div>
-			</div>
-		</section>
+        <!-- PRODUCTS -->
+        <section class="products-section">
+            <div class="container">
+                <div class="text-products row align-items-center">
+                    <div class="title-product col-7 col-sm-6 col-md-9">
+                        <h3 class="text-main">Our Products</h3>
+                    </div>
+                    <div class="text-show-all text-right text-main col-5 col-sm-6 col-md-3 pr-md-0">
+                        <a href="Show.html">
+                            <p>SHOW ALL <img src="gambar/arrow-2.png" alt="icon-arrow"></p>
+                        </a>
+                    </div>
+                </div>
 
-		<!--NEW ARRIVALS-->
-		<section class="new-arrivals">
-			<div class="container">
-				<div class="text-arrivals row align-items-center">
-					<div class="title col-7 col-sm-6 col-md-9 text-left">
-						<h3 class="text-main"><span>MY</span> PRODUCT</h3>
-					</div>
-					<div class="text-show-all col-5 col-sm-6 col-md-3 text-right text-main pr-md-0">
-						<a href="">
-							<p>SHOW ALL <img src="gambar/arrow.png" alt="icon-arrow"</p>
-						</a>
-					</div>
-				</div>
-			
-				<div class="arrival-images row justify-content-center align-items-center text-center">
-					<div class="arrival-image col-12 mb-4 mb-sm-0 mb-md-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4" data-aos="fade-left">
-						<a href="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.38_ffb063ba.jpg">
-							<img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.38_ffb063ba.jpg" alt="pict1" class="img-fluid">
-						</a>
-					</div>
-					<div class="arrival-image col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up">
-						<a href="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_4d9f74db.jpg">
-							<img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_4d9f74db.jpg" alt="pict2" class="img-fluid">
-						</a>
-					</div>
-					<div class="arrival-image col-12 mb-4 mb-sm-0 mb-md-4 mb-lg-0 col-sm-12 col-md-6 col-lg-4" data-aos="fade-right">
-						<a href="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_d70dfb03.jpg">
-							<img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_d70dfb03.jpg" alt="pict3" class="img-fluid">
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
+                <div class="products row justify-content-center">
+                    <div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up">
+                        <div class="bg-white">
+                            <div class="product-image text-center">
+                                <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.40_d6bc03d1.jpg" alt="product1" class="img-fluid">
+                            </div>
+                            <div class="desc-product">
+                                <a href="warning.html">
+                                    <p class="text-second">Product Description</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-		<!--PRODUCTS-->
-		<section class="products-section">
-			<div class="container">
-				<div class="text-products row align-items-center">
-					<div class="title-product col-7 col-sm-6 col-md-9">
-						<h2 class="text-main">PRODUCT STOCK</h2>
-					</div>
-					<div class="text-show-all text-right text-main col-5 col-sm-6 col-md-3 pr-md-0">
-						<a href="Show.html">
-							<p>SHOW ALL <img src="gambar/arrow-2.png" alt="icon-arrow"></p>
-						</a>
-					</div>
-				</div>
+                    <!-- Repeat similar blocks for other products -->
 
-				<div class="products row justify-content-center">
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.40_d6bc03d1.jpg" alt="product1" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+                </div>
+            </div>
+        </section>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="100">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/pict3.jpeg" alt="product3" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+        <!-- Preview -->
+        <section class="preview-section d-md-flex align-items-center">
+            <div class="container">
+                <div class="preview row">
+                    <div class="preview-item col-12 col-sm-12 col-md-6">
+                        <div class="image-preview">
+                            <img src="gambar/Gambar WhatsApp 2025-01-23 pukul 07.43.40_6c44af59.jpg" alt="preview" class="img-fluid">
+                        </div>
+                    </div>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="100">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/IMG-20250610-WA0798.jpg" alt="product3" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+                    <div class="preview-item col-12 col-sm-12 col-md-6">
+                        <div class="image-preview">
+                            <img src="gambar/Screenshot 2025-01-24 162537.png" alt="preview" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="100">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/IMG-20250610-WA0796.jpg" alt="product3" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+    <footer>
+        <div class="container">
+            <div class="footer-content row mb-4">
+                <div class="footer-brand col-12 col-md-3">
+                    <h1 class="text-main">PT.PESONA GOLDEN STEEL</h1>
+                </div>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="200">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/Gambar WhatsApp 2025-01-23 pukul 07.39.39_292e4509.jpg" alt="product4" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+                <div class="footer-items-box col-12 col-md-9">
+                    <div class="footer-items row">
+                        <div class="footer-item col-12 col-md-4">
+                            <h3 class="text-main">Contact Us</h3>
+                            <p>pesona.golden@gmail.com</p>
+                            <p><a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual">08989619222</a></p>
+                            <p><a href="lokasi.html">Jakarta Utara, Warakas</a></p>
+                        </div>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="200">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/IMG-20250610-WA0794.jpg" alt="product4" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+                        <div class="footer-item col-12 col-md-4">
+                            <h3 class="text-main">Online</h3>
+                            <a href="https://www.tokopedia.com/cv-pgs" class="tokped" target="_blank">
+                                <img src="gambar/pngegg.png" alt="Tokopedia" style="width: 120px; height: 40px;">
+                            </a>
+                            <a href="https://www.facebook.com/share/12G56nHjcUg/?mibextid=LQQJ4d" class="fb class="facebook" target="_blank">
+                                <img src="gambar/pngegg (2).png" alt="Facebook" style="width: 120px; height: 40px;">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="200">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/IMG-20250610-WA0800.jpg" alt="product4" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
+            <div class="copyright-section border-top">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright-content text-center mt-4">
+                            <p class="text-second">PT.Pesona Golden Steel Copyright &copy; 2022 All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-					<div class="product col-12 col-sm-12 col-md-6 col-lg-3 mb-md-4 md-lg-0" data-aos="fade-up"
-					data-aos-delay="300">
-						<div class="bg-white">
-							<div class="product-image text-center">
-								<img src="gambar/prod-2.jpg" alt="product2" class="img-fluid">
-							</div>
-							<div class="desc-product">
-								<a href="warning.html">
-									<p class="text-second"></p>
-									<p class="text-second"></p>
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!--Preview-->
-		<section class="preview-section d-md-flex align-items-center">
-			<div class="container">
-				<div class="preview row">
-					<div class="preview-item col-12 col-sm-12 col-md-6">
-						<div class="image-preview">
-							<img src="gambar/Gambar WhatsApp 2025-01-23 pukul 07.43.40_6c44af59.jpg" alt="preview" class="img-fluid">
-							<a href="warning.html">
-								
-							</a>
-						</div>
-					</div>
-
-					<div class="preview-item col-12 col-sm-12 col-md-6">
-						<div class="image-preview">
-							<img src="gambar/Screenshot 2025-01-24 162537.png" alt="preview" class="img-fluid">
-							<a href="warning.html">
-	
-								
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-	</main><!--main-->
-
-
-	<footer>
-		<div class="container">
-			<div class="footer-content row mb-4">
-				<div class="footer-brand col-12 col-sm-12 col-md-3 col-lg-3">
-					<div>
-						<h1 class="text-main">PT.PESONA GOLDEN STEEL</h1>
-					</div>
-				</div>
-
-				<div class="footer-items-box col-12 col-sm-12 col-md-9 col-lg-9">
-					<div class="footer-items row">
-						<div class="footer-item col-12 col-sm-12 col-md-4">
-							<div>
-								<div class="footer-item-content">
-									<h3 class="text-main">Categori Order</h3>
-									<p>Gate Valve</p>
-									<p>Ball Valve</p>
-									<p>Y strainer</p>
-									<p>Check Valve</p>
-									<p>Globe Valve</p>
-									<p>Butterfly Valve</p>
-									<p>Wafle Valve</p>
-									<p>Shigh Glass</p>
-									<p>Basket Straine Valve</p>
-								</div>
-							</div>
-						</div>
-	
-						<div class="footer-item col-12 col-sm-12 col-md-4">
-							<div>
-								<div class="footer-item-content">
-									<h3 class="text-main">Business</h3>
-									<p>pesona.golden@gmail.com</p>
-									<p><a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual .">08989619222</a></p>
-									<p><a href="lokasi.html">Jakarta Utara, Warakas</a></p>
-								</div>
-							</div>
-						</div>
-	
-					<div class="footer-item col-12 col-sm-12 col-md-4">
-   					 <div>
-     					   <div class="footer-item-content">
-      					      <h3 class="text-main">Online</h3>
-         
- 						           <!-- Tokopedia Link and Icon -->
-						            <a href="https://www.tokopedia.com/cv-pgs" class="tokped" target="_blank">
-           						     <img src="gambar/pngegg.png" alt="Tokopedia" style="width: 120px; height: 40px;">
-         				  			 </a>
-       							     <!-- Facebook Link -->
-      						  	   <a href="https://www.facebook.com/share/12G56nHjcUg/?mibextid=LQQJ4d" class="fb"class="facebook" target="_blank">
-     						           <img src="gambar/pngegg (2).png" alt="Facebook" class="img-fluid" style="width: 120px; height: 40px;">
-							   </a>
-    							     </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="copyright-section border-top">
-				<div class="row">
-					<div class="col-12">
-						<div class="copyright-content text-center mt-4">
-							<p class="text-second">PT.Pesona Golden Steel Copyright &copy; 2022 All Rights Reserved</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-		
-
-	<!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-	<script src="library/bootstrap/js/bootstrap.min.js"></script> -->
-	<script src="script/index.js"></script>
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<script>
-		AOS.init();
-	</script>
+    <script src="script/index.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>
