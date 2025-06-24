@@ -114,7 +114,7 @@
     </div>
   </section>
 
-  <!-- Products --><!-- Brand Support -->
+ <!-- Brand Support -->
 <section class="py-5 bg-white">
   <div class="container text-center">
     <h3 class="text-main mb-4">Siap Support Berbagai Merek</h3>
@@ -124,11 +124,18 @@
         <img src="https://kcbkk.com/wp-content/uploads/2020/01/yoshitake-logo-1.png" class="img-fluid" alt="Yoshitake" style="height: 60px;">
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvB0KPjQhs6Dm2CEWq2J7chCd8dN-MpeHMw&s" class="img-fluid" alt="Tozen" style="height: 60px;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/NITTAN_LOGO_2.png" class="img-fluid" alt="Nittan" style="height: 60px;">
-		<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Nittan" style="height: 60px;">
-		<img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png/v1/fill/w_480,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo%20flow.png
-" class="img-fluid" alt="Nittan" style="height: 60px;">
-		<img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Kitz" style="height: 60px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Brand5" style="height: 60px;">
+        <img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png/v1/fill/w_480,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo%20flow.png" class="img-fluid" alt="Brand6" style="height: 60px;">
+        <img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Ebara" style="height: 60px;">
+
         <!-- duplikat agar loop terlihat terus -->
+        <img src="https://w7.pngwing.com/pngs/746/254/png-transparent-kitz-hd-logo.png" class="img-fluid" alt="Kitz" style="height: 60px;">
+        <img src="https://kcbkk.com/wp-content/uploads/2020/01/yoshitake-logo-1.png" class="img-fluid" alt="Yoshitake" style="height: 60px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvB0KPjQhs6Dm2CEWq2J7chCd8dN-MpeHMw&s" class="img-fluid" alt="Tozen" style="height: 60px;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/NITTAN_LOGO_2.png" class="img-fluid" alt="Nittan" style="height: 60px;">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Brand5" style="height: 60px;">
+        <img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png/v1/fill/w_480,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo%20flow.png" class="img-fluid" alt="Brand6" style="height: 60px;">
+        <img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Ebara" style="height: 60px;">
       </div>
     </div>
   </div>
@@ -143,13 +150,16 @@
 .brand-track {
   display: flex;
   width: max-content;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 25s linear infinite;
+}
+.brand-marquee:hover .brand-track {
+  animation-play-state: paused;
 }
 @keyframes scroll-left {
-  from {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
 }
