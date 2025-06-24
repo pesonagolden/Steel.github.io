@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Katalog & Download</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -20,17 +20,20 @@
       {
         title: "Katalog Produk Elektronik",
         description: "Daftar produk elektronik terbaru tahun 2025.",
-        fileUrl: "files/katalog-elektronik.pdf"
+        fileUrl: "files/katalog-elektronik.pdf",
+        imageUrl: "images/katalog-elektronik.jpg"
       },
       {
         title: "Brosur Promo Juni",
         description: "Penawaran spesial bulan Juni untuk semua kategori.",
-        fileUrl: "files/promo-juni.pdf"
+        fileUrl: "files/promo-juni.pdf",
+        imageUrl: "images/promo-juni.jpg"
       },
       {
         title: "E-Book Panduan Pemakaian",
         description: "Panduan lengkap penggunaan alat rumah tangga.",
-        fileUrl: "files/panduan-pemakaian.pdf"
+        fileUrl: "files/panduan-pemakaian.pdf",
+        imageUrl: "images/panduan-pemakaian.jpg"
       }
     ];
 
@@ -38,16 +41,19 @@
     
     catalogs.forEach(catalog => {
       const item = document.createElement('div');
-      item.className = "bg-white p-4 rounded shadow flex justify-between items-center";
+      item.className = "bg-white p-4 rounded shadow flex items-center gap-4";
+
       item.innerHTML = `
-        <div>
+        <img src="${catalog.imageUrl}" alt="${catalog.title}" class="w-24 h-32 object-cover rounded" />
+        <div class="flex-1">
           <h2 class="text-xl font-semibold">${catalog.title}</h2>
-          <p class="text-sm text-gray-600">${catalog.description}</p>
+          <p class="text-sm text-gray-600 mb-2">${catalog.description}</p>
+          <a href="${catalog.fileUrl}" download class="inline-block bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Download
+          </a>
         </div>
-        <a href="${catalog.fileUrl}" download class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-          Download
-        </a>
       `;
+
       listContainer.appendChild(item);
     });
   </script>
