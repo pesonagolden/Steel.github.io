@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://pesonagolden.netlify.app/sitemap.xml
