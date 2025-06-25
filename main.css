@@ -795,3 +795,8 @@ footer .footer-item-content a.ig-icon {
 .close-btn:hover {
 	color: #2c6c88;
 }
+.product-card img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
