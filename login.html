@@ -38,7 +38,7 @@
         <div class="w-full max-w-4xl">
             <header class="text-center mb-12">
                 <div class="flex justify-center mb-6">
-                    <img src="https://pesonagolden.netlify.app/gambar/Screenshot_2025-06-25_221917-removebg-preview.png" alt="Company logo with modern minimalist design in indigo and white" />
+                    <img src="https://pesonagolden.netlify.app/gambar/Screenshot_2025-06-25_221917-removebg-preview.png" alt="Company logo with modern minimalist design in indigo and white" style="outline: rgb(0, 0, 0) dotted 3px; outline-offset: 1px;" />
                 </div>
                 <h1 class="text-3xl font-bold text-gray-900 mb-3">Partner Business Portal</h1>
                 <p class="text-lg text-gray-600 max-w-2xl mx-auto">Bergabunglah sebagai mitra bisnis kami dan nikmati berbagai keuntungan eksklusif untuk mendukung pertumbuhan bisnis Anda.</p>
@@ -223,7 +223,12 @@
         </div>
     </div>
     
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
+        // Google Sheets Database Setup
+        const scriptURL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+        const registeredPartners = []; // Cache for logged in users
+        
         document.addEventListener('DOMContentLoaded', function() {
             const loginForm = document.getElementById('loginForm');
             const registrationForm = document.getElementById('registrationForm');
@@ -257,13 +262,50 @@
                             alert('Kata sandi tidak cocok!');
                             return;
                         }
+
+                        // Prepare form data for Google Sheets
+                        const formData = new FormData(form);
+                        const partnerData = {
+                            company: formData.get('company'),
+                            industry: formData.get('industry'),
+                            address: formData.get('address'),
+                            fullname: formData.get('fullname'),
+                            position: formData.get('position'),
+                            email: formData.get('reg-email'),
+                            phone: formData.get('phone'),
+                            password: password,
+                            timestamp: new Date().toISOString()
+                        };
+
+                        // Save to Google Sheets
+                        axios.post(scriptURL, partnerData)
+                            .then(response => {
+                                alert('Pendaftaran berhasil! Sekarang Anda bisa login.');
+                                registeredPartners.push({
+                                    email: partnerData.email,
+                                    password: partnerData.password
+                                });
+                                showLogin.click(); // Switch to login view
+                            })
+                            .catch(error => {
+                                console.error('Error!', error);
+                                alert('Terjadi kesalahan saat menyimpan data');
+                            });
                     }
-                    
-                    // Simulate form submission
-                    alert('Form berhasil di-submit! (Ini hanya demo)');
-                    
-                    // In a real application, you would submit the form to your server
-                    // form.submit();
+                    else if (form === document.querySelector('#loginForm form')) {
+                        const email = document.getElementById('email').value;
+                        const password = document.getElementById('password').value;
+
+                        // Check in cache first
+                        const partner = registeredPartners.find(p => p.email === email && p.password === password);
+                        
+                        if (partner) {
+                            alert('Login berhasil! Mengarahkan ke dashboard...');
+                            // window.location.href = 'dashboard.html';
+                        } else {
+                            alert('Email atau password salah!');
+                        }
+                    }
                 });
             });
         });
