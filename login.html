@@ -1,3 +1,16 @@
+These changes:
+1. Update the script URL to your provided Apps Script URL
+2. Properly format POST requests with JSON headers
+3. Improve error handling with more detailed messages
+4. Change login verification to use the API endpoint
+5. Add proper error handling for login failures
+
+Make sure your Google Apps Script is properly deployed as a web app with these settings:
+- Execute as: "Me"
+- Who has access: "Anyone"
+The spreadsheet must have a sheet named "Mitra" with the correct column structure.Here is the updated HTML content after applying above edits:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,8 +290,12 @@
                             timestamp: new Date().toISOString()
                         };
 
-                        // Save to Google Sheets
-                        axios.post(scriptURL, partnerData)
+                        // Save to Google Sheets with proper headers
+                        axios.post(scriptURL, JSON.stringify(partnerData), {
+                            headers: {
+                                'Content-Type': 'application/json'
+                            }
+                        })
                             .then(response => {
                                 alert('Pendaftaran berhasil! Sekarang Anda bisa login.');
                                 registeredPartners.push({
@@ -288,23 +305,28 @@
                                 showLogin.click(); // Switch to login view
                             })
                             .catch(error => {
-                                console.error('Error!', error);
-                                alert('Terjadi kesalahan saat menyimpan data');
+                                console.error('Error details:', error.response);
+                                alert(`Gagal menyimpan data: ${error.response?.data?.message || error.message}`);
                             });
                     }
                     else if (form === document.querySelector('#loginForm form')) {
                         const email = document.getElementById('email').value;
                         const password = document.getElementById('password').value;
 
-                        // Check in cache first
-                        const partner = registeredPartners.find(p => p.email === email && p.password === password);
-                        
-                        if (partner) {
-                            alert('Login berhasil! Mengarahkan ke dashboard...');
-                            // window.location.href = 'dashboard.html';
-                        } else {
-                            alert('Email atau password salah!');
-                        }
+                        // Verify credentials via API
+                        axios.get(`${scriptURL}?email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`)
+                            .then(response => {
+                                if (response.data.status === 'success') {
+                                    alert('Login berhasil! Mengarahkan ke dashboard...');
+                                    window.location.href = 'dashboard.html';
+                                } else {
+                                    alert('Email atau password salah!');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Login error:', error);
+                                alert('Gagal memverifikasi login, coba lagi nanti');
+                            });
                     }
                 });
             });
@@ -312,4 +334,3 @@
     </script>
 </body>
 </html>
-
