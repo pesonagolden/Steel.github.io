@@ -3,6 +3,7 @@ const menuElement = document.querySelector('.menu');
 const linksElement = document.querySelector('.links');
 const popupModal = document.getElementById('popupModal');
 const closePopupBtn = document.getElementById('closePopup');
+.setHeader('Access-Control-Allow-Origin', 'https://pesonagolden.netlify.app');
 
 menuElement.addEventListener('click', openNav);
 closePopupBtn.addEventListener('click', closePopup);
