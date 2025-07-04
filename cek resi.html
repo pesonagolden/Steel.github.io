@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lacak Pesanan</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+input, select, button { padding: 8px; margin: 4px 0; }
+</style>
+</head>
+<body>
+
+<h2>Lacak Pesanan Anda</h2>
+<p>Masukkan nomor resi & pilih kurir untuk melihat statusnya di cekresi.com:</p>
+
+<input type="text" id="resi" placeholder="Nomor Resi">
+<select id="kurir">
+  <option value="jne">JNE</option>
+  <option value="jnt">J&T</option>
+  <option value="sicepat">SiCepat</option>
+  <option value="pos">POS Indonesia</option>
+  <!-- tambahkan kurir lain sesuai kebutuhan -->
+</select>
+<br>
+<button onclick="lacak()">Lacak</button>
+
+<script>
+function lacak() {
+  const resi = document.getElementById("resi").value.trim();
+  const kurir = document.getElementById("kurir").value.trim();
+
+  if (!resi) {
+    alert("Masukkan nomor resi!");
+    return;
+  }
+
+  // arahkan ke cekresi.com
+  const url = `https://cekresi.com/?noresi=${encodeURIComponent(resi)}&kurir=${encodeURIComponent(kurir)}`;
+  window.open(url, "_blank"); // buka di tab baru
+}
+</script>
+
+</body>
+</html>
