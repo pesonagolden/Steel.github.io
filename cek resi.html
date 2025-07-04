@@ -1,45 +1,235 @@
 <!DOCTYPE html>
-<html lang="id">
+<html dir="ltr" lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Lacak Pesanan</title>
-<style>
-body { font-family: Arial, sans-serif; padding: 20px; }
-input, select, button { padding: 8px; margin: 4px 0; }
-</style>
+    <title>Cek Resi Semua Paket Cepat Akurat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bantu kamu cek resi semua kiriman paket JNE, J&T, JNT Cargo, SPX Shopee, SiCepat, TIKI, Lion, Pos, Wahana, Anteraja, dan puluhan kurir lainnya.">
+    <meta name="keywords" content="tracking, lacak, cek, paket, resi, kurir, ekspedisi, kiriman, reguler, cargo, economy, hemat, pengiriman" />
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="https://cekresi.com/images/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/namamax/jqui-crcstm@master/css/bootstrap.min.css" media="screen">
+    <script src="https://cdn.jsdelivr.net/gh/namamax/jqui-crcstm@master/js/jquery.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            font-size: 1.8rem;
+            line-height: 1.6;
+        }
+        p {
+            margin: 1.5rem 0;
+        }
+        input, button {
+            padding: 8px;
+            margin: 4px 0;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .bgsearch {
+            min-height: 330px;
+            padding: 5px 10px 5px 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Lacak Pesanan Anda</h2>
-<p>Masukkan nomor resi & pilih kurir untuk melihat statusnya di cekresi.com:</p>
+<div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="https://cekresi.com/" class="navbar-brand"><img src="https://cekresi.com/images/cek-resi-logo.webp" alt="Cekresi" Title="Home" width="148" height="40" /></a>
+            <button class="navbar-toggle" type="button" role="none" data-toggle="collapse" data-target="#navbar-main" id="tnav" aria-label="Toggle navigation">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cek Resi <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-jnt-express.php">J&T Express</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-jne.php">JNE Express</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-spx-shopee-express.php">SPX Express</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/jnt-cargo.php">J&T Cargo</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-sicepat.php">SiCepat</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-lion-parcel.php">Lion Parcel</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-pos.php">Pos Indonesia</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-tiki.php">TIKI</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-anteraja.php">Anteraja</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-wahana.php">Wahana</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-indah-logistik-cargo.php">Indah Cargo</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-ninja-xpress.php">Ninja Xpress</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-idexpress.php">ID Express</a></li>
+                        <li><a class="dropdown-item" href="https://cekresi.com/tracking/cek-resi-paxel.php">Paxel</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="https://ongkir.cekresi.com/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Cek Ongkir <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a class="dropdown-item" href="https://ongkir.cekresi.com/jne/">JNE Express</a></li>
+                        <li><a class="dropdown-item" href="https://ongkir.cekresi.com/jnt/">J&T Express</a></li>
+                        <li><a class="dropdown-item" href="https://ongkir.cekresi.com/sicepat/">SiCepat</a></li>
+                        <li><a class="dropdown-item" href="https://ongkir.cekresi.com/pos/">Pos Indonesia</a></li>
+                        <li><a class="dropdown-item" href="https://ongkir.cekresi.com/lion/">Lion Parcel</a></li>
+                        <li><a class="dropdown-item" href="https://ongkir.cekresi.com/wahana/">Wahana</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="https://tanyapaket.cekresi.com" rel="nofollow" title="Tanya Paket Anda">Tanya Paket</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<input type="text" id="resi" placeholder="Nomor Resi">
-<select id="kurir">
-  <option value="jne">JNE</option>
-  <option value="jnt">J&T</option>
-  <option value="sicepat">SiCepat</option>
-  <option value="pos">POS Indonesia</option>
-  <!-- tambahkan kurir lain sesuai kebutuhan -->
-</select>
-<br>
-<button onclick="lacak()">Lacak</button>
+<div class="bgsearch">
+    <div class="container">
+        <div style="max-width: 728px; margin-top: 5em;">
+            <div class="row">
+                <div class="col-md-12">
+                    <center>
+                        <h1 class="wp-block-heading">Cek Resi All-in-One</h1>
+                        <h2 class="wp-block-heading">Bantu Kamu Lacak Paket<br>60+ Kurir Pengiriman<br>Belanja di Rumah Cekresi Mudah</h2>
+                    </center>
+                </div>
+            </div>
+            <br />
+            <form method="post" action="#" onSubmit="return false;" class="bs-example" id="form_cek">
+                <input type="hidden" name="viewstate" id="viewstate" value="05918" />
+                <input type="hidden" name="secret_key" id="secret_key" value="f3d270ec982fdcbde29636f39fa69712" />
+                <input type="hidden" name="e" id="e" value="" />
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-xs-12" style="margin-bottom:10px;">
+                        <input type="text" class="form-control input-lg" name="noresi" id="noresi" placeholder="Nomor Resi Pengiriman" value="JX8006822120">
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-xs-12 crarea">
+                        <div class="btn-group btn-block">
+                            <button class="btn btn-primary btn-lg col-lg-9 col-md-9 col-xs-9" id="cekresi" onclick="dCek()"> CEKRESI </button>
+                            <button class="btn btn-primary btn-lg col-lg-9 col-md-9 col-xs-9" id="cekresiloading" style="display:none;">Searching..</button>
+                            <button class="btn btn-primary btn-lg col-lg-3 col-md-3 col-xs-3 dropdown-toggle" data-toggle="dropdown" onclick="getHis()" id="bhis" aria-label="History"><span class="caret"></span></button>
+                            <ul class="dropdown-menu" id="ul_history">
+                                <li><a href="javascript:void(0)" onclick="clearHis()" id="clear_history">Clear History</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div id="selexpid"></div>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="modal" id="infopopup">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="padding:10px">
+                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                        <h4 class="modal-title" id="titlepopup">Informations</h4>
+                                    </div>
+                                    <div class="modal-body" id="contentpopup" style="padding:5px 10px 10px 10px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <center class="announcement">
+                    <p class="has-text-align-center has-white-background-color has-background">Coba: <a href="https://cekresi.com/top/">Cekresi Top 10</a> | <a href="https://ongkir.cekresi.com">Cek Ongkir</a> | <a href="https://cekresi.com/emas/">Cuan Emas</a></p>
+                </center>
+                <br />
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Lacak Pesanan Section -->
+<h2>Lacak Pesanan Anda</h2>
+<p>Masukkan nomor pesanan Anda untuk melihat statusnya:</p>
+<input type="text" id="orderId" placeholder="Nomor Pesanan">
+<button onclick="cekPesanan()">Lacak</button>
+<div id="result"></div>
 
 <script>
-function lacak() {
-  const resi = document.getElementById("resi").value.trim();
-  const kurir = document.getElementById("kurir").value.trim();
+// Contoh data pesanan
+const dataPesanan = {
+    "12345": {status: "Diproses", tanggal: "2025-07-02", pengiriman: "JNE"},
+    "67890": {status: "Dikirim", tanggal: "2025-07-03", pengiriman: "SiCepat"},
+    "11223": {status: "Selesai", tanggal: "2025-07-01", pengiriman: "POS Indonesia"}
+};
 
-  if (!resi) {
-    alert("Masukkan nomor resi!");
-    return;
-  }
+function cekPesanan() {
+    const id = document.getElementById("orderId").value.trim();
+    const result = document.getElementById("result");
 
-  // arahkan ke cekresi.com
-  const url = `https://cekresi.com/?noresi=${encodeURIComponent(resi)}&kurir=${encodeURIComponent(kurir)}`;
-  window.open(url, "_blank"); // buka di tab baru
+    if (dataPesanan[id]) {
+        const p = dataPesanan[id];
+        result.innerHTML = `
+            <strong>Status Pesanan:</strong> ${p.status}<br>
+            <strong>Tanggal:</strong> ${p.tanggal}<br>
+            <strong>Ekspedisi:</strong> ${p.pengiriman}
+        `;
+    } else {
+        result.innerHTML = `<span style="color: red;">Nomor pesanan tidak ditemukan.</span>`;
+    }
 }
 </script>
+
+<!-- Footer Section -->
+<footer class="footer-grid">
+    <div class="container">
+        <div class="tengah">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p class="footerinfo">Situs dan layanan ini tidak berafiliasi dengan ekspedisi manapun. Nama, logo, dan merek lain adalah hak milik dari masing-masing pemiliknya. Kami tidak bertanggungjawab atas penyalahgunaan, kerusakan, keterlambatan, kerugian materi dan non materi yang mungkin timbul akibat penggunaan layanan ini.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-4 col-lg-3 col-xl-3">
+                            <img width="148" height="40" alt="" class="img-fluid img-responsive" data-src="https://cr.cekcdn.com/2024/04/cek-resi-logo.png" src="https://cr.cekcdn.com/2024/04/cek-resi-logo.png">
+                            <p class="paddress">Bantu kamu lacak semua paket.</p>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-3 col-xl-3">
+                            <h5 class="">Cekresi.com</h5>
+                            <ul>
+                                <li><a href="https://cekresi.com/tentang-kami/">About</a></li>
+                                <li><a href="https://cekresi.com/contact.php">Contact</a></li>
+                                <li><a href="https://cekresi.com/term-and-conditions.php">Term</a></li>
+                                <li><a href="https://cekresi.com/privacy-policy.php">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-3 col-xl-3">
+                            <h5 class="">Products</h5>
+                            <ul>
+                                <li><a href="https://cekresi.com/">Cek Resi</a></li>
+                                <li><a href="https://ongkir.cekresi.com/">Cek Ongkir</a></li>
+                                <li><a href="https://tanyapaket.cekresi.com/">Forum</a></li>
+                                <li><a href="https://cekresi.com/emas/">Harga Emas</a></li>
+                                <li><a href="https://cekresi.com/api.php">API</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-lg-3 col-xl-3">
+                            <h5 class="">Free Tools</h5>
+                            <ul>
+                                <li><a href="https://cekresi.com/widget-cek-resi.php">Widget</a></li>
+                                <li><a href="https://cekresi.com/barcode/">QR Generator</a></li>
+                                <li><a href="https://cekresi.com/scan/">Scan Barcode</a></li>
+                                <li><a href="https://cekresi.com/wa/">Send Whatsapp</a></li>
+                                <li><a href="https://cekresi.com/volume/">Hitung Volumetrik</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="copyright">Cekresi.com &copy; 2025</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/gh/namamax/jqui-crcstm@1.0.0/js/bootstrap.min.js"></script>
+<script src="https://cekresi.com/js/bootswatch.js"></script>
 
 </body>
 </html>
