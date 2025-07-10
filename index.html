@@ -99,8 +99,6 @@ footer a {
 <li class="nav-item"><a class="nav-link fw-medium" href="https://cekresi.com/">Cek Resi</a></li>
 <li class="nav-item"><a class="nav-link fw-medium" href="lokasi.html">Lokasi Workshop</a></li>
 </ul>
-<div class="ms-3">
-<button id="toggleDark" class="btn btn-outline-secondary btn-sm">🌙 Dark Mode</button>
 </div>
 </div>
 </div>
@@ -176,21 +174,6 @@ footer a {
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
 AOS.init();
-
-const toggleBtn = document.getElementById('toggleDark');
-const prefersDark = localStorage.getItem('dark-mode') === 'true';
-
-if (prefersDark) {
-  document.body.classList.add('dark-mode');
-  toggleBtn.textContent = '☀️ Light Mode';
-}
-
-toggleBtn.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const isDark = document.body.classList.contains('dark-mode');
-  toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-  localStorage.setItem('dark-mode', isDark);
-});
 
 function updateDateTime() {
   const now = new Date();
