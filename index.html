@@ -10,7 +10,6 @@
 <meta name="author" content="PT. Pesona Golden Steel" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-<link rel="stylesheet" href="main.css">
 
 <style>
 body {
@@ -29,17 +28,15 @@ body {
   background-color: #1e1e1e;
   color: #e0e0e0;
 }
-nav.main-nav {
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 .banner {
-  padding: 4rem 0;
+  padding: 3rem 1rem;
   background: linear-gradient(135deg, #e0f7fa, #fff);
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .banner {
+    text-align: left;
+  }
 }
 .text-main {
   color: #007bff;
@@ -52,15 +49,14 @@ footer {
   background-color: #343a40;
   color: white;
   padding: 2rem 0;
+  font-size: 0.9rem;
 }
 footer a {
   color: #ffc107;
   text-decoration: none;
 }
 .brand-marquee {
-  width: 100%;
   overflow: hidden;
-  position: relative;
 }
 .brand-track {
   display: flex;
@@ -73,6 +69,14 @@ footer a {
 @keyframes scroll-left {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+.brand-marquee img {
+  height: 40px;
+}
+@media (min-width: 768px) {
+  .brand-marquee img {
+    height: 60px;
+  }
 }
 </style>
 </head>
@@ -111,7 +115,7 @@ footer a {
 <p class="text-second">Berbagai macam valve tersedia sesuai kebutuhan proyek Anda.</p>
 <a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual" target="_blank" class="btn btn-success">Hubungi Kami di WhatsApp</a>
 </div>
-<div class="col-md-6" data-aos="fade-left">
+<div class="col-md-6 text-center" data-aos="fade-left">
 <img src="gambar/image.jpeg" class="img-fluid" alt="Banner image">
 </div>
 </div>
@@ -122,25 +126,27 @@ footer a {
 <section class="py-5 bg-white">
 <div class="container text-center">
 <h3 class="text-main mb-4">Siap Support Berbagai Merek</h3>
-<div class="brand-marquee overflow-hidden position-relative">
+<div class="brand-marquee position-relative">
 <div class="brand-track d-flex align-items-center gap-5">
-<img src="https://w7.pngwing.com/pngs/746/254/png-transparent-kitz-hd-logo.png" class="img-fluid" alt="Kitz" style="height: 60px;">
-<img src="https://kcbkk.com/wp-content/uploads/2020/01/yoshitake-logo-1.png" class="img-fluid" alt="Yoshitake" style="height: 60px;">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvB0KPjQhs6Dm2CEWq2J7chCd8dN-MpeHMw&s" class="img-fluid" alt="Tozen" style="height: 60px;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/NITTAN_LOGO_2.png" class="img-fluid" alt="Nittan" style="height: 60px;">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Brand5" style="height: 60px;">
-<img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png" class="img-fluid" alt="Brand6" style="height: 60px;">
-<img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Ebara" style="height: 60px;">
+<img src="https://w7.pngwing.com/pngs/746/254/png-transparent-kitz-hd-logo.png" class="img-fluid" alt="Kitz">
+<img src="https://kcbkk.com/wp-content/uploads/2020/01/yoshitake-logo-1.png" class="img-fluid" alt="Yoshitake">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvB0KPjQhs6Dm2CEWq2J7chCd8dN-MpeHMw&s" class="img-fluid" alt="Tozen">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/NITTAN_LOGO_2.png" class="img-fluid" alt="Nittan">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Brand5">
+<img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png" class="img-fluid" alt="Brand6">
+<img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Ebara">
 </div>
 </div>
 </div>
 </section>
 
 <!-- Info Berita Hari Ini -->
-  <section class="py-3 bg-light">
+<section class="py-3 bg-light">
 <div class="container text-center">
 <p id="tanggal-jam"></p>
-<div id="id543d5a55b5e31" a='{"t":"g7bs","v":"1.2","lang":"id","locs":[243],"ssot":"c","sics":"ds","cbkg":"rgb(211,47,47)","cfnt":"rgb(255,255,255)","cend":"rgba(0,0,0,0.11)"}'>Sumber Data Cuaca: <a href="https://cuacalab.id/cuaca_indonesia/besok/">cuaca Indonesia besok per jam</a></div><script async src="https://static1.cuacalab.id/widgetjs/?id=id543d5a55b5e31"></script>
+<div id="id543d5a55b5e31">
+Sumber Data Cuaca: <a href="https://cuacalab.id/cuaca_indonesia/besok/">cuaca Indonesia besok per jam</a></div>
+<script async src="https://static1.cuacalab.id/widgetjs/?id=id543d5a55b5e31"></script>
 </div>
 </section>
 
@@ -172,14 +178,21 @@ footer a {
 <script>
 AOS.init();
 
-// Dark mode
 const toggleBtn = document.getElementById('toggleDark');
+const prefersDark = localStorage.getItem('dark-mode') === 'true';
+
+if (prefersDark) {
+  document.body.classList.add('dark-mode');
+  toggleBtn.textContent = '☀️ Light Mode';
+}
+
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  const isDark = document.body.classList.contains('dark-mode');
+  toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  localStorage.setItem('dark-mode', isDark);
 });
 
-// Tanggal & jam
 function updateDateTime() {
   const now = new Date();
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -189,7 +202,6 @@ function updateDateTime() {
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
-
 </script>
 </body>
 </html>
