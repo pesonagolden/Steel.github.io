@@ -5,37 +5,30 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PT. Pesona Golden Steel | Distributor Besi dan Baja</title>
 <link rel="icon" href="gambar/Screenshot_2025-06-25_221917-removebg-preview.png" type="image/png" />
-<meta name="description" content="PT. Pesona Golden Steel adalah distributor besi dan baja terpercaya yang berlokasi di Jakarta Utara, Warakas." />
+<meta name="description" content="PT. Pesona Golden Steel adalah distributor besi dan baja terpercaya di Jakarta Utara, Warakas." />
 <meta name="keywords" content="Pesona Golden Steel, distributor besi, baja, Jakarta Utara, Warakas" />
 <meta name="author" content="PT. Pesona Golden Steel" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-<link rel="stylesheet" href="main.css">
 
 <style>
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f8f9fa;
   color: #212529;
+  transition: all 0.3s ease;
 }
 .dark-mode {
   background-color: #121212;
   color: #e0e0e0;
 }
-.dark-mode nav {
-  background-color: #1e1e1e;
+.dark-mode nav,
+.dark-mode .navbar {
+  background-color: #1e1e1e !important;
 }
 .dark-mode footer {
-  background-color: #1e1e1e;
+  background-color: #1e1e1e !important;
   color: #e0e0e0;
-}
-nav.main-nav {
-  background-color: #ffffff;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .banner {
   padding: 4rem 0;
@@ -58,7 +51,6 @@ footer a {
   text-decoration: none;
 }
 .brand-marquee {
-  width: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -80,20 +72,20 @@ footer a {
 <body>
 
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg bg-white shadow-sm py-3">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm py-3">
 <div class="container">
-<a class="navbar-brand text-main fw-bold" href="index.html">PT. PESONA GOLDEN STEEL</a>
+<a class="navbar-brand text-main fw-bold" href="#">PT. PESONA GOLDEN STEEL</a>
 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
 <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-<li class="nav-item"><a class="nav-link fw-medium" href="Show.html">Product</a></li>
-<li class="nav-item"><a class="nav-link fw-medium" href="Catalog.html">Catalog Barang</a></li>
-<li class="nav-item"><a class="nav-link fw-medium" href="https://ongkir.cekresi.com/">Cek Ongkir</a></li>
-<li class="nav-item"><a class="nav-link fw-medium" href="https://cekresi.com/volume/">Ukur Volume Barang</a></li>
-<li class="nav-item"><a class="nav-link fw-medium" href="https://cekresi.com/">Cek Resi</a></li>
-<li class="nav-item"><a class="nav-link fw-medium" href="lokasi.html">Lokasi Workshop</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Product</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Catalog</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Cek Ongkir</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Ukur Volume</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Cek Resi</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Lokasi</a></li>
 </ul>
 <div class="ms-3">
 <button id="toggleDark" class="btn btn-outline-secondary btn-sm">🌙 Dark Mode</button>
@@ -106,41 +98,42 @@ footer a {
 <section class="banner">
 <div class="container">
 <div class="row align-items-center">
-<div class="col-md-6" data-aos="fade-right">
+<div class="col-md-6 text-center text-md-start" data-aos="fade-right">
 <h2 class="text-main">Solusi Kebutuhan Anda</h2>
 <p class="text-second">Berbagai macam valve tersedia sesuai kebutuhan proyek Anda.</p>
-<a href="https://wa.me/628989619222?text=Halo%2C%20Boleh%20Saya%20Bertanya%20Mengenai%20Valve%20Yang%20Anda%20Jual" target="_blank" class="btn btn-success">Hubungi Kami di WhatsApp</a>
+<a href="https://wa.me/628989619222" target="_blank" class="btn btn-success">Hubungi Kami</a>
 </div>
-<div class="col-md-6" data-aos="fade-left">
-<img src="gambar/image.jpeg" class="img-fluid" alt="Banner image">
+<div class="col-md-6 text-center" data-aos="fade-left">
+<img src="gambar/image.jpeg" class="img-fluid rounded shadow" alt="Banner image">
 </div>
 </div>
 </div>
 </section>
 
-<!-- Brand Support -->
+<!-- Brand -->
 <section class="py-5 bg-white">
 <div class="container text-center">
 <h3 class="text-main mb-4">Siap Support Berbagai Merek</h3>
-<div class="brand-marquee overflow-hidden position-relative">
-<div class="brand-track d-flex align-items-center gap-5">
-<img src="https://w7.pngwing.com/pngs/746/254/png-transparent-kitz-hd-logo.png" class="img-fluid" alt="Kitz" style="height: 60px;">
-<img src="https://kcbkk.com/wp-content/uploads/2020/01/yoshitake-logo-1.png" class="img-fluid" alt="Yoshitake" style="height: 60px;">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVvB0KPjQhs6Dm2CEWq2J7chCd8dN-MpeHMw&s" class="img-fluid" alt="Tozen" style="height: 60px;">
-<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/NITTAN_LOGO_2.png" class="img-fluid" alt="Nittan" style="height: 60px;">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Brand5" style="height: 60px;">
-<img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png" class="img-fluid" alt="Brand6" style="height: 60px;">
-<img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Ebara" style="height: 60px;">
+<div class="brand-marquee">
+<div class="brand-track gap-5">
+<img src="https://w7.pngwing.com/pngs/746/254/png-transparent-kitz-hd-logo.png" alt="Kitz" height="60">
+<img src="https://kcbkk.com/wp-content/uploads/2020/01/yoshitake-logo-1.png" alt="Yoshitake" height="60">
+<img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" alt="Ebara" height="60">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/NITTAN_LOGO_2.png" alt="Nittan" height="60">
 </div>
 </div>
 </div>
 </section>
 
-<!-- Info Berita Hari Ini -->
-  <section class="py-3 bg-light">
+<!-- Info -->
+<section class="py-3 bg-light">
 <div class="container text-center">
 <p id="tanggal-jam"></p>
-<div id="id543d5a55b5e31" a='{"t":"g7bs","v":"1.2","lang":"id","locs":[243],"ssot":"c","sics":"ds","cbkg":"rgb(211,47,47)","cfnt":"rgb(255,255,255)","cend":"rgba(0,0,0,0.11)"}'>Sumber Data Cuaca: <a href="https://cuacalab.id/cuaca_indonesia/besok/">cuaca Indonesia besok per jam</a></div><script async src="https://static1.cuacalab.id/widgetjs/?id=id543d5a55b5e31"></script>
+<div id="cuaca-widget">
+<script async src="https://static1.cuacalab.id/widgetjs/?id=id543d5a55b5e31"></script>
+</div>
+</div>
+</section>
 
 <!-- Footer -->
 <footer>
@@ -148,17 +141,17 @@ footer a {
 <div class="row">
 <div class="col-md-6">
 <h5>PT. PESONA GOLDEN STEEL</h5>
-<p><img src="gambar/pngegg (7).png" alt="Email" style="width: 20px;"> Email: pesona.golden@gmail.com</p>
-<p><img src="gambar/pngegg (4).png" alt="Telp" style="width: 20px;"> Telp: <a href="https://wa.me/628989619222">0898 9619 222</a></p>
-<p><img src="gambar/pngegg (6).png" alt="Lokasi" style="width: 20px;"> Lokasi: Jakarta Utara, Indonesia</p>
+<p>📧 Email: pesona.golden@gmail.com</p>
+<p>📞 Telp: <a href="https://wa.me/628989619222">0898 9619 222</a></p>
+<p>📍 Lokasi: Jakarta Utara, Indonesia</p>
 </div>
 <div class="col-md-6 text-md-end mt-4 mt-md-0">
 <p>Temukan Kami:</p>
-<a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank"><img src="gambar/pngegg.png" alt="Tokopedia" style="width: 100px;"></a>
-<a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank"><img src="gambar/pngegg (2).png" alt="Facebook" style="width: 100px;"></a>
+<a href="https://www.tokopedia.com/" target="_blank"><img src="gambar/pngegg.png" alt="Tokopedia" style="width: 80px;"></a>
+<a href="https://www.facebook.com/" target="_blank"><img src="gambar/pngegg (2).png" alt="Facebook" style="width: 80px;"></a>
 </div>
 </div>
-<hr class="my-4" />
+<hr />
 <div class="text-center">
 <small>&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
 </div>
@@ -170,14 +163,23 @@ footer a {
 <script>
 AOS.init();
 
-// Dark mode
+// Simpan preferensi dark mode
 const toggleBtn = document.getElementById('toggleDark');
+const prefersDark = localStorage.getItem('dark-mode') === 'true';
+
+if (prefersDark) {
+  document.body.classList.add('dark-mode');
+  toggleBtn.textContent = '☀️ Light Mode';
+}
+
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark-mode');
-  toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+  const isDark = document.body.classList.contains('dark-mode');
+  toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+  localStorage.setItem('dark-mode', isDark);
 });
 
-// Tanggal & jam
+// Tanggal & jam real-time
 function updateDateTime() {
   const now = new Date();
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -187,7 +189,7 @@ function updateDateTime() {
 }
 setInterval(updateDateTime, 1000);
 updateDateTime();
-
 </script>
+
 </body>
 </html>
