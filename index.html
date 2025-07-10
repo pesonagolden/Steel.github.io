@@ -137,13 +137,7 @@ footer a {
 </section>
 
 <!-- Info Berita Hari Ini -->
-<section class="py-3 bg-light">
-<div class="container text-center">
-<h5>📅 Berita Hari Ini</h5>
-<p id="tanggal-jam"></p>
-<p id="cuaca"></p>
-</div>
-</section>
+<div id="id543d5a55b5e31" a='{"t":"g7bs","v":"1.2","lang":"id","locs":[243],"ssot":"c","sics":"ds","cbkg":"rgb(211,47,47)","cfnt":"rgb(255,255,255)","cend":"rgba(0,0,0,0.11)"}'>Sumber Data Cuaca: <a href="https://cuacalab.id/cuaca_indonesia/besok/">cuaca Indonesia besok per jam</a></div><script async src="https://static1.cuacalab.id/widgetjs/?id=id543d5a55b5e31"></script>
 
 <!-- Footer -->
 <footer>
@@ -191,32 +185,6 @@ function updateDateTime() {
 setInterval(updateDateTime, 1000);
 updateDateTime();
 
-// Cuaca
-function tampilkanCuaca(lat, lon) {
-  const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // ganti dengan API key Anda
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&lang=id&appid=${apiKey}`;
-  fetch(url)
-    .then(res => res.json())
-    .then(data => {
-      const kondisi = data.weather[0].description;
-      const suhu = data.main.temp;
-      document.getElementById('cuaca').textContent = `🌤️ Cuaca: ${kondisi}, Suhu: ${suhu}°C`;
-    })
-    .catch(() => {
-      document.getElementById('cuaca').textContent = 'Cuaca: tidak dapat diambil.';
-    });
-}
-
-if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(
-    pos => tampilkanCuaca(pos.coords.latitude, pos.coords.longitude),
-    err => {
-      document.getElementById('cuaca').textContent = 'Lokasi ditolak. Tidak dapat menampilkan cuaca.';
-    }
-  );
-} else {
-  document.getElementById('cuaca').textContent = 'Geolocation tidak didukung.';
-}
 </script>
 </body>
 </html>
