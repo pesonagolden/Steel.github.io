@@ -153,6 +153,19 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgC9PGSsHajCh_PfMMWQWKTXoNXYNXP7fXHg&s" class="img-fluid" alt="Brand5" style="height: 60px;">
         <img src="https://static.wixstatic.com/media/526be8_9b0e931579a94f7ea7dabd243db2adb1~mv2.png/v1/fill/w_480,h_132,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/logo%20flow.png" class="img-fluid" alt="Brand6" style="height: 60px;">
         <img src="https://www.ebaraeurope.com/wp-content/uploads/2022/08/logo-ebara.png" class="img-fluid" alt="Ebara" style="height: 60px;">
+        <section id="pesan-section" class="container py-4">
+  <h3 class="text-main mb-3">Pesan untuk Anda</h3>
+  <div id="pesan-list" class="row">
+    <!-- pesan dari JSON akan tampil di sini -->
+  </div>
+
+  <div class="text-center mt-4">
+    <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20lebih%20lanjut." 
+       class="btn btn-success btn-lg" target="_blank">
+      Tanya via WhatsApp
+    </a>
+  </div>
+</section>
       </div>
     </div>
   </div>
@@ -211,6 +224,30 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+    
+    <script>
+fetch('pesan.json')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('pesan-list');
+    data.forEach(item => {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 mb-3';
+      col.innerHTML = `
+        <div class="border rounded p-3 shadow-sm bg-white">
+          <strong>${item.nama}:</strong>
+          <p>${item.pesan}</p>
+        </div>
+      `;
+      container.appendChild(col);
+    });
+  })
+  .catch(err => {
+    document.getElementById('pesan-list').innerHTML =
+      `<p class="text-danger">Gagal memuat pesan: ${err}</p>`;
+  });
+</script>
+
   </script>
 </body>
 </html>
