@@ -662,22 +662,38 @@ var njt_wa_global = {"ajax_url":"https:\/\/nawabhaktiartha.com\/wp-admin\/admin-
 jqueryParams.length&&$.each(jqueryParams,function(e,r){if("function"==typeof r){var n=String(r);n.replace("$","jQuery");var a=new Function("return "+n)();$(document).ready(a)}});
 /* ]]> */
 </script>
-<script type="text/javascript" id="divi-custom-script-js-extra">
-/* <![CDATA[ */
-var DIVI = {"item_count":"%d Item","items_count":"%d Items"};
-var et_builder_utils_params = {"condition":{"diviTheme":true,"extraTheme":false},"scrollLocations":["app","top"],"builderScrollLocations":{"desktop":"app","tablet":"app","phone":"app"},"onloadScrollLocation":"app","builderType":"fe"};
-var et_frontend_scripts = {"builderCssContainerPrefix":"#et-boc","builderCssLayoutPrefix":"#et-boc .et-l"};
-var et_pb_custom = {"ajaxurl":"https:\/\/nawabhaktiartha.com\/wp-admin\/admin-ajax.php","images_uri":"https:\/\/nawabhaktiartha.com\/wp-content\/themes\/Divi\/images","builder_images_uri":"https:\/\/nawabhaktiartha.com\/wp-content\/themes\/Divi\/includes\/builder\/images","et_frontend_nonce":"9f557e1429","subscription_failed":"Please, check the fields below to make sure you entered the correct information.","et_ab_log_nonce":"967863076d","fill_message":"Please, fill in the following fields:","contact_error_message":"Please, fix the following errors:","invalid":"Invalid email","captcha":"Captcha","prev":"Prev","previous":"Previous","next":"Next","wrong_captcha":"You entered the wrong number in captcha.","wrong_checkbox":"Checkbox","ignore_waypoints":"no","is_divi_theme_used":"1","widget_search_selector":".widget_search","ab_tests":[],"is_ab_testing_active":"","page_id":"9","unique_test_id":"","ab_bounce_rate":"5","is_cache_plugin_active":"no","is_shortcode_tracking":"","tinymce_uri":"https:\/\/nawabhaktiartha.com\/wp-content\/themes\/Divi\/includes\/builder\/frontend-builder\/assets\/vendors","accent_color":"#15c39a","waypoints_options":[]};
-var et_pb_box_shadow_elements = [];
-/* ]]> */
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Tunggu elemen WhatsApp tombol muncul
+    const observer = new MutationObserver(() => {
+      const waButtons = document.querySelectorAll('.njt-wa-account, .njt-wa-button');
+
+      if (waButtons.length) {
+        waButtons.forEach(button => {
+          button.addEventListener('click', function () {
+            // Kirim webhook
+            fetch('https://koesong.app.n8n.cloud/webhook/b34de9e2-b0b6-41d9-ac87-3e0ab8d6f233/chat', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                message: 'User clicked WhatsApp button',
+                page: window.location.href,
+                timestamp: new Date().toISOString()
+              })
+            });
+          });
+        });
+
+        observer.disconnect(); // Stop observing setelah terpasang
+      }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
 </script>
-<script type="text/javascript" src="https://nawabhaktiartha.com/wp-content/themes/Divi/js/scripts.min.js?ver=4.23.3" id="divi-custom-script-js"></script>
-<script type="text/javascript" src="https://nawabhaktiartha.com/wp-content/themes/Divi/core/admin/js/common.js?ver=4.23.3" id="et-core-common-js"></script>
-<script type="text/javascript" id="nta-js-popup-js-extra">
-/* <![CDATA[ */
-var njt_wa = {"gdprStatus":"","accounts":[{"accountId":185,"accountName":"Cust Service","avatar":"","number":"+6281188812008","title":"Cust. Service","predefinedText":"Hi, Saya mau tanya-tanya tentang Koperasi Nawa Bhakti Artha.","willBeBackText":"I will be back in [njwa_time_work]","dayOffsText":"I will be back soon","isAlwaysAvailable":"ON","daysOfWeekWorking":{"sunday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"monday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"tuesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"wednesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"thursday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"friday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"saturday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]}}},{"accountId":223,"accountName":"Marketing NBA","avatar":"","number":"+628118282008","title":"Marketing NBA","predefinedText":"Halo, saya mau bertanya tentang Koperasi","willBeBackText":"I will be back in [njwa_time_work]","dayOffsText":"I will be back soon","isAlwaysAvailable":"ON","daysOfWeekWorking":{"sunday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"monday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"tuesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"wednesday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"thursday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"friday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]},"saturday":{"isWorkingOnDay":"OFF","workHours":[{"startTime":"08:00","endTime":"17:30"}]}}}],"options":{"display":{"displayCondition":"includePages","includePages":["9","50","52","54"],"excludePages":["9","50","52","54"],"includePosts":[],"showOnDesktop":"ON","showOnMobile":"ON","time_symbols":"h:m"},"styles":{"title":"Start a Conversation","responseText":"The team typically replies in a few minutes.","description":"Hi! Click one of our member below to chat on <strong>WhatsApp<\/strong>","backgroundColor":"#2db742","textColor":"#fff","titleSize":18,"accountNameSize":14,"descriptionTextSize":12,"regularTextSize":11,"scrollHeight":500,"isShowScroll":"OFF","isShowResponseText":"ON","btnLabel":"Need Help? <strong>Chat with us<\/strong>","btnLabelWidth":156,"btnPosition":"right","btnLeftDistance":30,"btnRightDistance":30,"btnBottomDistance":30,"isShowBtnLabel":"ON","isShowGDPR":"OFF","gdprContent":"Please accept our <a href=\"https:\/\/ninjateam.org\/privacy-policy\/\">privacy policy<\/a> first to start a conversation."},"analytics":{"enabledGoogle":"OFF","enabledFacebook":"OFF","enabledGoogleGA4":"OFF"}}};
-/* ]]> */
-</script>
+
 <script type="text/javascript" src="https://nawabhaktiartha.com/wp-content/plugins/wp-whatsapp/assets/js/whatsapp-popup.js?ver=3.7.3" id="nta-js-popup-js"></script>
 <div style="display:none;">
 
