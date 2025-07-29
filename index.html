@@ -126,27 +126,87 @@ footer a {
     
 <!-- Brand Support -->
 <section class="py-5 bg-white">
-<div class="container text-center">
-<h3 class="text-main mb-4">Siap Support Berbagai Merek</h3>
-<div class="brand-marquee position-relative">
-<div class="brand-track d-flex align-items-center gap-10">
-<img src="gambar/logo_kitz.png" class="img-fluid" alt="Kitz">
-<img src="gambar/7503b0_774fba7bd9dd4ad7b1efe161d20beac1~mv2.png" class="img-fluid" alt="Yoshitake">
-<img src="gambar/velan-valves.webp" class="img-fluid" alt="Tozen">
-<img src="gambar/logo_01a.webp" class="img-fluid" alt="Nittan">
-<img src="gambar/download (2).png" class="img-fluid" alt="Brand5">
-<img src="gambar/download.jpeg" class="img-fluid" alt="Brand6">
-<img src="gambar/images (1).png" class="img-fluid" alt="Ebara">
-<img src="gambar/images (2).png" class="img-fluid" alt="Ebara">
-<img src="gambar/images (3).png" class="img-fluid" alt="Ebara">
-<img src="gambar/images.png" class="img-fluid" alt="Ebara">
-</div>
-</div>
-</div>
+  <div class="container text-center">
+    <h3 class="text-main mb-4">Siap Support Berbagai Merek</h3>
+
+    <div class="brand-marquee overflow-hidden position-relative">
+      <div class="brand-track d-flex align-items-center gap-5">
+        <!-- Duplikat isi agar efek scroll loop terlihat mulus -->
+        <div class="d-flex align-items-center gap-5 marquee-group">
+          <img src="gambar/logo_kitz.png" class="img-fluid" alt="Kitz">
+          <img src="gambar/7503b0_774fba7bd9dd4ad7b1efe161d20beac1~mv2.png" class="img-fluid" alt="Yoshitake">
+          <img src="gambar/velan-valves.webp" class="img-fluid" alt="Velan Valves">
+          <img src="gambar/logo_01a.webp" class="img-fluid" alt="Nittan">
+          <img src="gambar/download (2).png" class="img-fluid" alt="Tozen">
+          <img src="gambar/download.jpeg" class="img-fluid" alt="TLV">
+          <img src="gambar/images (1).png" class="img-fluid" alt="Ebara 1">
+          <img src="gambar/images (2).png" class="img-fluid" alt="Ebara 2">
+          <img src="gambar/images (3).png" class="img-fluid" alt="Ebara 3">
+          <img src="gambar/images.png" class="img-fluid" alt="Ebara 4">
+        </div>
+
+        <!-- Copy isi untuk loop -->
+        <div class="d-flex align-items-center gap-5 marquee-group">
+          <img src="gambar/logo_kitz.png" class="img-fluid" alt="Kitz">
+          <img src="gambar/7503b0_774fba7bd9dd4ad7b1efe161d20beac1~mv2.png" class="img-fluid" alt="Yoshitake">
+          <img src="gambar/velan-valves.webp" class="img-fluid" alt="Velan Valves">
+          <img src="gambar/logo_01a.webp" class="img-fluid" alt="Nittan">
+          <img src="gambar/download (2).png" class="img-fluid" alt="Tozen">
+          <img src="gambar/download.jpeg" class="img-fluid" alt="TLV">
+          <img src="gambar/images (1).png" class="img-fluid" alt="Ebara 1">
+          <img src="gambar/images (2).png" class="img-fluid" alt="Ebara 2">
+          <img src="gambar/images (3).png" class="img-fluid" alt="Ebara 3">
+          <img src="gambar/images.png" class="img-fluid" alt="Ebara 4">
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- Info Berita Hari Ini -->
+<style>
+  .brand-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
 
+  .brand-track {
+    display: flex;
+    animation: scroll-left 30s linear infinite;
+    will-change: transform;
+  }
+
+  .brand-marquee:hover .brand-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-group img {
+    max-height: 80px;
+    object-fit: contain;
+    padding: 0 1rem;
+  }
+
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* Optional: spacing if gap-5 class not working */
+  .gap-5 {
+    gap: 2rem;
+  }
+
+  /* Responsive tweak */
+  @media (max-width: 768px) {
+    .marquee-group img {
+      max-height: 60px;
+    }
+  }
+</style>
 
 <!-- Footer -->
 <footer>
