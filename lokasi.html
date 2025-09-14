@@ -1,18 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokasi PT Pesona Golden Steel</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background: #f4f4f4;
+        }
+
         .gfg {
-            font-size: 30px;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #009900;
-            margin-left: 20px;
+            margin-top: 20px;
+            text-align: center;
         }
 
         p {
-            font-size: 18px;
-            margin-left: 20px;
+            font-size: 1rem;
+            text-align: center;
+            margin: 5px 10px 15px;
+        }
+
+        #demo2 {
+            width: 90%;
+            max-width: 800px;
+            height: 60vh;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn {
+            background-color: #009900;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #007700;
         }
     </style>
 </head>
@@ -21,37 +61,62 @@
     <div class="gfg">PT Pesona Golden Steel</div>
     <p>Lokasi perusahaan pada peta</p>
 
-    <div id="demo2" style="width: 500px; height: 500px"></div>
+    <button class="btn" onclick="getMyLocation()">Lihat Lokasi Saya</button>
 
-    <!-- Google Maps JS API (versi lama, bisa jalan tanpa API Key) -->
+    <div id="demo2"></div>
+
+    <!-- Google Maps API -->
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
-    <script type="text/javascript">
-        // Koordinat yang Anda minta
-        const latt = -6.124276955490495;
-        const long = 106.88207591777044;
+    <script>
+        // Koordinat PT Pesona Golden Steel
+        const companyLat = -6.124276955490495;
+        const companyLng = 106.88207591777044;
 
-        // Buat lokasi LatLng
-        const lattlong = new google.maps.LatLng(latt, long);
+        const companyLatLng = new google.maps.LatLng(companyLat, companyLng);
 
-        // Opsi peta
-        const options = {
-            center: lattlong,
+        // Buat peta
+        const mapOptions = {
+            center: companyLatLng,
             zoom: 16,
             mapTypeControl: true,
         };
 
-        // Buat peta
-        const mapg = new google.maps.Map(
-            document.getElementById("demo2"),
-            options
-        );
+        const map = new google.maps.Map(document.getElementById("demo2"), mapOptions);
 
-        // Tambahkan marker
-        const markerg = new google.maps.Marker({
-            position: lattlong,
-            map: mapg,
+        // Marker perusahaan
+        const companyMarker = new google.maps.Marker({
+            position: companyLatLng,
+            map: map,
             title: "📍 PT Pesona Golden Steel"
         });
+
+        // Fungsi untuk ambil lokasi user
+        function getMyLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    (pos) => {
+                        const userLatLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+
+                        // Tambahkan marker lokasi user
+                        new google.maps.Marker({
+                            position: userLatLng,
+                            map: map,
+                            title: "📍 Lokasi Anda",
+                            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                        });
+
+                        // Zoom agar keduanya terlihat
+                        const bounds = new google.maps.LatLngBounds();
+                        bounds.extend(companyLatLng);
+                        bounds.extend(userLatLng);
+                        map.fitBounds(bounds);
+                    },
+                    () => alert("Gagal mengambil lokasi Anda. Periksa izin lokasi di browser.")
+                );
+            } else {
+                alert("Browser Anda tidak mendukung geolocation.");
+            }
+        }
     </script>
 </body>
 </html>
