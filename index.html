@@ -385,8 +385,13 @@
             z-index: 2;
         }
 
-        /* PERBAIKAN: Memaksa warna teks putih untuk brand support section */
+        /* PERBAIKAN: Mengubah warna teks untuk brand support section agar responsif terhadap tema */
         .brand-support .section-title {
+            color: var(--text-primary);
+        }
+
+        /* PERBAIKAN: Memastikan teks tetap putih di mode gelap */
+        body:not(.light-theme) .brand-support .section-title {
             color: #ffffff !important;
         }
 
