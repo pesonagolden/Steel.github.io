@@ -38,9 +38,6 @@
             --whatsapp-green: #25D366;
             --whatsapp-green-dark: #128C7E;
             --navbar-dark: #000000;
-            --navbar-light: rgba(248, 249, 250, 0.95);
-            --hamburger-dark: #FFD700;
-            --hamburger-light: #FFD700;
         }
 
         /* --- LIGHT THEME VARIABLES --- */
@@ -49,10 +46,6 @@
             --bg-secondary: #ffffff;
             --text-primary: #212529;
             --text-secondary: #6c757d;
-            --navbar-dark: #000000;
-            --navbar-light: rgba(248, 249, 250, 0.95);
-            --hamburger-dark: #FFD700;
-            --hamburger-light: #FFD700;
         }
 
         /* --- GLOBAL STYLES & RESET --- */
@@ -108,11 +101,11 @@
 
         /* Light theme navbar override */
         body.light-theme .navbar {
-            background-color: var(--navbar-light);
+            background-color: rgba(248, 249, 250, 0.9);
         }
 
         body.light-theme .navbar.scrolled {
-            background-color: var(--navbar-light);
+            background-color: rgba(248, 249, 250, 0.9);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
@@ -197,46 +190,30 @@
             opacity: 0.8;
         }
 
-        /* PERBAIKAN: Mobile Navigation Styles - DIPERBAIKI */
+        /* PERBAIKAN: Mobile Navigation Styles */
         .hamburger {
             display: none;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 35px;
-            height: 35px;
             cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            width: 30px;
+            height: 30px;
+            position: relative;
             z-index: 1001;
-            background: none;
-            border: none;
-            padding: 0;
         }
 
         .hamburger span {
             display: block;
-            width: 100%;
-            height: 4px;
-            background-color: var(--hamburger-dark);
-            margin: 6px 0;
+            width: 25px;
+            height: 3px;
+            background-color: var(--accent-gold);
+            margin: 5px auto;
             transition: all 0.3s ease-in-out;
             border-radius: 2px;
-            transform-origin: center;
-        }
-
-        .hamburger span:nth-child(1) {
-            transform-origin: top left;
-        }
-
-        .hamburger span:nth-child(2) {
-            transform-origin: center;
-        }
-
-        .hamburger span:nth-child(3) {
-            transform-origin: bottom left;
         }
 
         .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(6px, 6px);
+            transform: translateY(8px) rotate(45deg);
         }
 
         .hamburger.active span:nth-child(2) {
@@ -244,17 +221,7 @@
         }
 
         .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
-        /* PERBAIKAN: Warna hamburger untuk tema terang */
-        body.light-theme .hamburger span {
-            background-color: var(--hamburger-light);
-        }
-
-        /* PERBAIKAN: Hover effect untuk hamburger */
-        .hamburger:hover span {
-            background-color: var(--accent-cyan);
+            transform: translateY(-8px) rotate(-45deg);
         }
 
         /* Mobile Menu Overlay */
@@ -853,9 +820,12 @@
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            /* PERBAIKAN: Mobile Navigation - DIPERBAIKI */
+            /* PERBAIKAN: Mobile Navigation */
             .hamburger {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
             }
 
             .navbar .nav-menu {
@@ -1089,11 +1059,11 @@
                     </button>
                 </li>
             </ul>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+            <div class="hamburger" id="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
-            </button>
+            </div>
         </div>
     </header>
 
@@ -1277,11 +1247,11 @@
                     <p class="whatsapp-subtitle" data-translate-key="whatsapp_subtitle">Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan industri Anda. Tim kami siap membantu Anda 24/7.</p>
                     
                     <div class="whatsapp-buttons">
-                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20mengenai%20produk%20Anda." target="_blank" class="whatsapp-btn" data-aos="zoom-in" data-aos-delay="100">
+                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank" class="whatsapp-btn" data-aos="zoom-in" data-aos-delay="100">
                             <i class="fab fa-whatsapp"></i>
                             <span data-translate-key="whatsapp_chat_sales">Chat dengan Sales</span>
                         </a>
-                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20ingin%20meminta%20meminta%20katalog%20produk%20Anda." target="_blank" class="whatsapp-btn" data-aos="zoom-in" data-aos-delay="200">
+                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20ingin%20meminta%20katalog%20produk%20Anda." target="_blank" class="whatsapp-btn" data-aos="zoom-in" data-aos-delay="200">
                             <i class="fas fa-book"></i>
                             <span data-translate-key="whatsapp_request_catalog">Request Katalog</span>
                         </a>
@@ -1423,7 +1393,7 @@
                 product_12_title: "其他", product_12_desc: "我们还根据您的要求提供各种其他工业需求。",
                 product_ask_price: "询问价格",
                 whatsapp_title: "在WhatsApp上联系我们",
-                whatsapp_subtitle: "获取最佳报价和免费咨询，满足您的工业需求。",
+                whatsapp_subtitle: "获取最佳报价和免费咨询，满足您的工业需求。我们的团队随时准备为您提供24/7服务。",
                 whatsapp_chat_sales: "与销售聊天",
                 whatsapp_request_catalog: "请求目录",
                 whatsapp_available: "周一 - 周六: 08:00 - 17:00",
@@ -1453,7 +1423,7 @@
             });
             document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
                 const key = element.getAttribute('data-translate-placeholder');
-                if (transformations[lang] && translations[lang][key]) {
+                if (translations[lang] && translations[lang][key]) {
                     element.placeholder = translations[lang][key];
                 }
             });
@@ -1566,7 +1536,6 @@
                     document.body.style.overflow = '';
                 });
             });
-        });
 
             // --- Smooth Scroll for Desktop Only ---
             if (window.innerWidth > 768) {
