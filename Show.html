@@ -1,284 +1,1092 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" id="html-tag">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PT. Pesona Golden Steel | Homepage</title>
-  <link rel="icon" href="gambar/Screenshot_2025-06-25_221917-removebg-preview.png" type="image/png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <meta name="keywords" content="Pesona Golden Steel,Pesona Valve,Suplier Valve,Pesona Golden,Gate Valve,Ball Valve,Knife Gate,Flow Meter,Pipe,Pesona Golden,toko valve terdekat,agen valve terdekat" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <meta name="google-adsense-account" content="ca-pub-4694107664740278">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694107664740278"
-     crossorigin="anonymous"></script>
-  <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
-    header { background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .navbar-brand { font-weight: 600; font-size: 1.5rem; color: #2b2b2b; }
-    .banner { background: linear-gradient(90deg, #005b9f, #00a0dc); color: white; padding: 60px 0; }
-    .banner h1 { font-weight: 600; }
-    .whatsapp-button { background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; }
-    .product-card { background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-    .product-card:hover { transform: translateY(-5px); }
-    footer { background-color: #343a40; color: white; padding: 40px 0; }
-    footer a { color: #ffffff; text-decoration: none; }
-    footer a:hover { text-decoration: underline; }
-    .product-card img {
-    height: 200px;
-    width: 100%;
-    object-fit: cover;
-  }
-  </style>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PT. Pesona Golden Steel | Homepage</title>
+    <link rel="icon" href="gambar/Screenshot_2025-06-25_221917-removebg-preview.png" type="image/png" />
+    <link rel="icon" href="gambar/favicon.png" type="image/png" />
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="PT. Pesona Golden Steel adalah Suplier Berbagai Macam Jenis Valve,Pompa,Fiting,Besi dan Baja terpercaya yang berlokasi di Jakarta Utara,Indonesia.">
+    <meta name="keywords" content="Pesona Golden Steel,Pesona Valve,Suplier Valve,Pesona Golden,Gate Valve,Ball Valve,Knife Gate,Flow Meter,Pipe,Pesona Golden,toko valve terdekat,agen valve terdekat" />
+    <meta name="author" content="PT. Pesona Golden Steel">
+    <meta name="google-adsense-account" content="ca-pub-4694107664740278">
+    
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library untuk Animasi On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694107664740278"
+         crossorigin="anonymous"></script>
+    
+    <style>
+        /* --- CSS VARIABLES (Tema Warna) --- */
+        :root {
+            --bg-primary: #0F0F1E;
+            --bg-secondary: #1a1a2e;
+            --accent-gold: #FFD700;
+            --accent-cyan: #64FFDA;
+            --text-primary: #E6E6E6;
+            --text-secondary: #a8a8b3;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --whatsapp-green: #25D366;
+            --whatsapp-green-dark: #128C7E;
+        }
+
+        /* --- LIGHT THEME VARIABLES --- */
+        body.light-theme {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+        }
+
+        /* --- GLOBAL STYLES & RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* PERBAIKAN: Menggunakan variabel untuk warna teks heading */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* --- NAVIGATION BAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: transparent;
+            z-index: 1000;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            height: 70px;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(15, 15, 30, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Light theme navbar override */
+        body.light-theme .navbar.scrolled {
+            background-color: rgba(248, 249, 250, 0.9);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            height: 100%;
+        }
+
+        /* PERBAIKAN: Logo positioning untuk desktop */
+        .navbar .logo {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .navbar .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* PERBAIKAN: Mengubah warna nav link menjadi kuning */
+        .navbar .nav-link {
+            color: var(--accent-gold) !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- Language & Theme Switcher --- */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 1px solid var(--text-secondary);
+        }
+
+        /* PERBAIKAN: Mengubah warna language switcher menjadi kuning */
+        #language-switcher a, #theme-toggle {
+            color: var(--accent-gold) !important;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #language-switcher a.active,
+        #language-switcher a:hover,
+        #theme-toggle:hover {
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        /* --- HAMBURGER MENU --- */
+        /* PERBAIKAN: Hamburger disembunyikan di desktop */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--accent-gold) !important;
+            font-size: 1.8rem;
+            padding: 5px;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+            transform: scale(1.05);
+        }
+
+        .hamburger:active {
+            transform: scale(0.95);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff; /* Akan ditimpa oleh variabel di dalam */
+            position: relative;
+            /* PERUBAHAN: Menambahkan background image */
+            background-image: url('gambar/image.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 15, 30, 0.8), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PERBAIKAN: Mengubah warna judul hero menjadi kuning */
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            color: var(--accent-gold) !important;
+        }
+
+        /* PERBAIKAN: Mengubah warna subtitle hero menjadi kuning */
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--accent-gold) !important;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: var(--bg-primary);
+        }
+
+        /* --- SECTION STYLES --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .section-title .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .section-title .title-wrapper i {
+            color: var(--accent-gold);
+            font-size: 2rem;
+        }
+
+        .section-title .title-text {
+            position: relative;
+        }
+
+        .section-title .title-text::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+        }
+
+        /* --- PRODUCT SECTION --- */
+        .product-section {
+            padding: 80px 0;
+            background-color: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(15, 15, 30, 0.95) 0%, 
+                rgba(26, 26, 46, 0.95) 50%, 
+                rgba(15, 15, 30, 0.95) 100%);
+            z-index: 1;
+        }
+
+        body.light-theme .product-section::before {
+            background: linear-gradient(135deg, 
+                rgba(248, 249, 250, 0.95) 0%, 
+                rgba(255, 255, 255, 0.95) 50%, 
+                rgba(248, 249, 250, 0.95) 100%);
+        }
+
+        .product-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .product-card {
+            background-color: var(--bg-primary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .product-card-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .product-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--bg-secondary);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand h5 {
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .footer-brand a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-brand .contact-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-socials a {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            /* PERBAIKAN: Hamburger hanya muncul di mobile */
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            /* PERBAIKAN: Logo positioning untuk mobile */
+            .navbar .logo {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: calc(100% - 120px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .navbar .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px; /* Sesuai dengan tinggi navbar */
+                flex-direction: column;
+                background-color: var(--bg-secondary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .navbar .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-controls {
+                border-left: none;
+                border-top: 1px solid var(--text-secondary);
+                padding-top: 10px;
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-title .title-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="#">PT. PESONA GOLDEN STEEL</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="Catalog.html">Catalog Barang</a></li>
-            <li class="nav-item"><a class="nav-link" href="lokasi.html">Lokasi</a></li>
-          </ul>
+
+    <!-- ========== NAVIGATION ========== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">PT. PESONA GOLDEN STEEL</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link active" data-translate-key="nav_home">Beranda</a></li>
+                <li><a href="Show.html" class="nav-link" data-translate-key="nav_product">Produk</a></li>
+                <li><a href="Catalog.html" class="nav-link" data-translate-key="nav_catalog">Catalog</a></li>
+                <li><a href="lokasi.html" class="nav-link" data-translate-key="nav_location">Lokasi</a></li>
+                <li><a href="#whatsapp" class="nav-link" data-translate-key="nav_contact">Hubungi Kami</a></li>
+                <li class="nav-controls">
+                    <div id="language-switcher">
+                        <a href="#" data-lang="id" class="active">ID</a>
+                        <a href="#" data-lang="en">EN</a>
+                        <a href="#" data-lang="zh">中文</a>
+                    </div>
+                    <button id="theme-toggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-      </div>
-    </nav>
-  </header>
+    </header>
 
-  <section class="py-5">
-  <div class="container">
-    <div class="text-center mb-4">
-      <h2 class="fw-bold text-main">Produk Unggulan</h2>
-      <p class="text-muted">Pilih produk sesuai kebutuhan proyek Anda</p>
-    </div>
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="beranda">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 data-translate-key="hero_title">Solusi Kebutuhan Industri Anda</h1>
+                <p data-translate-key="hero_subtitle">Suplier terpercaya untuk berbagai macam Valve, Pompa, Fiting, Besi, dan Baja berkualitas tinggi.</p>
+                <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank" class="btn btn-primary" data-translate-key="hero_cta">Hubungi Kami di WhatsApp</a>
+            </div>
+        </section>
 
-    <!-- Bagian Horizontal Scroll untuk 4 Produk Pertama -->
-    <div class="d-flex overflow-auto gap-3 pb-4 mb-5 border-bottom" style="scroll-snap-type: x mandatory;">
-      
-      <!-- Produk 1 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" 
-           style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/pict1.jpeg" alt="Ball Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Ball Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Ball%20Valve" target="_blank" class="btn btn-sm btn-outline-success">More Info</a>
+        <!-- ========== FEATURED PRODUCTS SECTION ========== -->
+        <section class="product-section" id="featured-products">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <div class="title-wrapper">
+                        <i class="fa-solid fa-star"></i>
+                        <span class="title-text" data-translate-key="featured_title">Produk Unggulan</span>
+                    </div>
+                </h2>
+                
+                <!-- Bagian Horizontal Scroll untuk 5 Produk Pertama -->
+                <div class="d-flex overflow-auto gap-3 pb-4 mb-5 border-bottom" style="scroll-snap-type: x mandatory;">
+                    <!-- Produk 1 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/pict1.jpeg" alt="Ball Valve" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_1_title">Ball Valve</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Ball%20Valve" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/prod-2.jpg" alt="Gate Valve" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_2_title">Gate Valve</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Gate%20Valve" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/IMG-20250610-WA0801.jpg" alt="Ball Valve A105" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_3_title">Ball Valve A105</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Ball%20Valve%20A105" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 4 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/IMG-20250610-WA0796.jpg" alt="Ball Valve Actuator" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_4_title">Ball Valve Actuator</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Ball%20Valve%20Actuator" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 5 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/IMG-20250610-WA0794.jpg" alt="Safety Valve" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_5_title">Safety Valve</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Safety%20Valve" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SAMPLE PRODUCTS SECTION ========== -->
+        <section class="product-section" id="sample-products">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <div class="title-wrapper">
+                        <i class="fa-solid fa-cube"></i>
+                        <span class="title-text" data-translate-key="sample_title">Sample Product</span>
+                    </div>
+                </h2>
+
+                <!-- Bagian Horizontal (4 Produk Pertama) -->
+                <div class="d-flex overflow-auto gap-3 mb-5 pb-4" style="scroll-snap-type: x mandatory;">
+                    <!-- Produk 1 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/Gambar WhatsApp 2025-01-23 pukul 07.39.39_292e4509.jpg" alt="Knife Gate Valve" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_6_title">Knife Gate Valve</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Knife%20Gate%20Valve" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 2 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/IMG-20250610-WA0800.jpg" alt="Pompa Ebara" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_7_title">Pompa Ebara</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Pompa%20Ebara" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 3 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/Screenshot 2025-01-24 162537.png" alt="Pressure Valve" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_8_title">Pressure Valve</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Pressure%20Valve" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Produk 4 -->
+                    <div class="product-card flex-shrink-0" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
+                        <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.38_ffb063ba.jpg" alt="Check Valve" class="img-fluid">
+                        <div class="product-card-content">
+                            <h3 data-translate-key="product_9_title">Check Valve</h3>
+                            <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Check%20Valve" target="_blank" class="product-btn">
+                                <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Produk Grid (Sisanya) -->
+                <div class="row g-4">
+                    <!-- Produk 5 -->
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="product-card h-100">
+                            <img src="gambar/IMG-20250610-WA0803.jpg" alt="Butterfly Valve" class="img-fluid">
+                            <div class="product-card-content">
+                                <h3 data-translate-key="product_10_title">Butterfly Valve</h3>
+                                <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                                <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Butterfly%20Valve" target="_blank" class="product-btn">
+                                    <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 6 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-card h-100">
+                            <img src="gambar/IMG-20250623-WA0698.jpg" alt="Flange" class="img-fluid">
+                            <div class="product-card-content">
+                                <h3 data-translate-key="product_11_title">Flange</h3>
+                                <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                                <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Flange" target="_blank" class="product-btn">
+                                    <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 7 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                        <div class="product-card h-100">
+                            <img src="gambar/IMG-20250610-WA0798.jpg" alt="Sight Glass Valve" class="img-fluid">
+                            <div class="product-card-content">
+                                <h3 data-translate-key="product_12_title">Sight Glass Valve</h3>
+                                <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                                <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Sight%20Glass%20Valve" target="_blank" class="product-btn">
+                                    <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 8 -->
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="product-card h-100">
+                            <img src="gambar/pict3.jpeg" alt="Y Strainer" class="img-fluid">
+                            <div class="product-card-content">
+                                <h3 data-translate-key="product_13_title">Y Strainer Valve</h3>
+                                <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                                <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Y%20Strainer%20Valve" target="_blank" class="product-btn">
+                                    <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 9 -->
+                    <div class="col-md-4" data-aos="fade-up">
+                        <div class="product-card h-100">
+                            <img src="gambar/IMG-20250623-WA0708.jpg" alt="Flexible Join" class="img-fluid">
+                            <div class="product-card-content">
+                                <h3 data-translate-key="product_14_title">Flexible Join Valve</h3>
+                                <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                                <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Flexible%20Join%20Valve" target="_blank" class="product-btn">
+                                    <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Produk 10 -->
+                    <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                        <div class="product-card h-100">
+                            <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_4d9f74db.jpg" alt="Basket Strainer" class="img-fluid">
+                            <div class="product-card-content">
+                                <h3 data-translate-key="product_15_title">Basket Strainer</h3>
+                                <p data-translate-key="product_min_order">Minimum order: 1 pcs</p>
+                                <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Basket%20Strainer" target="_blank" class="product-btn">
+                                    <i class="fas fa-info-circle"></i> <span data-translate-key="product_more_info">More Info</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== WHATSAPP CONTACT SECTION ========== -->
+        <section class="product-section" id="whatsapp">
+            <div class="container">
+                <div class="whatsapp-container" data-aos="fade-up">
+                    <div class="whatsapp-icon-wrapper">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h2 class="section-title" data-aos="fade-up">
+                        <div class="title-wrapper">
+                            <i class="fa-solid fa-phone"></i>
+                            <span class="title-text" data-translate-key="whatsapp_title">Hubungi Kami di WhatsApp</span>
+                        </div>
+                    </h2>
+                    <p class="text-center mb-4" data-translate-key="whatsapp_subtitle">Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan industri Anda. Tim kami siap membantu Anda 24/7.</p>
+                    
+                    <div class="text-center">
+                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank" class="btn btn-primary" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-translate-key="whatsapp_chat_sales">Chat dengan Sales</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank" class="floating-whatsapp" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h5>PT. PESONA GOLDEN STEEL</h5>
+                    <p>
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <a href="mailto:pesona.golden@gmail.com">pesona.golden@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-whatsapp contact-icon"></i>
+                        <a href="https://wa.me/628989619222">0898 9619 222</a>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        Jakarta Utara, Indonesia
+                    </p>
+                </div>
+                <div class="footer-socials">
+                    <p data-translate-key="footer_find_us">Temukan Kami:</p>
+                    <a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank" title="Tokopedia">
+                        <i class="fa-solid fa-shop"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <small data-translate-key="footer_copyright">&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
+            </div>
         </div>
-      </div>
+    </footer>
 
-      <!-- Produk 2 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" 
-           style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/prod-2.jpg" alt="Gate Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Gate Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Gate%20Valve" target="_blank" class="btn btn-sm btn-outline-success">More Info</a>
-        </div>
-      </div>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // --- TRANSLATION DATA ---
+        const translations = {
+            id: {
+                nav_home: "Beranda", nav_product: "Produk", nav_catalog: "Catalog", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
+                hero_title: "Solusi Kebutuhan Industri Anda", 
+                hero_subtitle: "Suplier terpercaya untuk berbagai macam Valve, Pompa, Fiting, Besi, dan Baja berkualitas tinggi.", 
+                hero_cta: "Hubungi Kami di WhatsApp",
+                featured_title: "Produk Unggulan",
+                sample_title: "Sample Product",
+                product_min_order: "Minimum order: 1 pcs",
+                product_more_info: "More Info",
+                product_1_title: "Ball Valve",
+                product_2_title: "Gate Valve",
+                product_3_title: "Ball Valve A105",
+                product_4_title: "Ball Valve Actuator",
+                product_5_title: "Safety Valve",
+                product_6_title: "Knife Gate Valve",
+                product_7_title: "Pompa Ebara",
+                product_8_title: "Pressure Valve",
+                product_9_title: "Check Valve",
+                product_10_title: "Butterfly Valve",
+                product_11_title: "Flange",
+                product_12_title: "Sight Glass Valve",
+                product_13_title: "Y Strainer Valve",
+                product_14_title: "Flexible Join Valve",
+                product_15_title: "Basket Strainer",
+                whatsapp_title: "Hubungi Kami di WhatsApp",
+                whatsapp_subtitle: "Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan industri Anda. Tim kami siap membantu Anda 24/7.",
+                whatsapp_chat_sales: "Chat dengan Sales",
+                footer_find_us: "Temukan Kami:", 
+                footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Aktifkan mode gelap", 
+                theme_toggle_light: "Aktifkan mode terang"
+            },
+            en: {
+                nav_home: "Home", nav_product: "Products", nav_catalog: "Catalog", nav_location: "Location", nav_contact: "Contact",
+                hero_title: "Your Industrial Needs Solution", 
+                hero_subtitle: "Trusted supplier for various types of Valves, Pumps, Fittings, Iron, and Steel of high quality.", 
+                hero_cta: "Contact Us on WhatsApp",
+                featured_title: "Featured Products",
+                sample_title: "Sample Products",
+                product_min_order: "Minimum order: 1 pcs",
+                product_more_info: "More Info",
+                product_1_title: "Ball Valve",
+                product_2_title: "Gate Valve",
+                product_3_title: "Ball Valve A105",
+                product_4_title: "Ball Valve Actuator",
+                product_5_title: "Safety Valve",
+                product_6_title: "Knife Gate Valve",
+                product_7_title: "Ebara Pump",
+                product_8_title: "Pressure Valve",
+                product_9_title: "Check Valve",
+                product_10_title: "Butterfly Valve",
+                product_11_title: "Flange",
+                product_12_title: "Sight Glass Valve",
+                product_13_title: "Y Strainer Valve",
+                product_14_title: "Flexible Join Valve",
+                product_15_title: "Basket Strainer",
+                whatsapp_title: "Contact Us on WhatsApp",
+                whatsapp_subtitle: "Get the best offers and free consultation for your industrial needs. Our team is ready to help you 24/7.",
+                whatsapp_chat_sales: "Chat with Sales",
+                footer_find_us: "Find Us:", 
+                footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Activate dark mode", 
+                theme_toggle_light: "Activate light mode"
+            },
+            zh: {
+                nav_home: "首页", nav_product: "产品", nav_catalog: "目录", nav_location: "位置", nav_contact: "联系我们",
+                hero_title: "您的工业需求解决方案", 
+                hero_subtitle: "值得信赖的供应商，提供各种高质量的阀门、泵、管件、钢铁和钢材。", 
+                hero_cta: "在WhatsApp上联系我们",
+                featured_title: "精选产品",
+                sample_title: "样品产品",
+                product_min_order: "最小订单：1件",
+                product_more_info: "更多信息",
+                product_1_title: "球阀",
+                product_2_title: "闸阀",
+                product_3_title: "A105球阀",
+                product_4_title: "球阀执行器",
+                product_5_title: "安全阀",
+                product_6_title: "刀闸阀",
+                product_7_title: "荏原泵",
+                product_8_title: "压力阀",
+                product_9_title: "止回阀",
+                product_10_title: "蝶阀",
+                product_11_title: "法兰",
+                product_12_title: "视镜阀",
+                product_13_title: "Y型过滤器阀",
+                product_14_title: "柔性连接阀",
+                product_15_title: "篮式过滤器",
+                whatsapp_title: "在WhatsApp上联系我们",
+                whatsapp_subtitle: "获取最佳报价和免费咨询，满足您的工业需求。我们的团队随时准备为您提供24/7服务。",
+                whatsapp_chat_sales: "与销售聊天",
+                footer_find_us: "找到我们：", 
+                footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. 版权所有。",
+                theme_toggle_dark: "激活深色模式", 
+                theme_toggle_light: "激活浅色模式"
+            }
+        };
 
-      <!-- Produk 3 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" 
-           style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/IMG-20250610-WA0801.jpg" alt="Check Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Ball Valve A105 Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Check%20Valve" target="_blank" class="btn btn-sm btn-outline-success">More Info</a>
-        </div>
-      </div>
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'id';
+        let currentTheme = localStorage.getItem('selectedTheme') || 'dark';
 
-      <!-- Produk 4 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" 
-           style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/IMG-20250610-WA0796.jpg" alt="Butterfly Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Ball Valve Actuator</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Butterfly%20Valve" target="_blank" class="btn btn-sm btn-outline-success">More Info</a>
-        </div>
-      </div>
-	
-	<!-- Produk 5 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" 
-           style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/IMG-20250610-WA0794.jpg" alt="Butterfly Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Saftey Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Butterfly%20Valve" target="_blank" class="btn btn-sm btn-outline-success">More Info</a>
-        </div>
-      </div>
+        // --- LANGUAGE SWITCHER FUNCTION ---
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById('html-tag').setAttribute('lang', lang);
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-lang') === lang);
+            });
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+            updateThemeToggleTitle();
+        }
 
-	</div>
+        // --- THEME SWITCHER FUNCTION ---
+        function setTheme(theme) {
+            currentTheme = theme;
+            localStorage.setItem('selectedTheme', theme);
+            const isLight = theme === 'light';
+            document.body.classList.toggle('light-theme', isLight);
+            const icon = document.querySelector('#theme-toggle i');
+            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            updateThemeToggleTitle();
+        }
 
-   <section class="py-5">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold text-main">Sample Product</h2>
-      <p class="text-muted">Pilih produk yang sesuai dengan kebutuhan proyek Anda.</p>
-    </div>
+        function updateThemeToggleTitle() {
+            const toggleButton = document.getElementById('theme-toggle');
+            const titleKey = currentTheme === 'light' ? 'theme_toggle_dark' : 'theme_toggle_light';
+            if (translations[currentLanguage] && translations[currentLanguage][titleKey]) {
+                toggleButton.setAttribute('title', translations[currentLanguage][titleKey]);
+            }
+        }
 
-    <!-- Bagian Horizontal (4 Produk Pertama) -->
-    <div class="d-flex overflow-auto gap-3 mb-5 pb-4" style="scroll-snap-type: x mandatory;">
-      <!-- Produk 1 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/Gambar WhatsApp 2025-01-23 pukul 07.39.39_292e4509.jpg" alt="Knife Gate Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Knife Gate Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Knife%20Gate%20Valve" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-        </div>
-      </div>
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+            setLanguage(currentLanguage);
+            setTheme(currentTheme);
 
-      <!-- Produk 2 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/IMG-20250610-WA0800.jpg" alt="Ball Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Pompa Ebara</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Pompa%20Ebara" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-        </div>
-      </div>
+            // Language switcher event listeners
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(link.getAttribute('data-lang'));
+                });
+            });
 
-      <!-- Produk 3 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/Screenshot 2025-01-24 162537.png" alt="Gate Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Preasure Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Preasure%20Valve" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-        </div>
-      </div>
+            // Theme toggle event listener
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                setTheme(currentTheme === 'light' ? 'dark' : 'light');
+            });
 
-      <!-- Produk 4 -->
-      <div class="product-card flex-shrink-0 shadow-sm rounded bg-white" style="width: 250px; scroll-snap-align: start;" data-aos="zoom-in">
-        <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.38_ffb063ba.jpg" alt="Check Valve" class="img-fluid mb-3 rounded-top">
-        <div class="p-3">
-          <h6 class="text-main">Check Valve</h6>
-          <small class="text-muted">Minimum order: 1 pcs</small>
-          <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Check%20Valve" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-        </div>
-      </div>
-    </div>
+            // --- Navbar Scroll Effect ---
+            window.addEventListener('scroll', () => {
+                document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+            });
 
-    <!-- Produk Grid (Sisanya) -->
-    <div class="row g-4">
-      <!-- Produk 5 -->
-      <div class="col-md-4" data-aos="fade-up">
-        <div class="product-card shadow-sm rounded bg-white h-100">
-          <img src="gambar/IMG-20250610-WA0803.jpg" alt="Butterfly Valve" class="img-fluid rounded-top">
-          <div class="p-3">
-            <h6 class="text-main">Butterfly Valve</h6>
-            <small class="text-muted">Minimum order: 1 pcs</small>
-            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Butterfly%20Valve" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-          </div>
-        </div>
-      </div>
+            // --- Mobile Menu Toggle ---
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+        });
+    </script>
 
-      <!-- Produk 6 -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="product-card shadow-sm rounded bg-white h-100">
-          <img src="gambar/IMG-20250623-WA0698.jpg" alt="Safety Valve" class="img-fluid rounded-top">
-          <div class="p-3">
-            <h6 class="text-main">Flange</h6>
-            <small class="text-muted">Minimum order: 1 pcs</small>
-            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Flange%20Valve" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Produk 7 -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="product-card shadow-sm rounded bg-white h-100">
-          <img src="gambar/IMG-20250610-WA0798.jpg" alt="Sight Glass Valve" class="img-fluid rounded-top">
-          <div class="p-3">
-            <h6 class="text-main">Sight Glass Valve</h6>
-            <small class="text-muted">Minimum order: 1 pcs</small>
-            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Sight%20Glass" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Produk 8 -->
-      <div class="col-md-4" data-aos="fade-up">
-        <div class="product-card shadow-sm rounded bg-white h-100">
-          <img src="gambar/pict3.jpeg" alt="Y Strainer" class="img-fluid rounded-top">
-          <div class="p-3">
-            <h6 class="text-main">Y Strainer Valve</h6>
-            <small class="text-muted">Minimum order: 1 pcs</small>
-            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Y%20Strainer" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-          </div>
-        </div>
-      </div>
-
-	       <!-- Produk 9 -->
-      <div class="col-md-4" data-aos="fade-up">
-        <div class="product-card shadow-sm rounded bg-white h-100">
-          <img src="gambar/IMG-20250623-WA0708.jpg" alt="Y Strainer" class="img-fluid rounded-top">
-          <div class="p-3">
-            <h6 class="text-main">Flexible Join Valve</h6>
-            <small class="text-muted">Minimum order: 1 pcs</small>
-            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Flexible%20join%20Valve" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Produk 10 -->
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="product-card shadow-sm rounded bg-white h-100">
-          <img src="gambar/Gambar WhatsApp 2025-02-05 pukul 14.06.39_4d9f74db.jpg" alt="Basket Strainer" class="img-fluid rounded-top">
-          <div class="p-3">
-            <h6 class="text-main">Basket Strainer</h6>
-            <small class="text-muted">Minimum order: 1 pcs</small>
-            <a href="https://wa.me/628989619222?text=Halo%2C%20saya%20ingin%20bertanya%20tentang%20Basket%20Strainer" target="_blank" class="btn btn-sm btn-outline-success d-block mt-2">More Info</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-      <!-- Tambahkan produk lain jika ada -->
-
-    </div>
-  </div>
-</section>
-
-        <!-- Tambah produk lainnya sesuai kebutuhan -->
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h5>PT. PESONA GOLDEN STEEL</h5>
-          <p>Email: pesona.golden@gmail.com</p>
-          <p><img src="gambar/pngegg (4).png" alt="Facebook" style="width: 100px;"></a>Telp: <a href="https://wa.me/628989619222">0898 9619 222</a></p>
-          <p>Lokasi: Jakarta Utara, Indonesia</p>
-        </div>
-        <div class="col-md-6 text-md-end mt-4 mt-md-0">
-          <p>Ikuti kami:</p>
-          <a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank"><img src="gambar/pngegg.png" alt="Tokopedia" style="width: 100px;"></a>
-          <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank"><img src="gambar/pngegg (2).png" alt="Facebook" style="width: 100px;"></a>
-        </div>
-      </div>
-      <hr class="my-4" />
-      <div class="text-center">
-        <small>&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init();</script>
 </body>
 </html>
