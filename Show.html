@@ -40,6 +40,7 @@
             --font-body: 'Inter', sans-serif;
             --whatsapp-green: #25D366;
             --whatsapp-green-dark: #128C7E;
+            --navbar-height: 70px;
         }
 
         /* --- LIGHT THEME VARIABLES --- */
@@ -93,7 +94,7 @@
             background-color: transparent;
             z-index: 1000;
             transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
-            height: 70px;
+            height: var(--navbar-height);
         }
 
         .navbar.scrolled {
@@ -219,7 +220,9 @@
 
         /* --- HERO SECTION --- */
         .hero {
-            height: 50vh;
+            /* PERBAIKAN: Menyesuaikan height dan menambahkan spacing */
+            min-height: calc(50vh + var(--navbar-height) + 20px);
+            height: calc(50vh + var(--navbar-height) + 20px);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -231,6 +234,9 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            /* PERBAIKAN: Menambahkan padding-top untuk jeda yang lebih nyaman */
+            padding-top: calc(var(--navbar-height) + 20px);
+            box-sizing: border-box;
         }
 
         .hero::before {
@@ -247,14 +253,18 @@
         .hero-content {
             position: relative;
             z-index: 2;
+            /* PERBAIKAN: Menambahkan sedikit padding untuk spacing yang lebih baik */
+            padding: 20px;
+            max-width: 800px;
         }
 
         /* PERBAIKAN: Mengubah warna judul hero menjadi kuning */
         .hero h1 {
             font-size: 3.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem; /* PERBAIKAN: Menambah jarak bawah */
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
             color: var(--accent-gold) !important;
+            line-height: 1.2; /* PERBAIKAN: Menambah line height untuk keterbacaan */
         }
 
         /* PERBAIKAN: Mengubah warna subtitle hero menjadi kuning */
@@ -265,6 +275,7 @@
             margin-left: auto;
             margin-right: auto;
             color: var(--accent-gold) !important;
+            line-height: 1.6; /* PERBAIKAN: Menambah line height */
         }
 
         .btn {
@@ -644,7 +655,7 @@
             .navbar .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: 70px; /* Sesuai dengan tinggi navbar */
+                top: var(--navbar-height); /* Sesuai dengan tinggi navbar */
                 flex-direction: column;
                 background-color: var(--bg-secondary);
                 width: 100%;
@@ -1064,7 +1075,7 @@
                 whatsapp_subtitle: "Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan industri Anda. Tim kami siap membantu Anda 24/7.",
                 whatsapp_chat_sales: "Chat dengan Sales",
                 footer_find_us: "Temukan Kami:", 
-                footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
                 theme_toggle_dark: "Aktifkan mode gelap", 
                 theme_toggle_light: "Aktifkan mode terang"
             },
@@ -1096,7 +1107,7 @@
                 whatsapp_subtitle: "Get the best offers and free consultation for your industrial needs. Our team is ready to help you 24/7.",
                 whatsapp_chat_sales: "Chat with Sales",
                 footer_find_us: "Find Us:", 
-                footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
                 theme_toggle_dark: "Activate dark mode", 
                 theme_toggle_light: "Activate light mode"
             },
@@ -1128,7 +1139,7 @@
                 whatsapp_subtitle: "获取最佳报价和免费咨询，满足您的工业需求。我们的团队随时准备为您提供24/7服务。",
                 whatsapp_chat_sales: "与销售聊天",
                 footer_find_us: "找到我们：", 
-                footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. 版权所有。",
+                footer_copyright: "2022 PT. Pesona Golden Steel. 版权所有。",
                 theme_toggle_dark: "激活深色模式", 
                 theme_toggle_light: "激活浅色模式"
             }
