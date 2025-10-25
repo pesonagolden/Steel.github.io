@@ -379,6 +379,19 @@
             z-index: 2;
         }
 
+        /* PERBAIKAN: Memaksa warna teks putih untuk brand support section */
+        .brand-support .section-title {
+            color: #ffffff !important;
+        }
+
+        .brand-support .section-title .title-wrapper i {
+            color: var(--accent-gold);
+        }
+
+        .brand-support .section-title .title-text::after {
+            background-color: var(--accent-gold);
+        }
+
         .brand-marquee {
             overflow: hidden;
             position: relative;
