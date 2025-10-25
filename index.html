@@ -112,6 +112,7 @@
             flex-wrap: wrap;
             position: relative;
             height: 100%;
+            padding: 0 30px;
         }
 
         .navbar .logo {
@@ -120,11 +121,10 @@
             font-weight: 700;
             color: var(--accent-gold);
             text-decoration: none;
-            position: absolute;
-            left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            max-width: calc(100% - 120px);
+            /* PERBAIKAN: Logo di kiri tanpa positioning absolut */
+            position: relative;
+            margin-right: auto; /* Mendorong logo ke kiri */
+            max-width: 250px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -133,8 +133,10 @@
         .navbar .nav-menu {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 25px;
             align-items: center;
+            /* PERBAIKAN: Menu di kanan tanpa margin */
+            margin-left: 0;
         }
 
         /* PERBAIKAN: Mengubah warna nav link menjadi kuning */
@@ -578,7 +580,7 @@
         }
 
         .whatsapp-contact::after {
-            content = '';
+            content: '';
             position: absolute;
             bottom: -50px;
             left: -50px;
@@ -794,8 +796,24 @@
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
+            .navbar .container {
+                padding: 0 20px; /* Mengurangi padding di mobile */
+            }
+            
             .hamburger {
                 display: flex; /* Hanya muncul di mobile */
+            }
+
+            .navbar .logo {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: calc(100% - 120px);
+                margin-right: 0; /* Reset margin di mobile */
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             .navbar .nav-menu {
@@ -810,6 +828,7 @@
                 box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
                 padding: 20px 0;
                 z-index: 999;
+                gap: 15px; /* Mengurangi gap di mobile */
             }
 
             .navbar .nav-menu.active {
