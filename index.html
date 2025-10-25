@@ -198,19 +198,11 @@
 
         /* --- HAMBURGER MENU --- */
         .hamburger {
-            display: none;
+            display: none; /* Disembunyikan di desktop */
             cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        /* PERBAIKAN: Mengubah warna hamburger menjadi kuning dan menyesuaikan ukurannya */
-        .hamburger {
             color: var(--accent-gold) !important;
-            font-size: 1.8rem; /* Menyesuaikan ukuran dengan logo */
+            font-size: 1.8rem;
             padding: 5px;
-            display: flex;
             align-items: center;
             justify-content: center;
             width: 40px;
@@ -586,7 +578,7 @@
         }
 
         .whatsapp-contact::after {
-            content: '';
+            content = '';
             position: absolute;
             bottom: -50px;
             left: -50px;
@@ -803,7 +795,7 @@
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
             .hamburger {
-                display: flex;
+                display: flex; /* Hanya muncul di mobile */
             }
 
             .navbar .nav-menu {
@@ -1147,7 +1139,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <small data-translate-key="footer_copyright">&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
+                <small data-translate-key="footer_copyright">2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
             </div>
         </div>
     </footer>
@@ -1181,7 +1173,7 @@
                 whatsapp_available: "Senin - Sabtu: 08:00 - 17:00",
                 whatsapp_response: "Response Time: < 5 menit",
                 whatsapp_secure: "100% Aman & Terpercaya",
-                footer_find_us: "Temukan Kami:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                footer_find_us: "Temukan Kami:", footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
                 theme_toggle_dark: "Aktifkan mode gelap", theme_toggle_light: "Aktifkan mode terang"
             },
             en: {
@@ -1208,7 +1200,7 @@
                 whatsapp_available: "Monday - Saturday: 08:00 - 17:00",
                 whatsapp_response: "Response Time: < 5 minutes",
                 whatsapp_secure: "100% Safe & Trusted",
-                footer_find_us: "Find Us:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                footer_find_us: "Find Us:", footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
                 theme_toggle_dark: "Activate dark mode", theme_toggle_light: "Activate light mode"
             },
             zh: {
@@ -1235,7 +1227,7 @@
                 whatsapp_available: "周一 - 周六: 08:00 - 17:00",
                 whatsapp_response: "响应时间: < 5分钟",
                 whatsapp_secure: "100%安全可靠",
-                footer_find_us: "找到我们：", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. 版权所有。",
+                footer_find_us: "找到我们：", footer_copyright: "2022 PT. Pesona Golden Steel. 版权所有。",
                 theme_toggle_dark: "激活深色模式", theme_toggle_light: "激活浅色模式"
             }
         };
