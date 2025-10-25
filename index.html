@@ -194,7 +194,6 @@
             text-align: center;
             color: #fff;
             position: relative;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80') no-repeat center center/cover;
         }
 
         .hero::before {
@@ -205,6 +204,7 @@
             width: 100%;
             height: 100%;
             background: linear-gradient(to top, rgba(15, 15, 30, 0.8), transparent);
+            z-index: 1;
         }
 
         .hero-content {
@@ -264,7 +264,7 @@
             font-size: 2.5rem;
             margin-bottom: 50px;
             position: relative;
-            color: var(--text-primary); /* Use variable for title */
+            color: var(--text-primary);
         }
 
         .section-title::after {
@@ -280,9 +280,9 @@
 
         /* --- BRAND SUPPORT (MEREK DIDUKUNG) --- */
         .brand-support {
-            position: relative; /* Diperlukan untuk overlay */
-            background-color: var(--bg-secondary); /* Warna fallback */
-            background-image: url('gambar/image.jpeg'); /* Ganti dengan gambar Anda */
+            position: relative;
+            background-color: var(--bg-secondary);
+            background-image: url('gambar/image.jpeg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -290,7 +290,6 @@
             overflow: hidden;
         }
 
-        /* Tambahkan overlay gelap agar konten terlihat jelas */
         .brand-support::before {
             content: '';
             position: absolute;
@@ -298,11 +297,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(15, 15, 30, 0.8); /* Overlay semi-transparan */
+            background-color: rgba(15, 15, 30, 0.8);
             z-index: 1;
         }
 
-        /* Pastikan konten berada di atas overlay */
         .brand-support .container {
             position: relative;
             z-index: 2;
@@ -329,12 +327,11 @@
             gap: 3rem;
         }
 
-        /* PERBAIKAN: Hapus filter agar logo asli terlihat */
         .marquee-group img {
             height: 50px;
             width: auto;
             object-fit: contain;
-            opacity: 0.8; /* Sedikit transparan */
+            opacity: 0.8;
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
@@ -381,7 +378,7 @@
         .product-card-content h3 {
             font-size: 1.5rem;
             margin-bottom: 10px;
-            color: var(--text-primary); /* Use variable */
+            color: var(--text-primary);
         }
 
         .product-card-content p {
@@ -406,7 +403,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: var(--text-primary); /* Use variable */
+            color: var(--text-primary);
         }
 
         .form-group input,
@@ -421,7 +418,6 @@
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Light theme form override */
         body.light-theme .form-group input,
         body.light-theme .form-group textarea {
             background-color: rgba(0, 0, 0, 0.05);
@@ -472,6 +468,10 @@
         .footer-brand p {
             font-size: 0.9rem;
             color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
         }
 
         .footer-brand a {
@@ -484,15 +484,24 @@
             color: var(--accent-gold);
         }
 
+        /* Style untuk ikon di footer-brand */
+        .footer-brand .contact-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            width: 20px; /* Menjaga lebar tetap konsisten */
+            text-align: center;
+        }
+
         .footer-socials a {
             color: var(--text-primary);
             font-size: 1.8rem;
             margin: 0 10px;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         .footer-socials a:hover {
             color: var(--accent-gold);
+            transform: translateY(-3px);
         }
 
         .footer-bottom {
@@ -699,14 +708,27 @@
             <div class="footer-content">
                 <div class="footer-brand">
                     <h5>PT. PESONA GOLDEN STEEL</h5>
-                    <p><img src="gambar/pngegg (7).png" alt="Email" style="width: 20px; vertical-align: middle; margin-right: 8px;"> Email: <a href="mailto:pesona.golden@gmail.com">pesona.golden@gmail.com</a></p>
-                    <p><img src="gambar/pngegg (4).png" alt="Telp" style="width: 20px; vertical-align: middle; margin-right: 8px;"> Telp: <a href="https://wa.me/628989619222">0898 9619 222</a></p>
-                    <p><img src="gambar/pngegg (6).png" alt="Lokasi" style="width: 20px; vertical-align: middle; margin-right: 8px;"> Lokasi: Jakarta Utara, Indonesia</p>
+                    <p>
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <a href="mailto:pesona.golden@gmail.com">pesona.golden@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-whatsapp contact-icon"></i>
+                        <a href="https://wa.me/628989619222">0898 9619 222</a>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        Jakarta Utara, Indonesia
+                    </p>
                 </div>
                 <div class="footer-socials">
                     <p data-translate-key="footer_find_us">Temukan Kami:</p>
-                    <a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank"><img src="gambar/pngegg.png" alt="Tokopedia" style="width: 40px;"></a>
-                    <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank"><img src="gambar/pngegg (2).png" alt="Facebook" style="width: 40px;"></a>
+                    <a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank" title="Tokopedia">
+                        <i class="fa-solid fa-shop"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
                 </div>
             </div>
             <div class="footer-bottom">
