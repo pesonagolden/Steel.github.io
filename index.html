@@ -194,11 +194,7 @@
             text-align: center;
             color: #fff;
             position: relative;
-            /* PERUBAHAN: Menambahkan kembali background gambar */
-            background-image: url('gambar/image.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            /* PERUBAHAN: Background gambar dihapus, kembali ke warna solid */
         }
 
         .hero::before {
@@ -272,7 +268,24 @@
             color: var(--text-primary);
         }
 
-        .section-title::after {
+        /* PERUBAHAN: Gaya baru untuk judul dengan ikon */
+        .section-title .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* Jarak antara ikon dan teks */
+        }
+
+        .section-title .title-wrapper i {
+            color: var(--accent-gold);
+            font-size: 2rem; /* Ukuran ikon */
+        }
+
+        .section-title .title-text {
+            position: relative; /* Diperlukan untuk posisi garis bawah */
+        }
+
+        .section-title .title-text::after {
             content: '';
             position: absolute;
             bottom: -10px;
@@ -557,6 +570,11 @@
             .section-title {
                 font-size: 2rem;
             }
+            
+            .section-title .title-wrapper {
+                flex-direction: column; /* Ikon di atas teks di mobile */
+                gap: 10px;
+            }
 
             .footer-content {
                 flex-direction: column;
@@ -607,7 +625,12 @@
         <!-- ========== MEREK DIDUKUNG ========== -->
         <section class="brand-support" id="merek">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-translate-key="brand_title">Siap Support Berbagai Merek</h2>
+                <h2 class="section-title" data-aos="fade-up">
+                    <div class="title-wrapper">
+                        <i class="fa-solid fa-handshake"></i>
+                        <span class="title-text" data-translate-key="brand_title">Siap Support Berbagai Merek</span>
+                    </div>
+                </h2>
                 <div class="brand-marquee">
                     <div class="brand-track">
                         <div class="marquee-group">
@@ -648,7 +671,12 @@
         <!-- ========== PRODUK UNGGULAN ========== -->
         <section id="produk">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-translate-key="product_title">Produk Unggulan Kami</h2>
+                <h2 class="section-title" data-aos="fade-up">
+                    <div class="title-wrapper">
+                        <i class="fa-solid fa-cube"></i>
+                        <span class="title-text" data-translate-key="product_title">Produk Unggulan Kami</span>
+                    </div>
+                </h2>
                 <div class="product-grid">
                     <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Gate Valve">
@@ -681,7 +709,12 @@
         <!-- ========== KONTAK ========== -->
         <section id="kontak" style="background-color: var(--bg-secondary);">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up" data-translate-key="contact_title">Hubungi Kami</h2>
+                <h2 class="section-title" data-aos="fade-up">
+                    <div class="title-wrapper">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="title-text" data-translate-key="contact_title">Hubungi Kami</span>
+                    </div>
+                </h2>
                 <form class="contact-form" data-aos="fade-up">
                     <div class="form-group">
                         <label for="name" data-translate-key="contact_name_label">Nama Lengkap</label>
