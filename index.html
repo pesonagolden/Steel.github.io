@@ -35,6 +35,8 @@
             --text-secondary: #a8a8b3;
             --font-heading: 'Poppins', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --whatsapp-green: #25D366;
+            --whatsapp-green-dark: #128C7E;
         }
 
         /* --- LIGHT THEME VARIABLES --- */
@@ -306,14 +308,11 @@
         .brand-support {
             position: relative;
             background-color: var(--bg-secondary);
-            background-image: url('gambar/image.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 60px 0;
+            padding: 80px 0;
             overflow: hidden;
         }
 
+        /* PERUBAHAN: Menambahkan animasi background yang sesuai dengan hero */
         .brand-support::before {
             content: '';
             position: absolute;
@@ -321,8 +320,42 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(15, 15, 30, 0.8);
+            background: linear-gradient(135deg, 
+                rgba(15, 15, 30, 0.95) 0%, 
+                rgba(26, 26, 46, 0.95) 50%, 
+                rgba(15, 15, 30, 0.95) 100%);
             z-index: 1;
+        }
+
+        /* PERUBAHAN: Menambahkan efek animasi partikel */
+        .brand-support::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(100, 255, 218, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+            animation: floatingGradient 15s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        @keyframes floatingGradient {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+                opacity: 0.7;
+            }
+            33% {
+                transform: translate(-20px, -20px) scale(1.05);
+                opacity: 0.9;
+            }
+            66% {
+                transform: translate(20px, -10px) scale(0.95);
+                opacity: 0.8;
+            }
         }
 
         .brand-support .container {
@@ -333,6 +366,45 @@
         .brand-marquee {
             overflow: hidden;
             position: relative;
+            padding: 20px 0;
+        }
+
+        /* PERUBAHAN: Menambahkan efek glow pada marquee */
+        .brand-marquee::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--accent-gold), 
+                transparent);
+            animation: scanLine 3s linear infinite;
+        }
+
+        .brand-marquee::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--accent-cyan), 
+                transparent);
+            animation: scanLine 3s linear infinite reverse;
+        }
+
+        @keyframes scanLine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         .brand-track {
@@ -356,12 +428,15 @@
             width: auto;
             object-fit: contain;
             opacity: 0.8;
-            transition: opacity 0.3s ease, transform 0.3s ease;
+            transition: all 0.3s ease;
+            filter: grayscale(30%);
         }
 
         .marquee-group img:hover {
             opacity: 1;
             transform: scale(1.1);
+            filter: grayscale(0%);
+            drop-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
         }
 
         @keyframes scroll-left {
@@ -410,60 +485,170 @@
             margin-bottom: 20px;
         }
 
-        /* --- KONTAK --- */
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: var(--bg-secondary);
-            padding: 40px;
-            border-radius: 10px;
+        /* --- WHATSAPP CONTACT SECTION --- */
+        .whatsapp-contact {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(37, 211, 102, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .whatsapp-contact::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, var(--whatsapp-green) 0%, transparent 70%);
+            opacity: 0.1;
+            border-radius: 50%;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-primary);
+        .whatsapp-contact::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            left: -50px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--whatsapp-green) 0%, transparent 70%);
+            opacity: 0.1;
+            border-radius: 50%;
         }
 
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            color: var(--text-primary);
-            font-family: var(--font-body);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        body.light-theme .form-group input,
-        body.light-theme .form-group textarea {
-            background-color: rgba(0, 0, 0, 0.05);
-            border-color: rgba(0, 0, 0, 0.2);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-        }
-
-        .contact-info {
+        .whatsapp-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
-            margin-top: 30px;
         }
 
-        .contact-info a {
-            color: var(--accent-cyan);
+        .whatsapp-icon-wrapper {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-green-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+            }
+            70% {
+                box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .whatsapp-icon-wrapper i {
+            font-size: 60px;
+            color: white;
+        }
+
+        .whatsapp-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .whatsapp-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+
+        .whatsapp-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-green-dark));
+            color: white;
             text-decoration: none;
+            border-radius: 50px;
             font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .whatsapp-btn i {
+            font-size: 1.3rem;
+        }
+
+        .whatsapp-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .whatsapp-info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+        }
+
+        .whatsapp-info-item i {
+            color: var(--whatsapp-green);
+            font-size: 1.2rem;
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-green-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
         }
 
         /* --- FOOTER --- */
@@ -581,6 +766,29 @@
                 gap: 10px;
             }
 
+            .whatsapp-title {
+                font-size: 2rem;
+            }
+
+            .whatsapp-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .whatsapp-btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+
             .footer-content {
                 flex-direction: column;
                 text-align: center;
@@ -599,7 +807,7 @@
                 <li><a href="#produk" class="nav-link" data-translate-key="nav_product">Produk</a></li>
                 <li><a href="Catalog.html" class="nav-link" data-translate-key="nav_catalog">Catalog</a></li>
                 <li><a href="lokasi.html" class="nav-link" data-translate-key="nav_location">Lokasi</a></li>
-                <li><a href="#kontak" class="nav-link" data-translate-key="nav_contact">Kontak</a></li>
+                <li><a href="#whatsapp" class="nav-link" data-translate-key="nav_contact">Hubungi Kami</a></li>
                 <li class="nav-controls">
                     <div id="language-switcher">
                         <a href="#" data-lang="id" class="active">ID</a>
@@ -688,7 +896,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_1_title">Gate Valve</h3>
                             <p data-translate-key="product_1_desc">Desain kokoh dan handal untuk mengontrol aliran fluida dengan bukaan penuh atau tertutup penuh.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="200">
@@ -696,7 +904,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_2_title">Ball Valve</h3>
                             <p data-translate-key="product_2_desc">Pilihan populer untuk shut-off cepat dan andal, ideal untuk berbagai aplikasi industri.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="300">
@@ -704,7 +912,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_3_title">Pompa Industri</h3>
                             <p data-translate-key="product_3_desc">Kami menyediakan berbagai jenis pompa industri untuk memenuhi kebutuhan transfer fluida Anda.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="100">
@@ -712,7 +920,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_4_title">Globe Valve</h3>
                             <p data-translate-key="product_4_desc">Solusi regulasi aliran yang presisi, cocok untuk aplikasi yang membutuhkan kontrol throttling.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="200">
@@ -720,7 +928,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_5_title">Basket Strainer</h3>
                             <p data-translate-key="product_5_desc">Menyaring partikel padat dari aliran fluida untuk melindungi peralatan downstream.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="300">
@@ -728,7 +936,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_6_title">Y Strainer</h3>
                             <p data-translate-key="product_6_desc">Kompak dan efisien, ideal untuk pemasangan di ruang terbatas dengan kebutuhan filtrasi dasar.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="100">
@@ -736,7 +944,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_7_title">Hydrant</h3>
                             <p data-translate-key="product_7_desc">Sistem pemadaman kebakaran yang andal, menyediakan sumber air bertekanan tinggi untuk darurat.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="200">
@@ -744,7 +952,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_8_title">Pressure Relief Valve</h3>
                             <p data-translate-key="product_8_desc">Melindungi sistem dari overpressure dengan melepaskan kelebihan tekanan secara otomatis.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="300">
@@ -752,7 +960,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_9_title">Pressure Reducing Valve</h3>
                             <p data-translate-key="product_9_desc">Menurunkan tekanan inlet ke tekanan outlet yang lebih rendah dan stabil.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="100">
@@ -760,7 +968,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_10_title">Pipe</h3>
                             <p data-translate-key="product_10_desc">Menyediakan berbagai jenis pipa berkualitas tinggi untuk kebutuhan perpipaan industri.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="200">
@@ -768,7 +976,7 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_11_title">Plat</h3>
                             <p data-translate-key="product_11_desc">Plat besi dan baja dengan berbagai ketebalan, siap untuk kebutuhan konstruksi dan fabrikasi.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="300">
@@ -776,46 +984,57 @@
                         <div class="product-card-content">
                             <h3 data-translate-key="product_12_title">DLL</h3>
                             <p data-translate-key="product_12_desc">Kami juga menyediakan berbagai kebutuhan industri lainnya sesuai permintaan Anda.</p>
-                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                            <a href="#whatsapp" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ========== KONTAK ========== -->
-        <section id="kontak" style="background-color: var(--bg-secondary);">
+        <!-- ========== WHATSAPP CONTACT SECTION ========== -->
+        <section class="whatsapp-contact" id="whatsapp">
             <div class="container">
-                <h2 class="section-title" data-aos="fade-up">
-                    <div class="title-wrapper">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span class="title-text" data-translate-key="contact_title">Hubungi Kami</span>
+                <div class="whatsapp-container" data-aos="fade-up">
+                    <div class="whatsapp-icon-wrapper">
+                        <i class="fab fa-whatsapp"></i>
                     </div>
-                </h2>
-                <form class="contact-form" data-aos="fade-up">
-                    <div class="form-group">
-                        <label for="name" data-translate-key="contact_name_label">Nama Lengkap</label>
-                        <input type="text" id="name" name="name" required data-translate-placeholder="contact_name_placeholder">
+                    <h2 class="whatsapp-title" data-translate-key="whatsapp_title">Hubungi Kami di WhatsApp</h2>
+                    <p class="whatsapp-subtitle" data-translate-key="whatsapp_subtitle">Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan industri Anda. Tim kami siap membantu Anda 24/7.</p>
+                    
+                    <div class="whatsapp-buttons">
+                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank" class="whatsapp-btn" data-aos="zoom-in" data-aos-delay="100">
+                            <i class="fab fa-whatsapp"></i>
+                            <span data-translate-key="whatsapp_chat_sales">Chat dengan Sales</span>
+                        </a>
+                        <a href="https://wa.me/628989619222?text=Halo,%20saya%20ingin%20meminta%20katalog%20produk%20Anda." target="_blank" class="whatsapp-btn" data-aos="zoom-in" data-aos-delay="200">
+                            <i class="fas fa-book"></i>
+                            <span data-translate-key="whatsapp_request_catalog">Request Katalog</span>
+                        </a>
                     </div>
-                    <div class="form-group">
-                        <label for="email" data-translate-key="contact_email_label">Email</label>
-                        <input type="email" id="email" name="email" required data-translate-placeholder="contact_email_placeholder">
+                    
+                    <div class="whatsapp-info">
+                        <div class="whatsapp-info-item" data-aos="fade-up" data-aos-delay="300">
+                            <i class="fas fa-clock"></i>
+                            <span data-translate-key="whatsapp_available">Senin - Sabtu: 08:00 - 17:00</span>
+                        </div>
+                        <div class="whatsapp-info-item" data-aos="fade-up" data-aos-delay="400">
+                            <i class="fas fa-bolt"></i>
+                            <span data-translate-key="whatsapp_response">Response Time: &lt; 5 menit</span>
+                        </div>
+                        <div class="whatsapp-info-item" data-aos="fade-up" data-aos-delay="500">
+                            <i class="fas fa-shield-alt"></i>
+                            <span data-translate-key="whatsapp_secure">100% Aman & Terpercaya</span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message" data-translate-key="contact_message_label">Pesan / Kebutuhan Produk</label>
-                        <textarea id="message" name="message" rows="5" required data-translate-placeholder="contact_message_placeholder"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" data-translate-key="contact_send_button">Kirim Pesan</button>
-                </form>
-                <div class="contact-info" data-aos="fade-up">
-                    <p data-translate-key="contact_whatsapp_info">Atau hubungi kami langsung via WhatsApp:</p>
-                    <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank">
-                        <i class="fab fa-whatsapp"></i> 0898-9619-222
-                    </a>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20produk%20Anda." target="_blank" class="floating-whatsapp" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <!-- ========== FOOTER ========== -->
     <footer>
@@ -858,7 +1077,7 @@
         // --- TRANSLATION DATA ---
         const translations = {
             id: {
-                nav_home: "Beranda", nav_product: "Produk", nav_catalog: "Catalog", nav_location: "Lokasi", nav_contact: "Kontak",
+                nav_home: "Beranda", nav_product: "Produk", nav_catalog: "Catalog", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
                 hero_title: "Solusi Kebutuhan Industri Anda", hero_subtitle: "Suplier terpercaya untuk berbagai macam Valve, Pompa, Fiting, Besi, dan Baja berkualitas tinggi.", hero_cta: "Hubungi Kami di WhatsApp",
                 brand_title: "Siap Support Berbagai Merek", product_title: "Produk Unggulan Kami",
                 product_1_title: "Gate Valve", product_1_desc: "Desain kokoh dan handal untuk mengontrol aliran fluida dengan bukaan penuh atau tertutup penuh.",
@@ -873,9 +1092,15 @@
                 product_10_title: "Pipe", product_10_desc: "Menyediakan berbagai jenis pipa berkualitas tinggi untuk kebutuhan perpipaan industri.",
                 product_11_title: "Plat", product_11_desc: "Plat besi dan baja dengan berbagai ketebalan, siap untuk kebutuhan konstruksi dan fabrikasi.",
                 product_12_title: "DLL", product_12_desc: "Kami juga menyediakan berbagai kebutuhan industri lainnya sesuai permintaan Anda.",
-                product_ask_price: "Tanya Harga", contact_title: "Hubungi Kami", contact_name_label: "Nama Lengkap", contact_name_placeholder: "Masukkan nama Anda",
-                contact_email_label: "Email", contact_email_placeholder: "Masukkan email Anda", contact_message_label: "Pesan / Kebutuhan Produk", contact_message_placeholder: "Jelaskan kebutuhan Anda",
-                contact_send_button: "Kirim Pesan", contact_whatsapp_info: "Atau hubungi kami langsung via WhatsApp:", footer_find_us: "Temukan Kami:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                product_ask_price: "Tanya Harga",
+                whatsapp_title: "Hubungi Kami di WhatsApp",
+                whatsapp_subtitle: "Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan industri Anda. Tim kami siap membantu Anda 24/7.",
+                whatsapp_chat_sales: "Chat dengan Sales",
+                whatsapp_request_catalog: "Request Katalog",
+                whatsapp_available: "Senin - Sabtu: 08:00 - 17:00",
+                whatsapp_response: "Response Time: < 5 menit",
+                whatsapp_secure: "100% Aman & Terpercaya",
+                footer_find_us: "Temukan Kami:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
                 theme_toggle_dark: "Aktifkan mode gelap", theme_toggle_light: "Aktifkan mode terang"
             },
             en: {
@@ -894,9 +1119,15 @@
                 product_10_title: "Pipe", product_10_desc: "Providing various types of high-quality pipes for industrial piping needs.",
                 product_11_title: "Plate", product_11_desc: "Iron and steel plates with various thicknesses, ready for construction and fabrication needs.",
                 product_12_title: "Others", product_12_desc: "We also provide various other industrial needs according to your request.",
-                product_ask_price: "Ask for Price", contact_title: "Contact Us", contact_name_label: "Full Name", contact_name_placeholder: "Enter your name",
-                contact_email_label: "Email", contact_email_placeholder: "Enter your email", contact_message_label: "Message / Product Needs", contact_message_placeholder: "Describe your needs",
-                contact_send_button: "Send Message", contact_whatsapp_info: "Or contact us directly via WhatsApp:", footer_find_us: "Find Us:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                product_ask_price: "Ask for Price",
+                whatsapp_title: "Contact Us on WhatsApp",
+                whatsapp_subtitle: "Get the best offers and free consultation for your industrial needs. Our team is ready to help you 24/7.",
+                whatsapp_chat_sales: "Chat with Sales",
+                whatsapp_request_catalog: "Request Catalog",
+                whatsapp_available: "Monday - Saturday: 08:00 - 17:00",
+                whatsapp_response: "Response Time: < 5 minutes",
+                whatsapp_secure: "100% Safe & Trusted",
+                footer_find_us: "Find Us:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
                 theme_toggle_dark: "Activate dark mode", theme_toggle_light: "Activate light mode"
             },
             zh: {
@@ -915,9 +1146,15 @@
                 product_10_title: "管道", product_10_desc: "提供各种高质量的管道，满足工业管道需求。",
                 product_11_title: "钢板", product_11_desc: "各种厚度的铁板和钢板，满足建筑和制造需求。",
                 product_12_title: "其他", product_12_desc: "我们还根据您的要求提供各种其他工业需求。",
-                product_ask_price: "询问价格", contact_title: "联系我们", contact_name_label: "全名", contact_name_placeholder: "输入您的姓名",
-                contact_email_label: "电子邮件", contact_email_placeholder: "输入您的电子邮件", contact_message_label: "留言 / 产品需求", contact_message_placeholder: "描述您的需求",
-                contact_send_button: "发送消息", contact_whatsapp_info: "或直接通过WhatsApp联系我们：", footer_find_us: "找到我们：", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. 版权所有。",
+                product_ask_price: "询问价格",
+                whatsapp_title: "在WhatsApp上联系我们",
+                whatsapp_subtitle: "获取最佳报价和免费咨询，满足您的工业需求。我们的团队随时准备为您提供24/7服务。",
+                whatsapp_chat_sales: "与销售聊天",
+                whatsapp_request_catalog: "请求目录",
+                whatsapp_available: "周一 - 周六: 08:00 - 17:00",
+                whatsapp_response: "响应时间: < 5分钟",
+                whatsapp_secure: "100%安全可靠",
+                footer_find_us: "找到我们：", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. 版权所有。",
                 theme_toggle_dark: "激活深色模式", theme_toggle_light: "激活浅色模式"
             }
         };
