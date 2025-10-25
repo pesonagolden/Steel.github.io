@@ -280,9 +280,32 @@
 
         /* --- BRAND SUPPORT (MEREK DIDUKUNG) --- */
         .brand-support {
-            background-color: var(--bg-secondary);
+            position: relative; /* Diperlukan untuk overlay */
+            background-color: var(--bg-secondary); /* Warna fallback */
+            background-image: url('gambar/image.jpeg'); /* Ganti dengan gambar Anda */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             padding: 60px 0;
             overflow: hidden;
+        }
+
+        /* Tambahkan overlay gelap agar konten terlihat jelas */
+        .brand-support::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 15, 30, 0.8); /* Overlay semi-transparan */
+            z-index: 1;
+        }
+
+        /* Pastikan konten berada di atas overlay */
+        .brand-support .container {
+            position: relative;
+            z-index: 2;
         }
 
         .brand-marquee {
@@ -306,22 +329,18 @@
             gap: 3rem;
         }
 
+        /* PERBAIKAN: Hapus filter agar logo asli terlihat */
         .marquee-group img {
             height: 50px;
             width: auto;
             object-fit: contain;
-            filter: brightness(0) invert(1);
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
-
-        /* Light theme logo override */
-        body.light-theme .marquee-group img {
-            filter: none;
+            opacity: 0.8; /* Sedikit transparan */
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
 
         .marquee-group img:hover {
             opacity: 1;
+            transform: scale(1.1);
         }
 
         @keyframes scroll-left {
