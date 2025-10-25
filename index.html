@@ -71,10 +71,11 @@
             padding: 0 20px;
         }
 
+        /* PERBAIKAN: Menggunakan variabel untuk warna teks heading */
         h1, h2, h3 {
             font-family: var(--font-heading);
             font-weight: 700;
-            color: #FFFFFF;
+            color: var(--text-primary);
         }
 
         /* --- NAVIGATION BAR --- */
@@ -192,9 +193,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff;
+            color: #fff; /* Akan ditimpa oleh variabel di dalam */
             position: relative;
-            /* PERUBAHAN: Background gambar dihapus, kembali ke warna solid */
         }
 
         .hero::before {
@@ -219,12 +219,14 @@
             text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
         }
 
+        /* PERBAIKAN: Menggunakan variabel untuk warna teks di hero */
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: var(--text-primary);
         }
 
         .btn {
@@ -268,21 +270,20 @@
             color: var(--text-primary);
         }
 
-        /* PERUBAHAN: Gaya baru untuk judul dengan ikon */
         .section-title .title-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 15px; /* Jarak antara ikon dan teks */
+            gap: 15px;
         }
 
         .section-title .title-wrapper i {
             color: var(--accent-gold);
-            font-size: 2rem; /* Ukuran ikon */
+            font-size: 2rem;
         }
 
         .section-title .title-text {
-            position: relative; /* Diperlukan untuk posisi garis bawah */
+            position: relative;
         }
 
         .section-title .title-text::after {
@@ -502,11 +503,10 @@
             color: var(--accent-gold);
         }
 
-        /* Style untuk ikon di footer-brand */
         .footer-brand .contact-icon {
             color: var(--accent-gold);
             font-size: 1.1rem;
-            width: 20px; /* Menjaga lebar tetap konsisten */
+            width: 20px;
             text-align: center;
         }
 
@@ -572,7 +572,7 @@
             }
             
             .section-title .title-wrapper {
-                flex-direction: column; /* Ikon di atas teks di mobile */
+                flex-direction: column;
                 gap: 10px;
             }
 
@@ -681,24 +681,96 @@
                     <div class="product-card" data-aos="fade-up" data-aos-delay="100">
                         <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Gate Valve">
                         <div class="product-card-content">
-                            <h3 data-translate-key="product_1_title">Gate Valve</h3>
-                            <p data-translate-key="product_1_desc">Desain kokoh dan handal untuk mengontrol aliran fluida dengan bukaan penuh atau tertutup penuh.</p>
+                            <h3>Gate Valve</h3>
+                            <p>Desain kokoh dan handal untuk mengontrol aliran fluida dengan bukaan penuh atau tertutup penuh.</p>
                             <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="200">
                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Ball Valve">
                         <div class="product-card-content">
-                            <h3 data-translate-key="product_2_title">Ball Valve</h3>
-                            <p data-translate-key="product_2_desc">Pilihan populer untuk shut-off cepat dan andal, ideal untuk berbagai aplikasi industri.</p>
+                            <h3>Ball Valve</h3>
+                            <p>Pilihan populer untuk shut-off cepat dan andal, ideal untuk berbagai aplikasi industri.</p>
                             <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
                     <div class="product-card" data-aos="fade-up" data-aos-delay="300">
                         <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pompa Industri">
                         <div class="product-card-content">
-                            <h3 data-translate-key="product_3_title">Pompa Industri</h3>
-                            <p data-translate-key="product_3_desc">Kami menyediakan berbagai jenis pompa industri untuk memenuhi kebutuhan transfer fluida Anda.</p>
+                            <h3>Pompa Industri</h3>
+                            <p>Kami menyediakan berbagai jenis pompa industri untuk memenuhi kebutuhan transfer fluida Anda.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" alt="Globe Valve">
+                        <div class="product-card-content">
+                            <h3>Globe Valve</h3>
+                            <p>Solusi regulasi aliran yang presisi, cocok untuk aplikasi yang membutuhkan kontrol throttling.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1603726847598-2d0274236ba3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Basket Strainer">
+                        <div class="product-card-content">
+                            <h3>Basket Strainer</h3>
+                            <p>Menyaring partikel padat dari aliran fluida untuk melindungi peralatan downstream.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Y Strainer">
+                        <div class="product-card-content">
+                            <h3>Y Strainer</h3>
+                            <p>Kompak dan efisien, ideal untuk pemasangan di ruang terbatas dengan kebutuhan filtrasi dasar.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1604187498327-527b6cc4331a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Hydrant">
+                        <div class="product-card-content">
+                            <h3>Hydrant</h3>
+                            <p>Sistem pemadaman kebakaran yang andal, menyediakan sumber air bertekanan tinggi untuk darurat.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1628748286477-1a96b6226522?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pressure Relief Valve">
+                        <div class="product-card-content">
+                            <h3>Pressure Relief Valve</h3>
+                            <p>Melindungi sistem dari overpressure dengan melepaskan kelebihan tekanan secara otomatis.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pressure Reducing Valve">
+                        <div class="product-card-content">
+                            <h3>Pressure Reducing Valve</h3>
+                            <p>Menurunkan tekanan inlet ke tekanan outlet yang lebih rendah dan stabil.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1584272323369-575578907d2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Pipe">
+                        <div class="product-card-content">
+                            <h3>Pipe</h3>
+                            <p>Menyediakan berbagai jenis pipa berkualitas tinggi untuk kebutuhan perpipaan industri.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1577491724905-83a5973cf411?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="Plat">
+                        <div class="product-card-content">
+                            <h3>Plat</h3>
+                            <p>Plat besi dan baja dengan berbagai ketebalan, siap untuk kebutuhan konstruksi dan fabrikasi.</p>
+                            <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
+                        </div>
+                    </div>
+                    <div class="product-card" data-aos="fade-up" data-aos-delay="300">
+                        <img src="https://images.unsplash.com/photo-1519452575417-567c1f89f494?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" alt="DLL">
+                        <div class="product-card-content">
+                            <h3>DLL</h3>
+                            <p>Kami juga menyediakan berbagai kebutuhan industri lainnya sesuai permintaan Anda.</p>
                             <a href="#kontak" class="btn btn-primary" data-translate-key="product_ask_price">Tanya Harga</a>
                         </div>
                     </div>
