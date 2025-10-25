@@ -1,151 +1,974 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" id="html-tag">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PT. Pesona Golden Steel | Katalog & Unduhan</title>
-  <link rel="icon" href="gambar/Screenshot_2025-06-25_221917-removebg-preview.png" type="image/png" />
-  <link rel="icon" href="gambar/favicon.png" type="image/png" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <meta name="google-adsense-account" content="ca-pub-4694107664740278">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694107664740278"
-     crossorigin="anonymous"></script>
-  <style>
-    body { font-family: 'Poppins', sans-serif; background-color: #f8f9fa; }
-    header { background-color: #ffffff; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .navbar-brand { font-weight: 600; font-size: 1.5rem; color: #2b2b2b; }
-    .product-card { background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-    .product-card:hover { transform: translateY(-5px); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Pesona Golden Steel | Katalog & Unduhan</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="gambar/Screenshot_2025-06-25_221917-removebg-preview.png" type="image/png">
+    <link rel="icon" href="gambar/favicon.png" type="image/png">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="PT. Pesona Golden Steel adalah Suplier Berbagai Macam Jenis Valve,Pompa,Fiting,Besi dan Baja terpercaya yang berlokasi di Jakarta Utara,Indonesia.">
+    <meta name="keywords" content="Pesona Golden Steel,Pesona Valve,Suplier Valve,Pesona Golden,Gate Valve,Ball Valve,Knife Gate,Flow Meter,Pipe,Pesona Golden,toko valve terdekat,agen valve terdekat">
+    <meta name="author" content="PT. Pesona Golden Steel">
+    <meta name="google-adsense-account" content="ca-pub-4694107664740278">
+
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Library untuk Animasi On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* --- CSS VARIABLES (Tema Warna) --- */
+        :root {
+            --bg-primary: #0F0F1E;
+            --bg-secondary: #1a1a2e;
+            --accent-gold: #FFD700;
+            --accent-cyan: #64FFDA;
+            --text-primary: #E6E6E6;
+            --text-secondary: #a8a8b3;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --whatsapp-green: #25D366;
+            --whatsapp-green-dark: #128C7E;
+        }
+
+        /* --- LIGHT THEME VARIABLES --- */
+        body.light-theme {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+        }
+
+        /* --- GLOBAL STYLES & RESET --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* PERBAIKAN: Menggunakan variabel untuk warna teks heading */
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* --- NAVIGATION BAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: transparent;
+            z-index: 1000;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            height: 70px;
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(15, 15, 30, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Light theme navbar override */
+        body.light-theme .navbar.scrolled {
+            background-color: rgba(248, 249, 250, 0.9);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            height: 100%;
+        }
+
+        /* PERBAIKAN: Logo positioning untuk desktop */
+        .navbar .logo {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .navbar .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* PERBAIKAN: Mengubah warna nav link menjadi kuning */
+        .navbar .nav-link {
+            color: var(--accent-gold) !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- Language & Theme Switcher --- */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 1px solid var(--text-secondary);
+        }
+
+        /* PERBAIKAN: Mengubah warna language switcher menjadi kuning */
+        #language-switcher a, #theme-toggle {
+            color: var(--accent-gold) !important;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #language-switcher a.active,
+        #language-switcher a:hover,
+        #theme-toggle:hover {
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        /* --- HAMBURGER MENU --- */
+        /* PERBAIKAN: Hamburger disembunyikan di desktop */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--accent-gold) !important;
+            font-size: 1.8rem;
+            padding: 5px;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+            transform: scale(1.05);
+        }
+
+        .hamburger:active {
+            transform: scale(0.95);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff; /* Akan ditimpa oleh variabel di dalam */
+            position: relative;
+            /* PERUBAHAN: Menambahkan background image */
+            background-image: url('gambar/image.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(15, 15, 30, 0.8), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PERBAIKAN: Mengubah warna judul hero menjadi kuning */
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            color: var(--accent-gold) !important;
+        }
+
+        /* PERBAIKAN: Mengubah warna subtitle hero menjadi kuning */
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: var(--accent-gold) !important;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+        }
+
+        .btn-secondary:hover {
+            background-color: #fff;
+            color: var(--bg-primary);
+        }
+
+        /* --- SECTION STYLES --- */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .section-title .title-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .section-title .title-wrapper i {
+            color: var(--accent-gold);
+            font-size: 2rem;
+        }
+
+        .section-title .title-text {
+            position: relative;
+        }
+
+        .section-title .title-text::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-gold);
+        }
+
+        /* --- CATALOG SECTION --- */
+        .catalog-section {
+            padding: 80px 0;
+            background-color: var(--bg-secondary);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalog-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, 
+                rgba(15, 15, 30, 0.95) 0%, 
+                rgba(26, 26, 46, 0.95) 50%, 
+                rgba(15, 15, 30, 0.95) 100%);
+            z-index: 1;
+        }
+
+        body.light-theme .catalog-section::before {
+            background: linear-gradient(135deg, 
+                rgba(248, 249, 250, 0.95) 0%, 
+                rgba(255, 255, 255, 0.95) 50%, 
+                rgba(248, 249, 250, 0.95) 100%);
+        }
+
+        .catalog-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .catalog-card {
+            background-color: var(--bg-primary);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .catalog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+        }
+
+        .catalog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .catalog-card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .catalog-card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .catalog-card-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .catalog-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        .catalog-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--bg-secondary);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand h5 {
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .footer-brand a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-brand .contact-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-socials a {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            /* PERBAIKAN: Hamburger hanya muncul di mobile */
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            /* PERBAIKAN: Logo positioning untuk mobile */
+            .navbar .logo {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: calc(100% - 120px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .navbar .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px; /* Sesuai dengan tinggi navbar */
+                flex-direction: column;
+                background-color: var(--bg-secondary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .navbar .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-controls {
+                border-left: none;
+                border-top: 1px solid var(--text-secondary);
+                padding-top: 10px;
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-title .title-wrapper {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <!-- Header/Navbar -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <a class="navbar-brand" href="#">PT. PESONA GOLDEN STEEL</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="Show.html">Product</a></li>
-            <li class="nav-item"><a class="nav-link active fw-bold" href="Catalog.html">Catalog Barang</a></li>
-            <li class="nav-item"><a class="nav-link" href="lokasi.html">Lokasi</a></li>
-          </ul>
+
+    <!-- ========== NAVIGATION ========== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">PT. PESONA GOLDEN STEEL</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-translate-key="nav_home">Beranda</a></li>
+                <li><a href="Show.html" class="nav-link" data-translate-key="nav_product">Produk</a></li>
+                <li><a href="Catalog.html" class="nav-link active" data-translate-key="nav_catalog">Catalog</a></li>
+                <li><a href="lokasi.html" class="nav-link" data-translate-key="nav_location">Lokasi</a></li>
+                <li><a href="index.html#whatsapp" class="nav-link" data-translate-key="nav_contact">Hubungi Kami</a></li>
+                <li class="nav-controls">
+                    <div id="language-switcher">
+                        <a href="#" data-lang="id" class="active">ID</a>
+                        <a href="#" data-lang="en">EN</a>
+                        <a href="#" data-lang="zh">中文</a>
+                    </div>
+                    <button id="theme-toggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-      </div>
-    </nav>
-  </header>
+    </header>
 
-  <!-- Main Content -->
-  <main class="container my-5">
-    <h1 class="text-center mb-5 fw-bold">Katalog & Unduhan</h1>
-    <div id="catalogList" class="row g-4">
-      <!-- Item katalog akan dimasukkan lewat JavaScript -->
-    </div>
-  </main>
+    <main>
+        <!-- ========== HERO SECTION ========== -->
+        <section class="hero" id="beranda">
+            <div class="hero-content" data-aos="fade-up">
+                <h1 data-translate-key="catalog_title">Katalog & Unduhan</h1>
+                <p data-translate-key="catalog_subtitle">Unduh katalog produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk</p>
+            </div>
+        </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- ========== CATALOG SECTION ========== -->
+        <section class="catalog-section" id="catalog">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">
+                    <div class="title-wrapper">
+                        <i class="fa-solid fa-book"></i>
+                        <span class="title-text" data-translate-key="catalog_section_title">Katalog Produk</span>
+                    </div>
+                </h2>
+                <div class="catalog-grid" id="catalogList">
+                    <!-- Item katalog akan dimasukkan lewat JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <script>
-    const catalogs = [
-  {
-    title: "Katalog Produk Gate Valve",
-    description: "Spesifikasi lengkap detail barang yang anda butuhkan.",
-    fileUrl: "https://www.stockistvalve.com/wp-content/uploads/2019/04/Gate-Valve-Catalog-GLT.pdf",
-    imageUrl: "https://bjmsgroup.com/blog/wp-content/uploads/2019/08/Gate-valve-ANSI150.png"
-  },
-  {
-    title: "Katalog Produk Sight Glass",
-    description: "Spesifikasi lengkap detail barang yang anda butuhkan.",
-    fileUrl: "https://drive.google.com/uc?export=download&id=1dwxnF4MwbIfZV_Fkd_4kvs8hZYPhUMpx",
-    imageUrl: "https://image.metalco.co.id/s3/productimages/webp/co269152/p1537270/w600-h600/67a06f3f-f1a4-4f50-b7ea-2bcf50dac830.jpg"
-  },
-  {
-    title: "Katalog Produk Ball Valve",
-    description: "Spesifikasi lengkap detail barang yang anda butuhkan.",
-    fileUrl: "https://drive.google.com/uc?export=download&id=1HwoEb4lr6S5tqepsVI7QwfS2MieiGla1",
-    imageUrl: "https://image.kotateknik.com/s3/productimages/webp/co90761/p572461/w600-h600/0744063a-bf9e-4731-a2c1-12d35ff1669aw.jpg"
-  },
-  {
-    title: "Katalog Produk Butterfly Valve",
-    description: "Produk berkualitas tinggi untuk kebutuhan industri.",
-    fileUrl: "https://kvc-uk.com/wp-content/uploads/2018/08/Butterfly-Valve-Catalogue.pdf.pdf",
-    imageUrl: "https://images.tokopedia.net/img/cache/500-square/product-1/2020/6/8/85952554/85952554_666a66a2-a855-4e96-9958-33ef1c4825c7_700_700"
-  },
-  {
-    title: "Katalog Produk Check Valve",
-    description: "Desain inovatif dan efisiensi tinggi.",
-    fileUrl: "https://drive.google.com/file/d/1hVJZaCTJjilnnps8_blM6Z4Bq3TeEqgS/view?usp=sharing",
-    imageUrl: "https://bjmsonline.com/blog/wp-content/uploads/2023/08/VTV-Swing-Check-Valve-Cast-iron.png"
-  },
-  {
-    title: "Katalog Produk Globe Valve",
-    description: "Pengontrol aliran yang handal dan presisi.",
-    fileUrl: "https://drive.google.com/file/d/1nAnY44yC2cQ4uTdG6hISxIiiy1YNUN-n/view?usp=sharing",
-    imageUrl: "https://www.genebre.com/media/contents/product/mh/2231.jpg"
-  },
-  {
-    title: "Katalog Pipa Besi & Aksesoris",
-    description: "Berbagai macam ukuran dan spesifikasi pipa.",
-    fileUrl: "https://drive.google.com/file/d/1cQ1Z9n9OGv1Dld6R2XuZxbT0_1k4HRep/view?usp=sharing",
-    imageUrl: "https://lirp.cdn-website.com/2f73b385/dms3rep/multi/opt/Pipa+besi+untuk+kebutuhan+proyek-640w.JPEG"
-  },
-  {
-    title: "Katalog Flow Meter",
-    description: "Pengukuran debit atau volume",
-    fileUrl: "https://drive.google.com/file/d/1sPeFCAwj0NC3AOgCBo8muAFOdg9ukF8M/view?usp=sharing",
-    imageUrl: "https://aliyaqoob.com/resource/image/1707541354flow-meter.webp"
-  },
-  {
-  title: "Katalog Flange ON",
-    description: "Komponen sambungan pipa dengan standar industri.",
-    fileUrl: "https://www.pipefittingweb.com/images/ecatalog/pdf/Flanges.pdf",
-    imageUrl: "https://image.indobaja.id/s3/productimages/webp/co11648/p1209819/w600-h600/9c9eed2e-ebb2-4236-8040-a286b04b054f.jpg"
-  },
-  {
-    title: "Katalog Preasure PRV",
-    description: "Produk untuk kebutuhan higienitas dan sanitasi.",
-    fileUrl: "https://genair.co.id/wp-content/uploads/2018/09/Pressure-Reducing-Valve-FIG.F1318-min.pdf",
-    imageUrl: "https://www.flomatic.com/wp-content/uploads/2025/03/C105-600x650.jpg"
-  },
-  {
-    title: "Katalog Safety Valve",
-    description: "Layanan pemasangan sistem perpipaan industri.",
-    fileUrl: "https://emerson.com/documents/automation/data-sheets-h-series-crosby-en-en-6503228.pdf",
-    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3F4hgdgtRKT52jUCca4Q8jpNwCi3MHCaoaQ&s"
-  },
-  {
-    title: "Katalog Actuator",
-    description: "Penawaran terbatas dan diskon produk pilihan.",
-    fileUrl: "https://www.dycom.co.id/product/Pneumatic%20Actuators.pdf",
-    imageUrl: "https://s.alicdn.com/@sc04/kf/H472d3871b64e4ae88dd49c39619ef80cN.jpg"
-  }
-];
-
-    const listContainer = document.getElementById('catalogList');
-
-    catalogs.forEach(catalog => {
-      const col = document.createElement('div');
-      col.className = 'col-md-6 col-lg-4';
-
-      col.innerHTML = `
-        <div class="card h-100 product-card">
-          <img src="${catalog.imageUrl}" class="card-img-top" alt="${catalog.title}">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">${catalog.title}</h5>
-            <p class="card-text text-muted small">${catalog.description}</p>
-            <a href="${catalog.fileUrl}" download class="btn btn-primary mt-auto">Download</a>
-          </div>
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h5>PT. PESONA GOLDEN STEEL</h5>
+                    <p>
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <a href="mailto:pesona.golden@gmail.com">pesona.golden@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-whatsapp contact-icon"></i>
+                        <a href="https://wa.me/628989619222">0898 9619 222</a>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        Jakarta Utara, Indonesia
+                    </p>
+                </div>
+                <div class="footer-socials">
+                    <p data-translate-key="footer_find_us">Temukan Kami:</p>
+                    <a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank" title="Tokopedia">
+                        <i class="fa-solid fa-shop"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <small data-translate-key="footer_copyright">&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
+            </div>
         </div>
-      `;
+    </footer>
 
-      listContainer.appendChild(col);
-    });
-  </script>
+    <!-- ========== JAVASCRIPT ========== -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // --- TRANSLATION DATA ---
+        const translations = {
+            id: {
+                nav_home: "Beranda", nav_product: "Produk", nav_catalog: "Catalog", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
+                catalog_title: "Katalog & Unduhan",
+                catalog_subtitle: "Unduh katalog produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk",
+                catalog_section_title: "Katalog Produk",
+                catalog_download: "Download",
+                // Catalog Items
+                catalog_1_title: "Katalog Produk Gate Valve",
+                catalog_1_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
+                catalog_2_title: "Katalog Produk Sight Glass",
+                catalog_2_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
+                catalog_3_title: "Katalog Produk Ball Valve",
+                catalog_3_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
+                catalog_4_title: "Katalog Produk Butterfly Valve",
+                catalog_4_desc: "Produk berkualitas tinggi untuk kebutuhan industri.",
+                catalog_5_title: "Katalog Produk Check Valve",
+                catalog_5_desc: "Desain inovatif dan efisiensi tinggi.",
+                catalog_6_title: "Katalog Produk Globe Valve",
+                catalog_6_desc: "Pengontrol aliran yang handal dan presisi.",
+                catalog_7_title: "Katalog Pipa Besi & Aksesoris",
+                catalog_7_desc: "Berbagai macam ukuran dan spesifikasi pipa.",
+                catalog_8_title: "Katalog Flow Meter",
+                catalog_8_desc: "Pengukuran debit atau volume",
+                catalog_9_title: "Katalog Flange ON",
+                catalog_9_desc: "Komponen sambungan pipa dengan standar industri.",
+                catalog_10_title: "Katalog Pressure PRV",
+                catalog_10_desc: "Produk untuk kebutuhan higienitas dan sanitasi.",
+                catalog_11_title: "Katalog Safety Valve",
+                catalog_11_desc: "Layanan pemasangan sistem perpipaan industri.",
+                catalog_12_title: "Katalog Actuator",
+                catalog_12_desc: "Penawaran terbatas dan diskon produk pilihan.",
+                footer_find_us: "Temukan Kami:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Aktifkan mode gelap", theme_toggle_light: "Aktifkan mode terang"
+            },
+            en: {
+                nav_home: "Home", nav_product: "Products", nav_catalog: "Catalog", nav_location: "Location", nav_contact: "Contact",
+                catalog_title: "Catalog & Downloads",
+                catalog_subtitle: "Download our product catalogs for complete information on specifications and product details",
+                catalog_section_title: "Product Catalog",
+                catalog_download: "Download",
+                // Catalog Items
+                catalog_1_title: "Gate Valve Product Catalog",
+                catalog_1_desc: "Complete specifications for the items you need.",
+                catalog_2_title: "Sight Glass Product Catalog",
+                catalog_2_desc: "Complete specifications for the items you need.",
+                catalog_3_title: "Ball Valve Product Catalog",
+                catalog_3_desc: "Complete specifications for the items you need.",
+                catalog_4_title: "Butterfly Valve Product Catalog",
+                catalog_4_desc: "High quality products for industrial needs.",
+                catalog_5_title: "Check Valve Product Catalog",
+                catalog_5_desc: "Innovative design and high efficiency.",
+                catalog_6_title: "Globe Valve Product Catalog",
+                catalog_6_desc: "Reliable and precise flow control.",
+                catalog_7_title: "Iron Pipe & Accessories Catalog",
+                catalog_7_desc: "Various sizes and pipe specifications.",
+                catalog_8_title: "Flow Meter Catalog",
+                catalog_8_desc: "Flow rate or volume measurement",
+                catalog_9_title: "Flange ON Catalog",
+                catalog_9_desc: "Pipe connection components with industry standards.",
+                catalog_10_title: "Pressure PRV Catalog",
+                catalog_10_desc: "Products for hygiene and sanitation needs.",
+                catalog_11_title: "Safety Valve Catalog",
+                catalog_11_desc: "Industrial piping system installation services.",
+                catalog_12_title: "Actuator Catalog",
+                catalog_12_desc: "Limited offers and discounts on selected products.",
+                footer_find_us: "Find Us:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Activate dark mode", theme_toggle_light: "Activate light mode"
+            },
+            zh: {
+                nav_home: "首页", nav_product: "产品", nav_catalog: "目录", nav_location: "位置", nav_contact: "联系我们",
+                catalog_title: "目录和下载",
+                catalog_subtitle: "下载我们的产品目录以获取规格和产品详细信息",
+                catalog_section_title: "产品目录",
+                catalog_download: "下载",
+                // Catalog Items
+                catalog_1_title: "闸阀产品目录",
+                catalog_1_desc: "您所需物品的完整规格。",
+                catalog_2_title: "视镜产品目录",
+                catalog_2_desc: "您所需物品的完整规格。",
+                catalog_3_title: "球阀产品目录",
+                catalog_3_desc: "您所需物品的完整规格。",
+                catalog_4_title: "蝶阀产品目录",
+                catalog_4_desc: "工业需求的高质量产品。",
+                catalog_5_title: "止回阀产品目录",
+                catalog_5_desc: "创新设计和高效率。",
+                catalog_6_title: "截止阀产品目录",
+                catalog_6_desc: "可靠和精确的流量控制。",
+                catalog_7_title: "铁管和配件目录",
+                catalog_7_desc: "各种尺寸和管道规格。",
+                catalog_8_title: "流量计目录",
+                catalog_8_desc: "流速或体积测量",
+                catalog_9_title: "法兰ON目录",
+                catalog_9_desc: "符合行业标准的管道连接组件。",
+                catalog_10_title: "压力PRV目录",
+                catalog_10_desc: "卫生和消毒需求的产品。",
+                catalog_11_title: "安全阀目录",
+                catalog_11_desc: "工业管道系统安装服务。",
+                catalog_12_title: "执行器目录",
+                catalog_12_desc: "精选产品的有限优惠和折扣。",
+                footer_find_us: "找到我们：", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. 版权所有。",
+                theme_toggle_dark: "激活深色模式", theme_toggle_light: "激活浅色模式"
+            }
+        };
+
+        // --- CATALOG DATA ---
+        const catalogs = [
+            {
+                titleKey: "catalog_1_title",
+                descKey: "catalog_1_desc",
+                fileUrl: "https://www.stockistvalve.com/wp-content/uploads/2019/04/Gate-Valve-Catalog-GLT.pdf",
+                imageUrl: "https://bjmsgroup.com/blog/wp-content/uploads/2019/08/Gate-valve-ANSI150.png"
+            },
+            {
+                titleKey: "catalog_2_title",
+                descKey: "catalog_2_desc",
+                fileUrl: "https://drive.google.com/uc?export=download&id=1dwxnF4MwbIfZV_Fkd_4kvs8hZYPhUMpx",
+                imageUrl: "https://image.metalco.co.id/s3/productimages/webp/co269152/p1537270/w600-h600/67a06f3f-f1a4-4f50-b7ea-2bcf50dac830.jpg"
+            },
+            {
+                titleKey: "catalog_3_title",
+                descKey: "catalog_3_desc",
+                fileUrl: "https://drive.google.com/uc?export=download&id=1HwoEb4lr6S5tqepsVI7QwfS2MieiGla1",
+                imageUrl: "https://image.kotateknik.com/s3/productimages/webp/co90761/p572461/w600-h600/0744063a-bf9e-4731-a2c1-12d35ff1669aw.jpg"
+            },
+            {
+                titleKey: "catalog_4_title",
+                descKey: "catalog_4_desc",
+                fileUrl: "https://kvc-uk.com/wp-content/uploads/2018/08/Butterfly-Valve-Catalogue.pdf.pdf",
+                imageUrl: "https://images.tokopedia.net/img/cache/500-square/product-1/2020/6/8/85952554/85952554_666a66a2-a855-4e96-9958-33ef1c4825c7_700_700"
+            },
+            {
+                titleKey: "catalog_5_title",
+                descKey: "catalog_5_desc",
+                fileUrl: "https://drive.google.com/file/d/1hVJZaCTJjilnnps8_blM6Z4Bq3TeEqgS/view?usp=sharing",
+                imageUrl: "https://bjmsonline.com/blog/wp-content/uploads/2023/08/VTV-Swing-Check-Valve-Cast-iron.png"
+            },
+            {
+                titleKey: "catalog_6_title",
+                descKey: "catalog_6_desc",
+                fileUrl: "https://drive.google.com/file/d/1nAnY44yC2cQ4uTdG6hISxIiiy1YNUN-n/view?usp=sharing",
+                imageUrl: "https://www.genebre.com/media/contents/product/mh/2231.jpg"
+            },
+            {
+                titleKey: "catalog_7_title",
+                descKey: "catalog_7_desc",
+                fileUrl: "https://drive.google.com/file/d/1cQ1Z9n9OGv1Dld6R2XuZxbT0_1k4HRep/view?usp=sharing",
+                imageUrl: "https://lirp.cdn-website.com/2f73b385/dms3rep/multi/opt/Pipa+besi+untuk+kebutuhan+proyek-640w.JPEG"
+            },
+            {
+                titleKey: "catalog_8_title",
+                descKey: "catalog_8_desc",
+                fileUrl: "https://drive.google.com/file/d/1sPeFCAwj0NC3AOgCBo8muAFOdg9ukF8M/view?usp=sharing",
+                imageUrl: "https://aliyaqoob.com/resource/image/1707541354flow-meter.webp"
+            },
+            {
+                titleKey: "catalog_9_title",
+                descKey: "catalog_9_desc",
+                fileUrl: "https://www.pipefittingweb.com/images/ecatalog/pdf/Flanges.pdf",
+                imageUrl: "https://image.indobaja.id/s3/productimages/webp/co11648/p1209819/w600-h600/9c9eed2e-ebb2-4236-8040-a286b04b054f.jpg"
+            },
+            {
+                titleKey: "catalog_10_title",
+                descKey: "catalog_10_desc",
+                fileUrl: "https://genair.co.id/wp-content/uploads/2018/09/Pressure-Reducing-Valve-FIG.F1318-min.pdf",
+                imageUrl: "https://www.flomatic.com/wp-content/uploads/2025/03/C105-600x650.jpg"
+            },
+            {
+                titleKey: "catalog_11_title",
+                descKey: "catalog_11_desc",
+                fileUrl: "https://emerson.com/documents/automation/data-sheets-h-series-crosby-en-en-6503228.pdf",
+                imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3F4hgdgtRKT52jUCca4Q8jpNwCi3MHCaoaQ&s"
+            },
+            {
+                titleKey: "catalog_12_title",
+                descKey: "catalog_12_desc",
+                fileUrl: "https://www.dycom.co.id/product/Pneumatic%20Actuators.pdf",
+                imageUrl: "https://s.alicdn.com/@sc04/kf/H472d3871b64e4ae88dd49c39619ef80cN.jpg"
+            }
+        ];
+
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'id';
+        let currentTheme = localStorage.getItem('selectedTheme') || 'dark';
+
+        // --- LANGUAGE SWITCHER FUNCTION ---
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById('html-tag').setAttribute('lang', lang);
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-lang') === lang);
+            });
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+            updateThemeToggleTitle();
+            renderCatalogs(); // Re-render catalogs with new language
+        }
+
+        // --- THEME SWITCHER FUNCTION ---
+        function setTheme(theme) {
+            currentTheme = theme;
+            localStorage.setItem('selectedTheme', theme);
+            const isLight = theme === 'light';
+            document.body.classList.toggle('light-theme', isLight);
+            const icon = document.querySelector('#theme-toggle i');
+            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            updateThemeToggleTitle();
+        }
+
+        function updateThemeToggleTitle() {
+            const toggleButton = document.getElementById('theme-toggle');
+            const titleKey = currentTheme === 'light' ? 'theme_toggle_dark' : 'theme_toggle_light';
+            if (translations[currentLanguage] && translations[currentLanguage][titleKey]) {
+                toggleButton.setAttribute('title', translations[currentLanguage][titleKey]);
+            }
+        }
+
+        // --- RENDER CATALOG FUNCTION ---
+        function renderCatalogs() {
+            const listContainer = document.getElementById('catalogList');
+            listContainer.innerHTML = '';
+
+            catalogs.forEach((catalog, index) => {
+                const col = document.createElement('div');
+                col.className = 'catalog-card';
+                col.setAttribute('data-aos', 'fade-up');
+                col.setAttribute('data-aos-delay', (index % 3) * 100);
+
+                // Get translated title and description
+                const title = translations[currentLanguage][catalog.titleKey] || catalog.titleKey;
+                const description = translations[currentLanguage][catalog.descKey] || catalog.descKey;
+
+                col.innerHTML = `
+                    <img src="${catalog.imageUrl}" class="catalog-img" alt="${title}">
+                    <div class="catalog-card-content">
+                        <h3>${title}</h3>
+                        <p>${description}</p>
+                        <a href="${catalog.fileUrl}" target="_blank" class="catalog-btn">
+                            <i class="fas fa-download"></i> <span data-translate-key="catalog_download">${translations[currentLanguage]['catalog_download']}</span>
+                        </a>
+                    </div>
+                `;
+
+                listContainer.appendChild(col);
+            });
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+            setLanguage(currentLanguage);
+            setTheme(currentTheme);
+            renderCatalogs();
+
+            // Language switcher event listeners
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(link.getAttribute('data-lang'));
+                });
+            });
+
+            // Theme toggle event listener
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                setTheme(currentTheme === 'light' ? 'dark' : 'light');
+            });
+
+            // --- Navbar Scroll Effect ---
+            window.addEventListener('scroll', () => {
+                document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // --- Mobile Menu Toggle ---
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
