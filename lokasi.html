@@ -1,94 +1,835 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lokasi PT Pesona Golden Steel</title>
+    <link rel="icon" href="gambar/Screenshot_2025-06-25_221917-removebg-preview.png" type="image/png" />
+    <link rel="icon" href="gambar/favicon.png" type="image/png" />
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Lokasi PT. Pesona Golden Steel, Suplier Berbagai Macam Jenis Valve,Pompa,Fiting,Besi dan Baja terpercaya yang berlokasi di Jakarta Utara,Indonesia.">
+    <meta name="keywords" content="Pesona Golden Steel,Pesona Valve,Suplier Valve,Pesona Golden,Gate Valve,Ball Valve,Knife Gate,Flow Meter,Pipe,Pesona Golden,toko valve terdekat,agen valve terdekat" />
+    <meta name="author" content="PT. Pesona Golden Steel">
+    <meta name="google-adsense-account" content="ca-pub-4694107664740278">
+    
+    <!-- Google Fonts: Poppins & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library untuk Animasi On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4694107664740278"
+         crossorigin="anonymous"></script>
+    
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* --- CSS VARIABLES (Tema Warna) --- */
+        :root {
+            --bg-primary: #0F0F1E;
+            --bg-secondary: #1a1a2e;
+            --accent-gold: #FFD700;
+            --accent-cyan: #64FFDA;
+            --text-primary: #E6E6E6;
+            --text-secondary: #a8a8b3;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --whatsapp-green: #25D366;
+            --whatsapp-green-dark: #128C7E;
+            --navbar-height: 70px;
+        }
+
+        /* --- LIGHT THEME VARIABLES --- */
+        body.light-theme {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+        }
+
+        /* --- GLOBAL STYLES & RESET --- */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: flex-start;
             min-height: 100vh;
-            background: #f4f4f4;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            width: 100%;
+        }
+
+        /* PERBAIKAN: Menggunakan variabel untuk warna teks heading */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* --- NAVIGATION BAR --- */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background-color: transparent;
+            z-index: 1000;
+            transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+            height: var(--navbar-height);
+        }
+
+        .navbar.scrolled {
+            background-color: rgba(15, 15, 30, 0.9);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Light theme navbar override */
+        body.light-theme .navbar.scrolled {
+            background-color: rgba(248, 249, 250, 0.9);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            height: 100%;
+        }
+
+        /* PERBAIKAN: Logo positioning untuk desktop */
+        .navbar .logo {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            text-decoration: none;
+        }
+
+        .navbar .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        /* PERBAIKAN: Mengubah warna nav link menjadi kuning */
+        .navbar .nav-link {
+            color: var(--accent-gold) !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .navbar .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-gold);
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-link:hover {
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* --- Language & Theme Switcher --- */
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-left: 20px;
+            padding-left: 20px;
+            border-left: 1px solid var(--text-secondary);
+        }
+
+        /* PERBAIKAN: Mengubah warna language switcher menjadi kuning */
+        #language-switcher a, #theme-toggle {
+            color: var(--accent-gold) !important;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 5px;
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        #language-switcher a.active,
+        #language-switcher a:hover,
+        #theme-toggle:hover {
+            color: var(--accent-gold);
+            opacity: 0.8;
+        }
+
+        /* --- HAMBURGER MENU --- */
+        /* PERBAIKAN: Hamburger disembunyikan di desktop */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--accent-gold) !important;
+            font-size: 1.8rem;
+            padding: 5px;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background-color: rgba(255, 215, 0, 0.1);
+            transform: scale(1.05);
+        }
+
+        .hamburger:active {
+            transform: scale(0.95);
+        }
+
+        /* --- LOCATION SECTION --- */
+        .location-section {
+            padding: 100px 0 80px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .gfg {
-            font-size: 1.8rem;
+            font-size: 2.5rem;
             font-weight: bold;
-            color: #009900;
+            color: var(--accent-gold);
             margin-top: 20px;
             text-align: center;
+            font-family: var(--font-heading);
         }
 
-        p {
-            font-size: 1rem;
+        .location-subtitle {
+            font-size: 1.2rem;
             text-align: center;
-            margin: 5px 10px 15px;
+            margin: 10px 0 30px;
+            color: var(--text-secondary);
         }
 
         #demo2 {
             width: 90%;
-            max-width: 800px;
+            max-width: 1000px;
             height: 60vh;
             border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
         }
 
         .btn {
-            background-color: #009900;
-            color: white;
+            background-color: var(--accent-gold);
+            color: var(--bg-primary);
             border: none;
-            padding: 10px 15px;
+            padding: 12px 25px;
             margin: 10px 0;
-            border-radius: 8px;
+            border-radius: 50px;
             font-size: 1rem;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
         }
 
         .btn:hover {
-            background-color: #007700;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        .location-info {
+            max-width: 800px;
+            margin: 30px auto;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--bg-secondary);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-info h3 {
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+        }
+
+        .location-info p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .location-info i {
+            color: var(--accent-gold);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--bg-secondary);
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+
+        .footer-brand h5 {
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+
+        .footer-brand a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-brand a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-brand .contact-icon {
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .footer-socials a {
+            color: var(--text-primary);
+            font-size: 1.8rem;
+            margin: 0 10px;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .footer-socials a:hover {
+            color: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- FLOATING WHATSAPP --- */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--whatsapp-green), var(--whatsapp-green-dark));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 768px) {
+            /* PERBAIKAN: Hamburger hanya muncul di mobile */
+            .hamburger {
+                display: flex;
+                position: absolute;
+                right: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            /* PERBAIKAN: Logo positioning untuk mobile */
+            .navbar .logo {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                transform: translateY(-50%);
+                max-width: calc(100% - 120px);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .navbar .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: var(--navbar-height); /* Sesuai dengan tinggi navbar */
+                flex-direction: column;
+                background-color: var(--bg-secondary);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+                z-index: 999;
+            }
+
+            .navbar .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-controls {
+                border-left: none;
+                border-top: 1px solid var(--text-secondary);
+                padding-top: 10px;
+                margin-left: 0;
+                margin-top: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .gfg {
+                font-size: 2rem;
+            }
+
+            #demo2 {
+                height: 50vh;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="gfg">PT Pesona Golden Steel</div>
-    <p>Lokasi perusahaan pada peta</p>
+    <!-- ========== NAVIGATION ========== -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">PT. PESONA GOLDEN STEEL</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link" data-translate-key="nav_home">Beranda</a></li>
+                <li><a href="Show.html" class="nav-link" data-translate-key="nav_product">Produk</a></li>
+                <li><a href="Catalog.html" class="nav-link" data-translate-key="nav_catalog">Catalog</a></li>
+                <li><a href="lokasi.html" class="nav-link active" data-translate-key="nav_location">Lokasi</a></li>
+                <li><a href="#whatsapp" class="nav-link" data-translate-key="nav_contact">Hubungi Kami</a></li>
+                <li class="nav-controls">
+                    <div id="language-switcher">
+                        <a href="#" data-lang="id" class="active">ID</a>
+                        <a href="#" data-lang="en">EN</a>
+                        <a href="#" data-lang="zh">中文</a>
+                    </div>
+                    <button id="theme-toggle" title="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
 
-    <button class="btn" onclick="getMyLocation()">Lihat Lokasi Saya</button>
+    <main>
+        <!-- ========== LOCATION SECTION ========== -->
+        <section class="location-section" id="location">
+            <div class="container">
+                <h1 class="gfg" data-aos="fade-up" data-translate-key="location_title">PT Pesona Golden Steel</h1>
+                <p class="location-subtitle" data-aos="fade-up" data-aos-delay="100" data-translate-key="location_subtitle">Lokasi perusahaan pada peta</p>
 
-    <div id="demo2"></div>
+                <button class="btn" data-aos="fade-up" data-aos-delay="200" onclick="getMyLocation()" data-translate-key="location_btn">Lihat Lokasi Saya</button>
+
+                <div id="demo2" data-aos="fade-up" data-aos-delay="300"></div>
+
+                <div class="location-info" data-aos="fade-up" data-aos-delay="400">
+                    <h3 data-translate-key="location_info_title">Informasi Lokasi</h3>
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span data-translate-key="location_address">Jl. Raya Cilincing No. 88, Jakarta Utara, Indonesia</span>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-phone"></i>
+                        <a href="https://wa.me/628989619222">0898 9619 222</a>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        <a href="mailto:pesona.golden@gmail.com">pesona.golden@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FLOATING WHATSAPP BUTTON ========== -->
+    <a href="https://wa.me/628989619222?text=Halo,%20saya%20tertarik%20untuk%20bertanya%20mengenai%20lokasi%20Anda." target="_blank" class="floating-whatsapp" title="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h5>PT. PESONA GOLDEN STEEL</h5>
+                    <p>
+                        <i class="fa-solid fa-envelope contact-icon"></i>
+                        <a href="mailto:pesona.golden@gmail.com">pesona.golden@gmail.com</a>
+                    </p>
+                    <p>
+                        <i class="fa-brands fa-whatsapp contact-icon"></i>
+                        <a href="https://wa.me/628989619222">0898 9619 222</a>
+                    </p>
+                    <p>
+                        <i class="fa-solid fa-location-dot contact-icon"></i>
+                        Jakarta Utara, Indonesia
+                    </p>
+                </div>
+                <div class="footer-socials">
+                    <p data-translate-key="footer_find_us">Temukan Kami:</p>
+                    <a href="https://www.tokopedia.com/ptpesona-golden-steel" target="_blank" title="Tokopedia">
+                        <i class="fa-solid fa-shop"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/12G56nHjcUg/" target="_blank" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <small data-translate-key="footer_copyright">&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.</small>
+            </div>
+        </div>
+    </footer>
 
     <!-- Google Maps API -->
     <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Koordinat PT Pesona Golden Steel
-        const companyLat = -6.126378215884148;
-        const companyLng = 106.88118548014756;
-
-        const companyLatLng = new google.maps.LatLng(companyLat, companyLng);
-
-        // Buat peta
-        const mapOptions = {
-            center: companyLatLng,
-            zoom: 16,
-            mapTypeControl: true,
+        // --- TRANSLATION DATA ---
+        const translations = {
+            id: {
+                nav_home: "Beranda", nav_product: "Produk", nav_catalog: "Catalog", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
+                location_title: "PT Pesona Golden Steel",
+                location_subtitle: "Lokasi perusahaan pada peta",
+                location_btn: "Lihat Lokasi Saya",
+                location_info_title: "Informasi Lokasi",
+                location_address: "Jl. Raya Cilincing No. 88, Jakarta Utara, Indonesia",
+                footer_find_us: "Temukan Kami:", 
+                footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Aktifkan mode gelap", 
+                theme_toggle_light: "Aktifkan mode terang"
+            },
+            en: {
+                nav_home: "Home", nav_product: "Products", nav_catalog: "Catalog", nav_location: "Location", nav_contact: "Contact",
+                location_title: "PT Pesona Golden Steel",
+                location_subtitle: "Company location on the map",
+                location_btn: "Show My Location",
+                location_info_title: "Location Information",
+                location_address: "Jl. Raya Cilincing No. 88, North Jakarta, Indonesia",
+                footer_find_us: "Find Us:", 
+                footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Activate dark mode", 
+                theme_toggle_light: "Activate light mode"
+            },
+            zh: {
+                nav_home: "首页", nav_product: "产品", nav_catalog: "目录", nav_location: "位置", nav_contact: "联系我们",
+                location_title: "PT Pesona Golden Steel",
+                location_subtitle: "公司在地图上的位置",
+                location_btn: "显示我的位置",
+                location_info_title: "位置信息",
+                location_address: "Jl. Raya Cilincing No. 88, 北雅加达, 印度尼西亚",
+                footer_find_us: "找到我们：", 
+                footer_copyright: "2022 PT. Pesona Golden Steel. 版权所有。",
+                theme_toggle_dark: "激活深色模式", 
+                theme_toggle_light: "激活浅色模式"
+            }
         };
 
-        const map = new google.maps.Map(document.getElementById("demo2"), mapOptions);
+        let currentLanguage = localStorage.getItem('selectedLanguage') || 'id';
+        let currentTheme = localStorage.getItem('selectedTheme') || 'dark';
 
-        // Marker perusahaan
-        const companyMarker = new google.maps.Marker({
-            position: companyLatLng,
-            map: map,
-            title: "📍 PT Pesona Golden Steel"
+        // --- LANGUAGE SWITCHER FUNCTION ---
+        function setLanguage(lang) {
+            currentLanguage = lang;
+            localStorage.setItem('selectedLanguage', lang);
+            document.getElementById('html-tag').setAttribute('lang', lang);
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('data-lang') === lang);
+            });
+            document.querySelectorAll('[data-translate-key]').forEach(element => {
+                const key = element.getAttribute('data-translate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            document.querySelectorAll('[data-translate-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-translate-placeholder');
+                if (translations[lang] && translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+            updateThemeToggleTitle();
+        }
+
+        // --- THEME SWITCHER FUNCTION ---
+        function setTheme(theme) {
+            currentTheme = theme;
+            localStorage.setItem('selectedTheme', theme);
+            const isLight = theme === 'light';
+            document.body.classList.toggle('light-theme', isLight);
+            const icon = document.querySelector('#theme-toggle i');
+            icon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
+            updateThemeToggleTitle();
+        }
+
+        function updateThemeToggleTitle() {
+            const toggleButton = document.getElementById('theme-toggle');
+            const titleKey = currentTheme === 'light' ? 'theme_toggle_dark' : 'theme_toggle_light';
+            if (translations[currentLanguage] && translations[currentLanguage][titleKey]) {
+                toggleButton.setAttribute('title', translations[currentLanguage][titleKey]);
+            }
+        }
+
+        // --- INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({ duration: 1000, once: true });
+            setLanguage(currentLanguage);
+            setTheme(currentTheme);
+
+            // Language switcher event listeners
+            document.querySelectorAll('#language-switcher a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    setLanguage(link.getAttribute('data-lang'));
+                });
+            });
+
+            // Theme toggle event listener
+            document.getElementById('theme-toggle').addEventListener('click', () => {
+                setTheme(currentTheme === 'light' ? 'dark' : 'light');
+            });
+
+            // --- Navbar Scroll Effect ---
+            window.addEventListener('scroll', () => {
+                document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // --- Mobile Menu Toggle ---
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            hamburger.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburger.querySelector('i').className = 'fas fa-bars';
+                });
+            });
+
+            // Initialize map
+            initializeMap();
         });
+
+        // --- MAP INITIALIZATION ---
+        function initializeMap() {
+            // Koordinat PT Pesona Golden Steel
+            const companyLat = -6.126378215884148;
+            const companyLng = 106.88118548014756;
+
+            const companyLatLng = new google.maps.LatLng(companyLat, companyLng);
+
+            // Buat peta
+            const mapOptions = {
+                center: companyLatLng,
+                zoom: 16,
+                mapTypeControl: true,
+                styles: currentTheme === 'dark' ? [
+                    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+                    {
+                        featureType: 'administrative.locality',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'poi',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'geometry',
+                        stylers: [{color: '#263c3f'}]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#6b9a76'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry',
+                        stylers: [{color: '#38414e'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#212a37'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#9ca5b3'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry',
+                        stylers: [{color: '#746855'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#1f2835'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#f3d19c'}]
+                    },
+                    {
+                        featureType: 'transit',
+                        elementType: 'geometry',
+                        stylers: [{color: '#2f3948'}]
+                    },
+                    {
+                        featureType: 'transit.station',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [{color: '#17263c'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#515c6d'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.stroke',
+                        stylers: [{color: '#17263c'}]
+                    }
+                ] : []
+            };
+
+            const map = new google.maps.Map(document.getElementById("demo2"), mapOptions);
+
+            // Marker perusahaan
+            const companyMarker = new google.maps.Marker({
+                position: companyLatLng,
+                map: map,
+                title: "📍 PT Pesona Golden Steel"
+            });
+
+            // Info window untuk marker perusahaan
+            const infoWindow = new google.maps.InfoWindow({
+                content: "<div style='color: #000;'><h3>PT Pesona Golden Steel</h3><p>Jl. Raya Cilincing No. 88, Jakarta Utara</p></div>"
+            });
+
+            companyMarker.addListener('click', function() {
+                infoWindow.open(map, companyMarker);
+            });
+
+            // Store map and marker references for later use
+            window.map = map;
+            window.companyLatLng = companyLatLng;
+        }
 
         // Fungsi untuk ambil lokasi user
         function getMyLocation() {
@@ -103,21 +844,33 @@
                         // Tambahkan marker lokasi user
                         new google.maps.Marker({
                             position: userLatLng,
-                            map: map,
+                            map: window.map,
                             title: "📍 Lokasi Anda",
                             icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
                         });
 
                         // Zoom agar keduanya terlihat
                         const bounds = new google.maps.LatLngBounds();
-                        bounds.extend(companyLatLng);
+                        bounds.extend(window.companyLatLng);
                         bounds.extend(userLatLng);
-                        map.fitBounds(bounds);
+                        window.map.fitBounds(bounds);
                     },
-                    () => alert("Gagal mengambil lokasi Anda. Periksa izin lokasi di browser.")
+                    () => {
+                        const errorMessage = currentLanguage === 'id' ? 
+                            "Gagal mengambil lokasi Anda. Periksa izin lokasi di browser." : 
+                            currentLanguage === 'en' ? 
+                            "Failed to get your location. Check location permissions in your browser." :
+                            "无法获取您的位置。请检查浏览器中的位置权限。";
+                        alert(errorMessage);
+                    }
                 );
             } else {
-                alert("Browser Anda tidak mendukung geolocation.");
+                const browserError = currentLanguage === 'id' ? 
+                    "Browser Anda tidak mendukung geolocation." : 
+                    currentLanguage === 'en' ? 
+                    "Your browser does not support geolocation." :
+                    "您的浏览器不支持地理定位。";
+                alert(browserError);
             }
         }
     </script>
