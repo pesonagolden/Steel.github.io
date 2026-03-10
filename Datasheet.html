@@ -586,7 +586,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link" data-translate-key="nav_home">Beranda</a></li>
                 <li><a href="Show.html" class="nav-link" data-translate-key="nav_product">Produk</a></li>
-                <li><a href="Catalog.html" class="nav-link active" data-translate-key="nav_catalog">Catalog</a></li>
+                <li><a href="Datasheet.html" class="nav-link active" data-translate-key="nav_Datasheet">Datasheet</a></li>
                 <li><a href="lokasi.html" class="nav-link" data-translate-key="nav_location">Lokasi</a></li>
                 <li><a href="index.html#whatsapp" class="nav-link" data-translate-key="nav_contact">Hubungi Kami</a></li>
                 <li class="nav-controls">
@@ -610,21 +610,21 @@
         <!-- ========== HERO SECTION ========== -->
         <section class="hero" id="beranda">
             <div class="hero-content" data-aos="fade-up">
-                <h1 data-translate-key="catalog_title">Datasheet & Unduhan</h1>
-                <p data-translate-key="catalog_subtitle">Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk</p>
+                <h1 data-translate-key="Datasheet_title">Datasheet & Unduhan</h1>
+                <p data-translate-key="Datasheet_subtitle">Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk</p>
             </div>
         </section>
 
         <!-- ========== CATALOG SECTION ========== -->
-        <section class="catalog-section" id="catalog">
+        <section class="Datasheet-section" id="Datasheet">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">
                     <div class="title-wrapper">
                         <i class="fa-solid fa-book"></i>
-                        <span class="title-text" data-translate-key="catalog_section_title">Datasheet Produk</span>
+                        <span class="title-text" data-translate-key="Datasheet_section_title">Datasheet Produk</span>
                     </div>
                 </h2>
-                <div class="catalog-grid" id="catalogList">
+                <div class="Datasheet-grid" id="DatasheetList">
                     <!-- Item katalog akan dimasukkan lewat JavaScript -->
                 </div>
             </div>
@@ -672,13 +672,13 @@
         // --- TRANSLATION DATA ---
         const translations = {
             id: {
-                nav_home: "Beranda", nav_product: "Produk", nav_catalog: "Catalog", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
+                nav_home: "Beranda", nav_product: "Produk", nav_Datasheet: "Datasheet", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
                 Datasheet_title: "Datasheet & Unduhan",
                 Datasheet_subtitle: "Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk",
-                catalog_section_title: "Datasheet Produk",
-                catalog_download: "Download",
+                Datasheet_section_title: "Datasheet Produk",
+                Datasheet_download: "Download",
                 // Catalog Items
-                catalog_1_title: "Datasheet Produk Gate Valve",
+                Datasheet_1_title: "Datasheet Produk Gate Valve",
                 catalog_1_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
                 catalog_2_title: "Datasheet Produk Sight Glass",
                 catalog_2_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
@@ -728,7 +728,7 @@
                 catalog_7_desc: "Various sizes and pipe specifications.",
                 catalog_8_title: "Flow Meter Datasheet",
                 catalog_8_desc: "Flow rate or volume measurement",
-                catalog_9_title: "Flange ON Catalog",
+                catalog_9_title: "Flange ON Datasheet",
                 catalog_9_desc: "Pipe connection components with industry standards.",
                 catalog_10_title: "Pressure PRV Datasheet",
                 catalog_10_desc: "Products for hygiene and sanitation needs.",
@@ -741,32 +741,32 @@
             },
             zh: {
                 nav_home: "首页", nav_product: "产品", nav_catalog: "目录", nav_location: "位置", nav_contact: "联系我们",
-                catalog_title: "目录和下载",
-                catalog_subtitle: "下载我们的产品目录以获取规格和产品详细信息",
-                catalog_section_title: "产品目录",
+                catalog_title: "闸阀产品数据表",
+                catalog_subtitle: "请下载产品数据手册，了解产品规格和详细信息。",
+                catalog_section_title: "产品数据表",
                 catalog_download: "下载",
                 // Catalog Items
-                catalog_1_title: "闸阀产品目录",
+                catalog_1_title: "闸阀产品数据表",
                 catalog_1_desc: "您所需物品的完整规格。",
-                catalog_2_title: "视镜产品目录",
+                catalog_2_title: "视觉镜产品数据表",
                 catalog_2_desc: "您所需物品的完整规格。",
-                catalog_3_title: "球阀产品目录",
+                catalog_3_title: "球阀产品数据表,
                 catalog_3_desc: "您所需物品的完整规格。",
-                catalog_4_title: "蝶阀产品目录",
+                catalog_4_title: "蝶阀产品数据表",
                 catalog_4_desc: "工业需求的高质量产品。",
-                catalog_5_title: "止回阀产品目录",
+                catalog_5_title: "止回阀产品数据表",
                 catalog_5_desc: "创新设计和高效率。",
-                catalog_6_title: "截止阀产品目录",
+                catalog_6_title: "闸阀产品数据表",
                 catalog_6_desc: "可靠和精确的流量控制。",
-                catalog_7_title: "铁管和配件目录",
+                catalog_7_title: "铁管及管件数据表",
                 catalog_7_desc: "各种尺寸和管道规格。",
-                catalog_8_title: "流量计目录",
+                catalog_8_title: "流量计数据表",
                 catalog_8_desc: "流速或体积测量",
-                catalog_9_title: "法兰ON目录",
+                catalog_9_title: "法兰连接数据表",
                 catalog_9_desc: "符合行业标准的管道连接组件。",
-                catalog_10_title: "压力PRV目录",
+                catalog_10_title: "PRV压力数据表",
                 catalog_10_desc: "卫生和消毒需求的产品。",
-                catalog_11_title: "安全阀目录",
+                catalog_11_title: "安全阀数据表",
                 catalog_11_desc: "工业管道系统安装服务。",
                 catalog_12_title: "执行器目录",
                 catalog_12_desc: "精选产品的有限优惠和折扣。",
