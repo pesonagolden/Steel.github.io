@@ -75,7 +75,6 @@
             padding: 0 20px;
         }
 
-        /* PERBAIKAN: Menggunakan variabel untuk warna teks heading */
         h1, h2, h3 {
             font-family: var(--font-heading);
             font-weight: 700;
@@ -101,7 +100,6 @@
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        /* Light theme navbar override */
         body.light-theme .navbar.scrolled {
             background-color: rgba(248, 249, 250, 0.9);
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -116,7 +114,6 @@
             height: 100%;
         }
 
-        /* PERBAIKAN: Logo positioning untuk desktop */
         .navbar .logo {
             font-family: var(--font-heading);
             font-size: 1.2rem;
@@ -132,7 +129,6 @@
             align-items: center;
         }
 
-        /* PERBAIKAN: Mengubah warna nav link menjadi kuning */
         .navbar .nav-link {
             color: var(--accent-gold) !important;
             text-decoration: none;
@@ -171,7 +167,6 @@
             border-left: 1px solid var(--text-secondary);
         }
 
-        /* PERBAIKAN: Mengubah warna language switcher menjadi kuning */
         #language-switcher a, #theme-toggle {
             color: var(--accent-gold) !important;
             text-decoration: none;
@@ -192,7 +187,6 @@
         }
 
         /* --- HAMBURGER MENU --- */
-        /* PERBAIKAN: Hamburger disembunyikan di desktop */
         .hamburger {
             display: none;
             cursor: pointer;
@@ -223,9 +217,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            color: #fff; /* Akan ditimpa oleh variabel di dalam */
+            color: #fff;
             position: relative;
-            /* PERUBAHAN: Menambahkan background image */
             background-image: url('gambar/image.jpeg');
             background-size: cover;
             background-position: center;
@@ -248,7 +241,6 @@
             z-index: 2;
         }
 
-        /* PERBAIKAN: Mengubah warna judul hero menjadi kuning */
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
@@ -256,7 +248,6 @@
             color: var(--accent-gold) !important;
         }
 
-        /* PERBAIKAN: Mengubah warna subtitle hero menjadi kuning */
         .hero p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
@@ -334,15 +325,15 @@
             background-color: var(--accent-gold);
         }
 
-        /* --- CATALOG SECTION --- */
-        .catalog-section {
+        /* --- DATASHEET SECTION --- */
+        .datasheet-section {
             padding: 80px 0;
             background-color: var(--bg-secondary);
             position: relative;
             overflow: hidden;
         }
 
-        .catalog-section::before {
+        .datasheet-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -356,25 +347,25 @@
             z-index: 1;
         }
 
-        body.light-theme .catalog-section::before {
+        body.light-theme .datasheet-section::before {
             background: linear-gradient(135deg, 
                 rgba(248, 249, 250, 0.95) 0%, 
                 rgba(255, 255, 255, 0.95) 50%, 
                 rgba(248, 249, 250, 0.95) 100%);
         }
 
-        .catalog-section .container {
+        .datasheet-section .container {
             position: relative;
             z-index: 2;
         }
 
-        .catalog-grid {
+        .datasheet-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .catalog-card {
+        .datasheet-card {
             background-color: var(--bg-primary);
             border-radius: 12px;
             overflow: hidden;
@@ -385,37 +376,37 @@
             flex-direction: column;
         }
 
-        .catalog-card:hover {
+        .datasheet-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
         }
 
-        .catalog-card img {
+        .datasheet-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
 
-        .catalog-card-content {
+        .datasheet-card-content {
             padding: 20px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
 
-        .catalog-card-content h3 {
+        .datasheet-card-content h3 {
             font-size: 1.3rem;
             margin-bottom: 10px;
             color: var(--text-primary);
         }
 
-        .catalog-card-content p {
+        .datasheet-card-content p {
             color: var(--text-secondary);
             margin-bottom: 20px;
             flex-grow: 1;
         }
 
-        .catalog-btn {
+        .datasheet-btn {
             display: inline-block;
             padding: 10px 20px;
             background-color: var(--accent-gold);
@@ -428,7 +419,7 @@
             margin-top: auto;
         }
 
-        .catalog-btn:hover {
+        .datasheet-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
         }
@@ -504,7 +495,6 @@
 
         /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            /* PERBAIKAN: Hamburger hanya muncul di mobile */
             .hamburger {
                 display: flex;
                 position: absolute;
@@ -513,7 +503,6 @@
                 transform: translateY(-50%);
             }
 
-            /* PERBAIKAN: Logo positioning untuk mobile */
             .navbar .logo {
                 position: absolute;
                 left: 20px;
@@ -528,7 +517,7 @@
             .navbar .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: 70px; /* Sesuai dengan tinggi navbar */
+                top: 70px;
                 flex-direction: column;
                 background-color: var(--bg-secondary);
                 width: 100%;
@@ -566,7 +555,7 @@
                 gap: 10px;
             }
 
-            .catalog-grid {
+            .datasheet-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -586,7 +575,7 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="nav-link" data-translate-key="nav_home">Beranda</a></li>
                 <li><a href="Show.html" class="nav-link" data-translate-key="nav_product">Produk</a></li>
-                <li><a href="Datasheet.html" class="nav-link active" data-translate-key="nav_Datasheet">Datasheet</a></li>
+                <li><a href="Datasheet.html" class="nav-link active" data-translate-key="nav_datasheet">Datasheet</a></li>
                 <li><a href="lokasi.html" class="nav-link" data-translate-key="nav_location">Lokasi</a></li>
                 <li><a href="index.html#whatsapp" class="nav-link" data-translate-key="nav_contact">Hubungi Kami</a></li>
                 <li class="nav-controls">
@@ -610,22 +599,22 @@
         <!-- ========== HERO SECTION ========== -->
         <section class="hero" id="beranda">
             <div class="hero-content" data-aos="fade-up">
-                <h1 data-translate-key="Datasheet_title">Datasheet & Unduhan</h1>
-                <p data-translate-key="Datasheet_subtitle">Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk</p>
+                <h1 data-translate-key="datasheet_title">Datasheet & Unduhan</h1>
+                <p data-translate-key="datasheet_subtitle">Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk</p>
             </div>
         </section>
 
-        <!-- ========== CATALOG SECTION ========== -->
-        <section class="Datasheet-section" id="Datasheet">
+        <!-- ========== DATASHEET SECTION ========== -->
+        <section class="datasheet-section" id="datasheet">
             <div class="container">
                 <h2 class="section-title" data-aos="fade-up">
                     <div class="title-wrapper">
-                        <i class="fa-solid fa-book"></i>
-                        <span class="title-text" data-translate-key="Datasheet_section_title">Datasheet Produk</span>
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span class="title-text" data-translate-key="datasheet_section_title">Datasheet Produk</span>
                     </div>
                 </h2>
-                <div class="Datasheet-grid" id="DatasheetList">
-                    <!-- Item katalog akan dimasukkan lewat JavaScript -->
+                <div class="datasheet-grid" id="datasheetList">
+                    <!-- Item datasheet akan dimasukkan lewat JavaScript -->
                 </div>
             </div>
         </section>
@@ -672,180 +661,198 @@
         // --- TRANSLATION DATA ---
         const translations = {
             id: {
-                nav_home: "Beranda", nav_product: "Produk", nav_Datasheet: "Datasheet", nav_location: "Lokasi", nav_contact: "Hubungi Kami",
-                Datasheet_title: "Datasheet & Unduhan",
-                Datasheet_subtitle: "Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk",
-                Datasheet_section_title: "Datasheet Produk",
-                Datasheet_download: "Download",
-                // Catalog Items
-                Datasheet_1_title: "Datasheet Produk Gate Valve",
-                catalog_1_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
-                catalog_2_title: "Datasheet Produk Sight Glass",
-                catalog_2_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
-                catalog_3_title: "Datasheet Produk Ball Valve",
-                catalog_3_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
-                catalog_4_title: "Datasheet Produk Butterfly Valve",
-                catalog_4_desc: "Produk berkualitas tinggi untuk kebutuhan industri.",
-                catalog_5_title: "Datasheet Produk Check Valve",
-                catalog_5_desc: "Desain inovatif dan efisiensi tinggi.",
-                catalog_6_title: "Datasheet Produk Globe Valve",
-                catalog_6_desc: "Pengontrol aliran yang handal dan presisi.",
-                catalog_7_title: "Datasheet Pipa Besi & Aksesoris",
-                catalog_7_desc: "Berbagai macam ukuran dan spesifikasi pipa.",
-                catalog_8_title: "Datasheet Flow Meter",
-                catalog_8_desc: "Pengukuran debit atau volume",
-                catalog_9_title: "Datasheet Flange ON",
-                catalog_9_desc: "Komponen sambungan pipa dengan standar industri.",
-                catalog_10_title: "Datasheet Pressure PRV",
-                catalog_10_desc: "Produk untuk kebutuhan higienitas dan sanitasi.",
-                catalog_11_title: "Datasheet Safety Valve",
-                catalog_11_desc: "Layanan pemasangan sistem perpipaan industri.",
-                catalog_12_title: "Datasheet Actuator",
-                catalog_12_desc: "Penawaran terbatas dan diskon produk pilihan.",
-                footer_find_us: "Temukan Kami:", footer_copyright: "&copy; 2022 PT. Pesona Golden Steel. All Rights Reserved.",
-                theme_toggle_dark: "Aktifkan mode gelap", theme_toggle_light: "Aktifkan mode terang"
+                nav_home: "Beranda", 
+                nav_product: "Produk", 
+                nav_datasheet: "Datasheet", 
+                nav_location: "Lokasi", 
+                nav_contact: "Hubungi Kami",
+                datasheet_title: "Datasheet & Unduhan",
+                datasheet_subtitle: "Unduh Datasheet produk kami untuk informasi lengkap mengenai spesifikasi dan detail produk",
+                datasheet_section_title: "Datasheet Produk",
+                datasheet_download: "Download",
+                // Datasheet Items
+                datasheet_1_title: "Datasheet Produk Gate Valve",
+                datasheet_1_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
+                datasheet_2_title: "Datasheet Produk Sight Glass",
+                datasheet_2_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
+                datasheet_3_title: "Datasheet Produk Ball Valve",
+                datasheet_3_desc: "Spesifikasi lengkap detail barang yang anda butuhkan.",
+                datasheet_4_title: "Datasheet Produk Butterfly Valve",
+                datasheet_4_desc: "Produk berkualitas tinggi untuk kebutuhan industri.",
+                datasheet_5_title: "Datasheet Produk Check Valve",
+                datasheet_5_desc: "Desain inovatif dan efisiensi tinggi.",
+                datasheet_6_title: "Datasheet Produk Globe Valve",
+                datasheet_6_desc: "Pengontrol aliran yang handal dan presisi.",
+                datasheet_7_title: "Datasheet Pipa Besi & Aksesoris",
+                datasheet_7_desc: "Berbagai macam ukuran dan spesifikasi pipa.",
+                datasheet_8_title: "Datasheet Flow Meter",
+                datasheet_8_desc: "Pengukuran debit atau volume",
+                datasheet_9_title: "Datasheet Flange ON",
+                datasheet_9_desc: "Komponen sambungan pipa dengan standar industri.",
+                datasheet_10_title: "Datasheet Pressure PRV",
+                datasheet_10_desc: "Produk untuk kebutuhan higienitas dan sanitasi.",
+                datasheet_11_title: "Datasheet Safety Valve",
+                datasheet_11_desc: "Layanan pemasangan sistem perpipaan industri.",
+                datasheet_12_title: "Datasheet Actuator",
+                datasheet_12_desc: "Penawaran terbatas dan diskon produk pilihan.",
+                footer_find_us: "Temukan Kami:", 
+                footer_copyright: "© 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Aktifkan mode gelap", 
+                theme_toggle_light: "Aktifkan mode terang"
             },
             en: {
-                nav_home: "Home", nav_product: "Products", nav_catalog: "Catalog", nav_location: "Location", nav_contact: "Contact",
-                catalog_title: "Catalog & Downloads",
-                catalog_subtitle: "Download our product catalogs for complete information on specifications and product details",
-                catalog_section_title: "Product Catalog",
-                catalog_download: "Download",
-                // Catalog Items
-                catalog_1_title: "Gate Valve Product Datasheet",
-                catalog_1_desc: "Complete specifications for the items you need.",
-                catalog_2_title: "Sight Glass Product Datasheet",
-                catalog_2_desc: "Complete specifications for the items you need.",
-                catalog_3_title: "Ball Valve Product Datasheet",
-                catalog_3_desc: "Complete specifications for the items you need.",
-                catalog_4_title: "Butterfly Valve Product Datasheet",
-                catalog_4_desc: "High quality products for industrial needs.",
-                catalog_5_title: "Check Valve Product Datasheet",
-                catalog_5_desc: "Innovative design and high efficiency.",
-                catalog_6_title: "Globe Valve Product Datasheet",
-                catalog_6_desc: "Reliable and precise flow control.",
-                catalog_7_title: "Iron Pipe & Accessories Datasheet",
-                catalog_7_desc: "Various sizes and pipe specifications.",
-                catalog_8_title: "Flow Meter Datasheet",
-                catalog_8_desc: "Flow rate or volume measurement",
-                catalog_9_title: "Flange ON Datasheet",
-                catalog_9_desc: "Pipe connection components with industry standards.",
-                catalog_10_title: "Pressure PRV Datasheet",
-                catalog_10_desc: "Products for hygiene and sanitation needs.",
-                catalog_11_title: "Safety Valve Datasheet",
-                catalog_11_desc: "Industrial piping system installation services.",
-                catalog_12_title: "Actuator Datasheet",
-                catalog_12_desc: "Limited offers and discounts on selected products.",
-                footer_find_us: "Find Us:", footer_copyright: "2022 PT. Pesona Golden Steel. All Rights Reserved.",
-                theme_toggle_dark: "Activate dark mode", theme_toggle_light: "Activate light mode"
+                nav_home: "Home", 
+                nav_product: "Products", 
+                nav_datasheet: "Datasheet", 
+                nav_location: "Location", 
+                nav_contact: "Contact",
+                datasheet_title: "Datasheet & Downloads",
+                datasheet_subtitle: "Download our product datasheets for complete information on specifications and product details",
+                datasheet_section_title: "Product Datasheet",
+                datasheet_download: "Download",
+                // Datasheet Items
+                datasheet_1_title: "Gate Valve Product Datasheet",
+                datasheet_1_desc: "Complete specifications for the items you need.",
+                datasheet_2_title: "Sight Glass Product Datasheet",
+                datasheet_2_desc: "Complete specifications for the items you need.",
+                datasheet_3_title: "Ball Valve Product Datasheet",
+                datasheet_3_desc: "Complete specifications for the items you need.",
+                datasheet_4_title: "Butterfly Valve Product Datasheet",
+                datasheet_4_desc: "High quality products for industrial needs.",
+                datasheet_5_title: "Check Valve Product Datasheet",
+                datasheet_5_desc: "Innovative design and high efficiency.",
+                datasheet_6_title: "Globe Valve Product Datasheet",
+                datasheet_6_desc: "Reliable and precise flow control.",
+                datasheet_7_title: "Iron Pipe & Accessories Datasheet",
+                datasheet_7_desc: "Various sizes and pipe specifications.",
+                datasheet_8_title: "Flow Meter Datasheet",
+                datasheet_8_desc: "Flow rate or volume measurement",
+                datasheet_9_title: "Flange ON Datasheet",
+                datasheet_9_desc: "Pipe connection components with industry standards.",
+                datasheet_10_title: "Pressure PRV Datasheet",
+                datasheet_10_desc: "Products for hygiene and sanitation needs.",
+                datasheet_11_title: "Safety Valve Datasheet",
+                datasheet_11_desc: "Industrial piping system installation services.",
+                datasheet_12_title: "Actuator Datasheet",
+                datasheet_12_desc: "Limited offers and discounts on selected products.",
+                footer_find_us: "Find Us:", 
+                footer_copyright: "© 2022 PT. Pesona Golden Steel. All Rights Reserved.",
+                theme_toggle_dark: "Activate dark mode", 
+                theme_toggle_light: "Activate light mode"
             },
             zh: {
-                nav_home: "首页", nav_product: "产品", nav_catalog: "目录", nav_location: "位置", nav_contact: "联系我们",
-                catalog_title: "闸阀产品数据表",
-                catalog_subtitle: "请下载产品数据手册，了解产品规格和详细信息。",
-                catalog_section_title: "产品数据表",
-                catalog_download: "下载",
-                // Catalog Items
-                catalog_1_title: "闸阀产品数据表",
-                catalog_1_desc: "您所需物品的完整规格。",
-                catalog_2_title: "视觉镜产品数据表",
-                catalog_2_desc: "您所需物品的完整规格。",
-                catalog_3_title: "球阀产品数据表,
-                catalog_3_desc: "您所需物品的完整规格。",
-                catalog_4_title: "蝶阀产品数据表",
-                catalog_4_desc: "工业需求的高质量产品。",
-                catalog_5_title: "止回阀产品数据表",
-                catalog_5_desc: "创新设计和高效率。",
-                catalog_6_title: "闸阀产品数据表",
-                catalog_6_desc: "可靠和精确的流量控制。",
-                catalog_7_title: "铁管及管件数据表",
-                catalog_7_desc: "各种尺寸和管道规格。",
-                catalog_8_title: "流量计数据表",
-                catalog_8_desc: "流速或体积测量",
-                catalog_9_title: "法兰连接数据表",
-                catalog_9_desc: "符合行业标准的管道连接组件。",
-                catalog_10_title: "PRV压力数据表",
-                catalog_10_desc: "卫生和消毒需求的产品。",
-                catalog_11_title: "安全阀数据表",
-                catalog_11_desc: "工业管道系统安装服务。",
-                catalog_12_title: "执行器目录",
-                catalog_12_desc: "精选产品的有限优惠和折扣。",
-                footer_find_us: "找到我们：", footer_copyright: "2022 PT. Pesona Golden Steel. 版权所有。",
-                theme_toggle_dark: "激活深色模式", theme_toggle_light: "激活浅色模式"
+                nav_home: "首页", 
+                nav_product: "产品", 
+                nav_datasheet: "数据表", 
+                nav_location: "位置", 
+                nav_contact: "联系我们",
+                datasheet_title: "数据表与下载",
+                datasheet_subtitle: "下载我们的产品数据表，获取关于规格和产品详细信息的完整信息",
+                datasheet_section_title: "产品数据表",
+                datasheet_download: "下载",
+                // Datasheet Items
+                datasheet_1_title: "闸阀产品数据表",
+                datasheet_1_desc: "您所需物品的完整规格。",
+                datasheet_2_title: "视镜产品数据表",
+                datasheet_2_desc: "您所需物品的完整规格。",
+                datasheet_3_title: "球阀产品数据表",
+                datasheet_3_desc: "您所需物品的完整规格。",
+                datasheet_4_title: "蝶阀产品数据表",
+                datasheet_4_desc: "工业需求的高质量产品。",
+                datasheet_5_title: "止回阀产品数据表",
+                datasheet_5_desc: "创新设计和高效率。",
+                datasheet_6_title: "截止阀产品数据表",
+                datasheet_6_desc: "可靠和精确的流量控制。",
+                datasheet_7_title: "铁管和配件数据表",
+                datasheet_7_desc: "各种尺寸和管道规格。",
+                datasheet_8_title: "流量计数据表",
+                datasheet_8_desc: "流速或体积测量",
+                datasheet_9_title: "法兰ON数据表",
+                datasheet_9_desc: "符合行业标准的管道连接组件。",
+                datasheet_10_title: "压力PRV数据表",
+                datasheet_10_desc: "卫生和消毒需求的产品。",
+                datasheet_11_title: "安全阀数据表",
+                datasheet_11_desc: "工业管道系统安装服务。",
+                datasheet_12_title: "执行器数据表",
+                datasheet_12_desc: "精选产品的有限优惠和折扣。",
+                footer_find_us: "找到我们：", 
+                footer_copyright: "© 2022 PT. Pesona Golden Steel. 版权所有。",
+                theme_toggle_dark: "激活深色模式", 
+                theme_toggle_light: "激活浅色模式"
             }
         };
 
-        // --- CATALOG DATA ---
-        const catalogs = [
+        // --- DATASHEET DATA ---
+        const datasheets = [
             {
-                titleKey: "catalog_1_title",
-                descKey: "catalog_1_desc",
+                titleKey: "datasheet_1_title",
+                descKey: "datasheet_1_desc",
                 fileUrl: "https://www.stockistvalve.com/wp-content/uploads/2019/04/Gate-Valve-Catalog-GLT.pdf",
                 imageUrl: "https://bjmsgroup.com/blog/wp-content/uploads/2019/08/Gate-valve-ANSI150.png"
             },
             {
-                titleKey: "catalog_2_title",
-                descKey: "catalog_2_desc",
+                titleKey: "datasheet_2_title",
+                descKey: "datasheet_2_desc",
                 fileUrl: "https://drive.google.com/uc?export=download&id=1dwxnF4MwbIfZV_Fkd_4kvs8hZYPhUMpx",
                 imageUrl: "https://image.metalco.co.id/s3/productimages/webp/co269152/p1537270/w600-h600/67a06f3f-f1a4-4f50-b7ea-2bcf50dac830.jpg"
             },
             {
-                titleKey: "catalog_3_title",
-                descKey: "catalog_3_desc",
+                titleKey: "datasheet_3_title",
+                descKey: "datasheet_3_desc",
                 fileUrl: "https://drive.google.com/uc?export=download&id=1HwoEb4lr6S5tqepsVI7QwfS2MieiGla1",
                 imageUrl: "https://image.kotateknik.com/s3/productimages/webp/co90761/p572461/w600-h600/0744063a-bf9e-4731-a2c1-12d35ff1669aw.jpg"
             },
             {
-                titleKey: "catalog_4_title",
-                descKey: "catalog_4_desc",
+                titleKey: "datasheet_4_title",
+                descKey: "datasheet_4_desc",
                 fileUrl: "https://kvc-uk.com/wp-content/uploads/2018/08/Butterfly-Valve-Catalogue.pdf.pdf",
                 imageUrl: "https://images.tokopedia.net/img/cache/500-square/product-1/2020/6/8/85952554/85952554_666a66a2-a855-4e96-9958-33ef1c4825c7_700_700"
             },
             {
-                titleKey: "catalog_5_title",
-                descKey: "catalog_5_desc",
+                titleKey: "datasheet_5_title",
+                descKey: "datasheet_5_desc",
                 fileUrl: "https://drive.google.com/file/d/1hVJZaCTJjilnnps8_blM6Z4Bq3TeEqgS/view?usp=sharing",
                 imageUrl: "https://tekniksaurus.com/storage/images/article_1658850546.jpg"
             },
             {
-                titleKey: "catalog_6_title",
-                descKey: "catalog_6_desc",
+                titleKey: "datasheet_6_title",
+                descKey: "datasheet_6_desc",
                 fileUrl: "https://drive.google.com/file/d/1nAnY44yC2cQ4uTdG6hISxIiiy1YNUN-n/view?usp=sharing",
                 imageUrl: "https://www.genebre.com/media/contents/product/mh/2231.jpg"
             },
             {
-                titleKey: "catalog_7_title",
-                descKey: "catalog_7_desc",
+                titleKey: "datasheet_7_title",
+                descKey: "datasheet_7_desc",
                 fileUrl: "https://drive.google.com/file/d/1cQ1Z9n9OGv1Dld6R2XuZxbT0_1k4HRep/view?usp=sharing",
                 imageUrl: "https://lirp.cdn-website.com/2f73b385/dms3rep/multi/opt/Pipa+besi+untuk+kebutuhan+proyek-640w.JPEG"
             },
             {
-                titleKey: "catalog_8_title",
-                descKey: "catalog_8_desc",
+                titleKey: "datasheet_8_title",
+                descKey: "datasheet_8_desc",
                 fileUrl: "https://drive.google.com/file/d/1sPeFCAwj0NC3AOgCBo8muAFOdg9ukF8M/view?usp=sharing",
                 imageUrl: "https://aliyaqoob.com/resource/image/1707541354flow-meter.webp"
             },
             {
-                titleKey: "catalog_9_title",
-                descKey: "catalog_9_desc",
+                titleKey: "datasheet_9_title",
+                descKey: "datasheet_9_desc",
                 fileUrl: "https://www.pipefittingweb.com/images/ecatalog/pdf/Flanges.pdf",
                 imageUrl: "https://image.indobaja.id/s3/productimages/webp/co11648/p1209819/w600-h600/9c9eed2e-ebb2-4236-8040-a286b04b054f.jpg"
             },
             {
-                titleKey: "catalog_10_title",
-                descKey: "catalog_10_desc",
+                titleKey: "datasheet_10_title",
+                descKey: "datasheet_10_desc",
                 fileUrl: "https://genair.co.id/wp-content/uploads/2018/09/Pressure-Reducing-Valve-FIG.F1318-min.pdf",
                 imageUrl: "https://www.flomatic.com/wp-content/uploads/2025/03/C105-600x650.jpg"
             },
             {
-                titleKey: "catalog_11_title",
-                descKey: "catalog_11_desc",
+                titleKey: "datasheet_11_title",
+                descKey: "datasheet_11_desc",
                 fileUrl: "https://emerson.com/documents/automation/data-sheets-h-series-crosby-en-en-6503228.pdf",
                 imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3F4hgdgtRKT52jUCca4Q8jpNwCi3MHCaoaQ&s"
             },
             {
-                titleKey: "catalog_12_title",
-                descKey: "catalog_12_desc",
+                titleKey: "datasheet_12_title",
+                descKey: "datasheet_12_desc",
                 fileUrl: "https://www.dycom.co.id/product/Pneumatic%20Actuators.pdf",
                 imageUrl: "https://s.alicdn.com/@sc04/kf/H472d3871b64e4ae88dd49c39619ef80cN.jpg"
             }
@@ -875,7 +882,7 @@
                 }
             });
             updateThemeToggleTitle();
-            renderCatalogs(); // Re-render catalogs with new language
+            renderDatasheets(); // Re-render datasheets with new language
         }
 
         // --- THEME SWITCHER FUNCTION ---
@@ -897,28 +904,28 @@
             }
         }
 
-        // --- RENDER CATALOG FUNCTION ---
-        function renderCatalogs() {
-            const listContainer = document.getElementById('catalogList');
+        // --- RENDER DATASHEET FUNCTION ---
+        function renderDatasheets() {
+            const listContainer = document.getElementById('datasheetList');
             listContainer.innerHTML = '';
 
-            catalogs.forEach((catalog, index) => {
+            datasheets.forEach((datasheet, index) => {
                 const col = document.createElement('div');
-                col.className = 'catalog-card';
+                col.className = 'datasheet-card';
                 col.setAttribute('data-aos', 'fade-up');
                 col.setAttribute('data-aos-delay', (index % 3) * 100);
 
                 // Get translated title and description
-                const title = translations[currentLanguage][catalog.titleKey] || catalog.titleKey;
-                const description = translations[currentLanguage][catalog.descKey] || catalog.descKey;
+                const title = translations[currentLanguage][datasheet.titleKey] || datasheet.titleKey;
+                const description = translations[currentLanguage][datasheet.descKey] || datasheet.descKey;
 
                 col.innerHTML = `
-                    <img src="${catalog.imageUrl}" class="catalog-img" alt="${title}">
-                    <div class="catalog-card-content">
+                    <img src="${datasheet.imageUrl}" class="datasheet-img" alt="${title}">
+                    <div class="datasheet-card-content">
                         <h3>${title}</h3>
                         <p>${description}</p>
-                        <a href="${catalog.fileUrl}" target="_blank" class="catalog-btn">
-                            <i class="fas fa-download"></i> <span data-translate-key="catalog_download">${translations[currentLanguage]['catalog_download']}</span>
+                        <a href="${datasheet.fileUrl}" target="_blank" class="datasheet-btn">
+                            <i class="fas fa-download"></i> <span data-translate-key="datasheet_download">${translations[currentLanguage]['datasheet_download']}</span>
                         </a>
                     </div>
                 `;
@@ -932,7 +939,7 @@
             AOS.init({ duration: 1000, once: true });
             setLanguage(currentLanguage);
             setTheme(currentTheme);
-            renderCatalogs();
+            renderDatasheets();
 
             // Language switcher event listeners
             document.querySelectorAll('#language-switcher a').forEach(link => {
