@@ -4,3 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 Sitemap: https://pesonagolden.netlify.app/sitemap.xml
+Sitemap: https://pesonagolden.my.id/sitemap.xml
