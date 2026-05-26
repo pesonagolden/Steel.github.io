@@ -5,19 +5,19 @@
                             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <url>
-    <loc>https://pesonagolden.netlify.app/</loc>
+    <loc>https://pesonagolden.my.id/</loc>
     <lastmod>2025-06-24T15:04:34+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://pesonagolden.netlify.app/catalog</loc>
+    <loc>https://pesonagolden.my.id/catalog</loc>
     <lastmod>2025-06-24T15:04:34+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://pesonagolden.netlify.app/lokasi</loc>
+    <loc>https://pesonagolden.my.id/lokasi</loc>
     <lastmod>2025-06-24T15:04:34+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
