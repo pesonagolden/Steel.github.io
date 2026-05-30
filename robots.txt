@@ -1,46 +1,21 @@
 User-agent: *
 Allow: /
 
-# Blok halaman tidak penting
+# Blokir halaman sensitif dan tidak penting untuk SEO
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /admin/
 Disallow: /login/
 Disallow: /search?
 
-# Google
-User-agent: Googlebot
-Allow: /
+# Opsional: Jika Anda menggunakan parameter tracking yang tidak diinginkan
+# Disallow: /*?
 
-# Bing
-User-agent: Bingbot
-Allow: /
-
-# Yandex
-User-agent: Yandex
-Allow: /
-
-# Baidu
-User-agent: Baiduspider
-Allow: /
-
-# Sitemap Utama
+# Sitemap Declarations
 Sitemap: https://pesonagolden.my.id/sitemap.xml
-
-# Sitemap Produk
 Sitemap: https://pesonagolden.my.id/sitemap-produk.xml
-
-# Sitemap Kategori
 Sitemap: https://pesonagolden.my.id/sitemap-kategori.xml
-
-# Sitemap Artikel
 Sitemap: https://pesonagolden.my.id/sitemap-artikel.xml
-
-# Sitemap Kota Indonesia
 Sitemap: https://pesonagolden.my.id/sitemap-kota.xml
-
-# Sitemap Industri
 Sitemap: https://pesonagolden.my.id/sitemap-industri.xml
-
-# Sitemap Tag
 Sitemap: https://pesonagolden.my.id/sitemap-tag.xml
