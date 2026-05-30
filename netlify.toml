@@ -1,8 +1,5 @@
 [[headers]]
-  # Menerapkan aturan ini khusus untuk file sitemap.xml
-  for = "/sitemap.xml"
+  for = "/*.xml"
   [headers.values]
-    # Memaksa server membacanya sebagai XML
     Content-Type = "application/xml; charset=utf-8"
-    # Cache kontrol agar Google tidak mengecek berulang kali terlalu cepat
-    Cache-Control = "public, max-age=3600"
+    X-Content-Type-Options = "nosniff"
