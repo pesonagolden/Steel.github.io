@@ -13,11 +13,3 @@ Disallow: /search?
 
 # Sitemap Declarations
 Sitemap: https://pesonagolden.my.id/sitemap.xml
-Sitemap: https://pesonagolden.my.id/sitemap-produk.xml
-Sitemap: https://pesonagolden.my.id/sitemap-kategori.xml
-Sitemap: https://pesonagolden.my.id/sitemap-artikel.xml
-Sitemap: https://pesonagolden.my.id/sitemap-kota.xml
-Sitemap: https://pesonagolden.my.id/sitemap-industri.xml
-Sitemap: https://pesonagolden.my.id/sitemap-tag.xml
-
-
