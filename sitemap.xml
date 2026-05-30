@@ -1,29 +1,17 @@
-<url>
-    <loc>https://pesonagolden.my.id/</loc>
-    <changefreq>daily</changefreq>
-    <priority>1.0</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex
+xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<url>
-    <loc>https://pesonagolden.my.id/jual-pipe-valve-fitting-plat-stainless-steel-kota-jakarta-murah</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-</url>
+<sitemap>
+<loc>https://pesonagolden.my.id/sitemap-1.xml</loc>
+</sitemap>
 
-<url>
-    <loc>https://pesonagolden.my.id/jual-pipe-valve-fitting-plat-stainless-steel-kota-bandar-lampung-murah</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-</url>
+<sitemap>
+<loc>https://pesonagolden.my.id/sitemap-2.xml</loc>
+</sitemap>
 
-<url>
-    <loc>https://pesonagolden.my.id/distributor-pipe-valve-fitting-plat-stainless-steel-kota-medan-murah</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-</url>
+<sitemap>
+<loc>https://pesonagolden.my.id/sitemap-3.xml</loc>
+</sitemap>
 
-<url>
-    <loc>https://pesonagolden.my.id/distributor-pipe-valve-fitting-plat-stainless-steel-kota-tanjung-pinang-murah</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-</url>
+</sitemapindex>
