@@ -3,3 +3,17 @@
   to = "https://script.google.com/macros/s/AKfycbyqkmK48G8N2Z2KqMdRFR_LR275Lq4VG6iWkYYs41xrns6qNt-x0wY4FYZFYD1B__sItw/exec"
   status = 200
   force = true
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
+
+[[redirects]]
+  from = "/sitemap-kota.xml"
+  to = "/sitemap-kota.xml"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
