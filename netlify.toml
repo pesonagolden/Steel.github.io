@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "/sitemap.xml"
-  to = "https://script.google.com/macros/s/AKfycbyqkmK48G8N2Z2KqMdRFR_LR275Lq4VG6iWkYYs41xrns6qNt-x0wY4FYZFYD1B__sItw/exec"
+  #from = "/sitemap.xml"
+ # to = "https://script.google.com/macros/s/AKfycbyqkmK48G8N2Z2KqMdRFR_LR275Lq4VG6iWkYYs41xrns6qNt-x0wY4FYZFYD1B__sItw/exec"
   status = 200
   force = true
 [[redirects]]
