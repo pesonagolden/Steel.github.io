@@ -4,4 +4,13 @@
 <sitemap>
 <loc>https://pesonagolden.my.id/sitemap-produk.xml</loc>
 </sitemap>
+
+<sitemap>
+<loc>https://pesonagolden.my.id/sitemap-kota.xml</loc>
+</sitemap>
+
+<sitemap>
+<loc>https://pesonagolden.my.id/sitemap-artikel.xml</loc>
+</sitemap>
+
 </sitemapindex>
