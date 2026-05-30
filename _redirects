@@ -1,0 +1,7 @@
+# Pengecualian Sitemap & Robots
+/sitemap.xml /sitemap.xml 200
+/sitemap-kota.xml /sitemap-kota.xml 200
+/robots.txt /robots.txt 200
+
+# Catch-all untuk Website
+/* /index.html 200
