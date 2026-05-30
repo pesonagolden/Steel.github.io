@@ -1,0 +1,10 @@
+/sitemap.xml
+  Content-Type: application/xml
+  X-Robots-Tag: noindex
+
+/sitemap-v2.xml
+  Content-Type: application/xml
+  X-Robots-Tag: noindex
+
+/robots.txt
+  Content-Type: text/plain
