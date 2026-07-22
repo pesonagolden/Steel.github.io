@@ -684,31 +684,35 @@
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
         }
 
-        /* --- STYLING WIDGET TRAFFIC FEED (POJOK KIRI BAWAH) --- */
+        /* --- STYLING WIDGET TRAFFIC FEED (POJOK KIRI BAWAH - DIKECILKAN) --- */
         .traffic-counter-widget {
             position: fixed;
-            bottom: 30px;
-            left: 30px;
+            bottom: 20px;
+            left: 20px;
             z-index: 999;
             background-color: var(--bg-secondary);
-            padding: 8px 12px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            padding: 4px 8px;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
             border: 1px solid rgba(255, 215, 0, 0.2);
             transition: transform 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
+            
+            /* Trik mengecilkan skala widget */
+            transform-origin: bottom left;
+            transform: scale(0.75);
         }
 
         .traffic-counter-widget:hover {
-            transform: translateY(-3px);
+            transform: scale(0.8) translateY(-3px);
             border-color: var(--accent-gold);
         }
 
         .traffic-counter-widget a {
             color: var(--accent-gold) !important;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             text-decoration: none;
             font-family: var(--font-body);
         }
@@ -870,9 +874,13 @@
             }
 
             .traffic-counter-widget {
-                bottom: 20px;
-                left: 20px;
-                padding: 5px 8px;
+                bottom: 15px;
+                left: 15px;
+                transform: scale(0.65);
+            }
+
+            .traffic-counter-widget:hover {
+                transform: scale(0.7) translateY(-2px);
             }
 
             .footer-content {
@@ -1259,7 +1267,7 @@
             zh: {
                 nav_home: "首页", nav_product: "产品", nav_Datasheet: "数据表", nav_location: "位置", nav_contact: "联系我们",
                 hero_title: "您的工业需求解决方案", hero_subtitle: "值得信赖的供应商，提供各种高质量的阀门、泵、管件、钢铁和钢材。", hero_cta: "在WhatsApp上联系我们",
-                brand_title: "支持各大品牌", product_title: "我们的特色产品",
+                brand_title: "支持各大品牌", product_title: " our 特色产品",
                 product_1_title: "闸阀", product_1_desc: "坚固可靠的设计，用于控制流体全开或全关的流动。",
                 product_2_title: "球阀", product_2_desc: "快速可靠关闭的热门选择，适用于各种工业应用。",
                 product_3_title: "工业泵", product_3_desc: "我们提供各种类型的工业泵，以满足您的流体输送需求。",
